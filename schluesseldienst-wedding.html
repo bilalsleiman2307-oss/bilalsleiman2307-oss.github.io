@@ -1,233 +1,294 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Schlüsseldienst Wedding – Trust Schlüsseldienst Berlin</title>
-<meta name="description" content="Schlüsseldienst Wedding – 24/7 Notdienst, schnelle Hilfe in 10–30 Minuten. Transparente Preise, seriös & fair. Jetzt anrufen.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{max-width:100%;overflow-x:hidden;font-family:system-ui,-apple-system,BlinkMacSystemFont}
+  <title>Schlüsseldienst Wedding – 24/7 Notdienst | Trust Schlüsseldienst Berlin</title>
+  <meta name="description" content="Schlüsseldienst Wedding – 24/7 Notdienst. Anfahrt 10–30 Minuten. Transparente Preise. Eine zugefallene Tür öffnen wir zu 95% beschädigungsfrei. Jetzt anrufen." />
 
-body{background:#f7f9fb;color:#1a1a1a}
+  <style>
+    :root{
+      --brand:#0b7fa6;
+      --brand2:#0a4f6e;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --bg:#f9fafb;
+      --card:#ffffff;
+      --shadow: 0 10px 30px rgba(17,24,39,.08);
+      --radius:18px;
+    }
 
-a{text-decoration:none;color:inherit}
+    *{box-sizing:border-box}
+    html, body{width:100%; max-width:100%;}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg, #ffffff 0%, #ffffff 30%, var(--bg) 100%);
+      line-height:1.55;
+      overflow-x:hidden; /* WICHTIG: kein Links/Rechts-Wischen */
+    }
 
-header{
-  background:#fff;
-  padding:12px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 2px 10px rgba(0,0,0,.05)
-}
+    img{max-width:100%; height:auto; display:block}
+    a{color:inherit}
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:700
-}
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 16px;
+      width:100%;
+    }
 
-.logo img{width:38px;height:auto}
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
 
-.menu-btn{
-  font-size:18px;
-  background:#f1f4f7;
-  border-radius:10px;
-  padding:10px 14px;
-  cursor:pointer
-}
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 0;
+      flex-wrap:wrap; /* verhindert Overflow */
+    }
 
-nav{
-  display:none;
-  background:#fff;
-  padding:16px;
-  border-top:1px solid #eee
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.2px;
+      min-width:0;
+      flex:1 1 auto;
+    }
 
-nav a{
-  display:block;
-  padding:12px 0;
-  font-weight:600
-}
+    .brand img{
+      height:40px;
+      width:auto;
+      border-radius:10px;
+      box-shadow: 0 6px 18px rgba(11,127,166,.18);
+      flex:0 0 auto;
+    }
 
-.hero{
-  margin:16px;
-  padding:20px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#e6f3f8,#ffffff)
-}
+    .brand span{
+      min-width:0;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      max-width:70vw;
+    }
 
-.badges{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:12px
-}
+    /* Desktop nav */
+    nav.desktop{
+      display:flex; gap:10px; align-items:center;
+      flex:0 0 auto;
+    }
+    nav.desktop a{
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:800;
+      color:var(--brand2);
+      white-space:nowrap;
+    }
+    nav.desktop a:hover{ background:rgba(11,127,166,.08); }
 
-.badge{
-  background:#dff1f7;
-  padding:6px 12px;
-  border-radius:999px;
-  font-size:13px;
-  font-weight:600
-}
+    /* Buttons */
+    .call{
+      display:inline-flex; align-items:center; justify-content:center;
+      background:var(--brand);
+      color:#fff;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:900;
+      box-shadow: 0 12px 26px rgba(11,127,166,.22);
+      white-space:nowrap;
+      max-width:100%;
+    }
+    .call:hover{filter:brightness(.98)}
 
-h1{font-size:28px;margin:10px 0}
-p{line-height:1.6;color:#444}
+    .ghost{
+      display:inline-flex; align-items:center; justify-content:center;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--brand2);
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:900;
+      max-width:100%;
+      white-space:nowrap;
+    }
+    .ghost:hover{background:rgba(11,127,166,.06)}
 
-.buttons{
-  margin-top:16px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap
-}
+    /* Mobile menu */
+    .menu-btn{
+      display:none;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:900;
+      cursor:pointer;
+      white-space:nowrap;
+      flex:0 0 auto;
+    }
+    #menuToggle{display:none}
+    nav.mobile{
+      display:none;
+      border-top:1px solid var(--line);
+      padding:10px 0 14px;
+    }
+    nav.mobile a{
+      display:block;
+      text-decoration:none;
+      padding:12px 10px;
+      border-radius:12px;
+      font-weight:900;
+      color:var(--brand2);
+    }
+    nav.mobile a:hover{background:rgba(11,127,166,.08)}
+    #menuToggle:not(:checked) + nav.mobile{display:none}
 
-.btn{
-  padding:14px 18px;
-  border-radius:14px;
-  font-weight:700;
-  text-align:center;
-  display:inline-block
-}
+    /* Hero */
+    .hero{padding:18px 0 10px;}
+    .hero-card{
+      background: radial-gradient(900px 280px at 30% 0%, rgba(11,127,166,.18), transparent 70%),
+                  #ffffff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      width:100%;
+    }
 
-.btn-call{
-  background:#0d7fa3;
-  color:#fff
-}
+    .kicker{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-start;
+      margin-bottom:10px;
+    }
 
-.btn-light{
-  background:#fff;
-  border:1px solid #ddd
-}
+    .badge{
+      display:inline-flex; align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(11,127,166,.10);
+      color:var(--brand2);
+      font-weight:900;
+      font-size:13px;
+    }
 
-.section{
-  margin:24px 16px
-}
+    h1{margin:6px 0 6px; font-size: clamp(26px, 4vw, 40px); line-height:1.15}
+    .lead{margin:0; color:var(--muted); font-size:16px; max-width:70ch}
 
-.section h2{
-  font-size:22px;
-  margin-bottom:10px
-}
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+      width:100%;
+    }
 
-.price-box{
-  background:#fff;
-  border-radius:18px;
-  padding:16px;
-  box-shadow:0 4px 12px rgba(0,0,0,.05)
-}
+    /* Nur 2 Badges unten nebeneinander */
+    .notes{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .notes span{
+      padding:6px 10px;
+      border:1px dashed rgba(11,127,166,.35);
+      border-radius:999px;
+      background:#fff;
+      font-weight:800;
+      white-space:nowrap;
+    }
 
-.price-row{
-  display:flex;
-  justify-content:space-between;
-  padding:10px 0;
-  border-bottom:1px solid #eee
-}
+    /* Sections */
+    section{padding:22px 0}
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+      width:100%;
+    }
+    h2{margin:0 0 10px; font-size: clamp(20px, 2.4vw, 28px)}
+    h3{margin:0 0 8px; font-size:16px}
+    p{margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .hr{height:1px; background:var(--line); margin:14px 0}
 
-.price-row:last-child{border:none}
+    /* Preis-Tabelle */
+    .table-wrap{
+      overflow:auto;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background:#fff;
+      max-width:100%;
+    }
+    table{width:100%; border-collapse:collapse; min-width:620px;}
+    th, td{padding:12px 14px; border-bottom:1px solid var(--line); text-align:left}
+    th{background:rgba(11,127,166,.06); color:var(--brand2); font-weight:900}
+    tr:last-child td{border-bottom:0}
+    .price-note{
+      margin-top:10px;
+      font-size:13px;
+      color:var(--muted);
+    }
 
-.note{
-  margin-top:12px;
-  font-size:14px;
-  color:#555
-}
+    /* Footer */
+    footer{
+      padding:26px 0 36px;
+      border-top:1px solid var(--line);
+      background:#fff;
+    }
+    .footer-grid{
+      display:grid; gap:12px;
+      grid-template-columns: 1.2fr .8fr;
+      align-items:start;
+    }
 
-.contact{
-  background:#fff;
-  border-radius:18px;
-  padding:16px;
-  box-shadow:0 4px 12px rgba(0,0,0,.05)
-}
+    /* Responsive */
+    @media (max-width: 920px){
+      .grid{grid-template-columns: 1fr}
+      nav.desktop{display:none}
+      .menu-btn{display:inline-flex}
+      nav.mobile{display:block}
+      .footer-grid{grid-template-columns:1fr}
+      .brand span{max-width:60vw;}
+    }
 
-footer{
-  text-align:center;
-  padding:24px 16px;
-  font-size:14px;
-  color:#666
-}
-</style>
+    /* Extra mobile safety */
+    @media (max-width: 480px){
+      .brand span{max-width:55vw;}
+      .hero-card{padding:16px;}
+      .call, .ghost{width:100%;}
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <a href="/" class="logo">
-    <img src="assets/logo.png" alt="Trust Schlüsseldienst Berlin">
-    Trust Schlüsseldienst Berlin
-  </a>
-  <div class="menu-btn" onclick="toggleMenu()">☰ Menü</div>
-</header>
-
-<nav id="menu">
-  <a href="#leistungen">Leistungen</a>
-  <a href="/#bezirke">Bezirke</a>
-  <a href="/#preise">Preise</a>
-  <a href="#kontakt">Kontakt</a>
-</nav>
-
-<section class="hero">
-  <div class="badges">
-    <div class="badge">24/7 Notdienst · Wedding</div>
-    <div class="badge">Anfahrt 10–30 Minuten</div>
-  </div>
-
-  <h1>Schlüsseldienst Wedding</h1>
-  <p>
-    Ihr seriöser Schlüsseldienst in Wedding. Schnelle Hilfe bei zugefallener Tür,
-    Schlüsselverlust oder defektem Schloss.
-    Eine <strong>zugefallene Tür öffnen wir zu 95 % beschädigungsfrei.</strong>
-  </p>
-
-  <div class="buttons">
-    <a class="btn btn-call" href="tel:+491638516782">Jetzt anrufen</a>
-    <a class="btn btn-light" href="#preise">Preise ansehen</a>
-  </div>
-</section>
-
-<section class="section" id="preise">
-  <h2>Preise – transparent & fair</h2>
-  <div class="price-box">
-    <div class="price-row"><span>Zugefallene Tür</span><strong>ab 59 €</strong></div>
-    <div class="price-row"><span>Abgeschlossene Tür</span><strong>ab 89 €</strong></div>
-    <div class="price-row"><span>Zylinderschloss wechseln</span><strong>ab 89 €</strong></div>
-    <p class="note">
-      Bei aufwändigeren Arbeiten kann sich der Preis ändern – dies wird immer
-      <strong>vorab klar abgesprochen</strong>.
-      Bei abgeschlossenen Türen ist ein neuer Profilzylinder
-      <strong>nicht im Preis enthalten</strong>.
-      Anfahrtskosten bitte telefonisch erfragen.
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Warum Trust Schlüsseldienst Berlin?</h2>
-  <p>
-    Ein Schlüsseldienst ist Vertrauenssache – besonders im Notfall.
-    Wir stehen für transparente Preise, klare Kommunikation und saubere Arbeit.
-    Sie wissen vorher, woran Sie sind – ohne versteckte Kosten.
-  </p>
-</section>
-
-<section class="section contact" id="kontakt">
-  <h2>Kontakt</h2>
-  <p><strong>Telefon:</strong> <a href="tel:+491638516782">+49 163 8516782</a></p>
-  <p><strong>E-Mail:</strong> trust.schluesseldienstberlin@gmail.com</p>
-  <p>24/7 erreichbar – bitte nennen Sie beim Anruf kurz den Stadtteil (Wedding).</p>
-</section>
-
-<footer>
-  © Trust Schlüsseldienst Berlin · 24/7 Notdienst · Schnell & fair
-</footer>
-
-<script>
-function toggleMenu(){
-  const m=document.getElementById("menu");
-  m.style.display = m.style.display==="block" ? "none" : "block";
-}
-</script>
-
-</body>
-</html>
+  <div class="wrap">
+    <div
