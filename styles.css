@@ -123,11 +123,28 @@ footer{
 @media(min-width:900px){
   .grid{grid-template-columns:1fr 1fr;}
 }
+.bezirk-links{
+  margin-top: 12px;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
 .bezirk-links a{
-  color: inherit;
+  color: #0a4f6e;          /* Trust-Blau */
   text-decoration: none;
   font-weight: 600;
+  white-space: nowrap;
 }
+
 .bezirk-links a:hover{
   text-decoration: underline;
+}
+
+/* Mobil-Optimierung */
+@media (max-width: 600px){
+  .bezirk-links{
+    line-height: 1.8;
+    font-size: 0.9rem;
+  }
 }
