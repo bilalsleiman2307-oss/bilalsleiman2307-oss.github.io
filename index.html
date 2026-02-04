@@ -26,86 +26,115 @@
   <meta property="og:url" content="https://www.trust-schluesseldienstberlin.de/" />
 
   <!-- Structured Data: LocalBusiness (Locksmith) + FAQ + WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"WebSite",
-        "@id":"https://www.trust-schluesseldienstberlin.de/#website",
-        "url":"https://www.trust-schluesseldienstberlin.de/",
-        "name":"Trust Schlüsseldienst Berlin",
-        "inLanguage":"de-DE"
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.trust-schluesseldienstberlin.de/#website",
+      "url": "https://www.trust-schluesseldienstberlin.de/",
+      "name": "Trust Schlüsseldienst Berlin",
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "Locksmith",
+      "@id": "https://www.trust-schluesseldienstberlin.de/#locksmith",
+      "name": "Trust Schlüsseldienst Berlin",
+      "url": "https://www.trust-schluesseldienstberlin.de/",
+      "image": "https://www.trust-schluesseldienstberlin.de/assets/logo.jpeg",
+      "logo": "https://www.trust-schluesseldienstberlin.de/assets/logo.jpeg",
+      "telephone": "+491638516782",
+      "email": "trust.schluesseldienstberlin@gmail.com",
+      "areaServed": "Berlin",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
       },
-      {
-        "@type":"Locksmith",
-        "@id":"https://www.trust-schluesseldienstberlin.de/#business",
-        "name":"Trust Schlüsseldienst Berlin",
-        "url":"https://www.trust-schluesseldienstberlin.de/",
-        "telephone":"+49 163 8516782",
-        "email":"trust.schluesseldienstberlin@gmail.com",
-        "image":"https://www.trust-schluesseldienstberlin.de/assets/logo.jpeg",
-        "priceRange":"€€",
-        "currenciesAccepted":"EUR",
-        "areaServed":[
-          {"@type":"City","name":"Berlin"},
-          {"@type":"AdministrativeArea","name":"Mitte"},
-          {"@type":"AdministrativeArea","name":"Pankow"},
-          {"@type":"AdministrativeArea","name":"Reinickendorf"},
-          {"@type":"AdministrativeArea","name":"Friedrichshain-Kreuzberg"},
-          {"@type":"AdministrativeArea","name":"Charlottenburg-Wilmersdorf"},
-          {"@type":"AdministrativeArea","name":"Tempelhof-Schöneberg"},
-          {"@type":"AdministrativeArea","name":"Neukölln"},
-          {"@type":"AdministrativeArea","name":"Treptow-Köpenick"},
-          {"@type":"AdministrativeArea","name":"Lichtenberg"},
-          {"@type":"AdministrativeArea","name":"Marzahn-Hellersdorf"},
-          {"@type":"AdministrativeArea","name":"Spandau"},
-          {"@type":"AdministrativeArea","name":"Steglitz-Zehlendorf"}
-        ],
-        "openingHours":"Mo-Su 00:00-23:59",
-        "sameAs":[]
-      },
-      {
-        "@type":"FAQPage",
-        "@id":"https://www.trust-schluesseldienstberlin.de/#faq",
-        "mainEntity":[
-          {
-            "@type":"Question",
-            "name":"Wie schnell ist der Schlüsseldienst in Berlin vor Ort?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"In der Regel sind wir in Berlin in 10–30 Minuten bei Ihnen (je nach Verkehr und Standort)."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Ist eine Türöffnung beschädigungsfrei möglich?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Bei zugefallenen Türen ist eine Öffnung in 95% der Fälle beschädigungsfrei möglich. Bei abgeschlossenen Türen hängt es von Schloss, Beschlag und Situation ab – wir erklären die Optionen vorab."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Muss ich mich ausweisen?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Ja. Wenn der Ausweis in der Wohnung liegt, kann ein Nachbar bestätigen, dass Sie dort wohnen. Nach der Öffnung ist ein Ausweis bzw. Nachweis zwingend erforderlich."
-            }
-          },
-          {
-            "@type":"Question",
-            "name":"Wie setzen sich die Kosten zusammen?",
-            "acceptedAnswer":{
-              "@type":"Answer",
-              "text":"Sie erhalten transparente Festpreise (inkl. MwSt.). Anfahrtskosten bitte telefonisch erfragen. Bei aufwändigen Arbeiten kann sich der Preis ändern – das wird vorher klar abgesprochen."
-            }
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/trust_schluesseldienst_berlin?igsh=MWJmaW9oYWRhYWF6eQ%3D%3D&utm_source=qr"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+491638516782",
+          "email": "trust.schluesseldienstberlin@gmail.com",
+          "availableLanguage": ["de"]
+        }
+      ],
+      "makesOffer": [
+        { "@type": "Offer", "name": "Türöffnung (zugefallen)" },
+        { "@type": "Offer", "name": "Türöffnung (abgeschlossen)" },
+        { "@type": "Offer", "name": "Schloss- & Zylinderwechsel" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.trust-schluesseldienstberlin.de/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Geht eine Türöffnung beschädigungsfrei?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei zugefallenen Türen ist eine Öffnung in ca. 95% der Fälle beschädigungsfrei möglich. Bei abgeschlossenen Türen hängt es von Schloss, Tür und Situation ab – wir sprechen das Vorgehen vorher ab."
           }
-        ]
-      }
-    ]
-  }
-  </script>
+        },
+        {
+          "@type": "Question",
+          "name": "Wie schnell sind Sie vor Ort?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Je nach Verkehr sind wir in Berlin häufig in 10–30 Minuten bei Ihnen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet der Schlüsseldienst in Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wir arbeiten mit transparenten Festpreisen (inkl. MwSt.). Die genauen Preise finden Sie in der Preisliste auf der Website. Anfahrtskosten bitte telefonisch erfragen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist ein neuer Profilzylinder bei einer abgeschlossenen Tür im Preis enthalten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Bei einer abgeschlossenen Tür ist ein neuer Profilzylinder nicht im Preis inbegriffen. Material ist nur enthalten, wenn ausdrücklich so vereinbart."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Muss ich mich ausweisen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Sie müssen sich ausweisen. Wenn der Ausweis in der Wohnung liegt, kann ein Nachbar bestätigen, dass Sie dort wohnen. Nach der Öffnung ist ein Ausweis bzw. Nachweis zwingend erforderlich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann sich der Preis ändern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nur wenn zusätzliche, aufwändige Arbeiten nötig sind. Das wird immer vorab mit Ihnen abgesprochen."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
   <style>
     :root{
@@ -344,54 +373,7 @@
       .hero-card,.card,.table-wrap{max-width:100%}
     }
   </style>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was kostet eine Türöffnung in Berlin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Die Kosten hängen von Türart (zugefallen/abgeschlossen) und Uhrzeit ab. Wir nennen Ihnen vorab transparente Festpreise. anfahrtskosten telefonisch erfragen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie schnell sind Sie vor Ort?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In Berlin sind wir je nach Verkehr häufig in 10–30 Minuten bei Ihnen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Geht das ohne Schäden?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei zugefallenen Türen ist eine Öffnung in 95% der Fälle beschädigungsfrei möglich. Bei abgeschlossenen Türen erklären wir vorher die Optionen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Muss ich mich ausweisen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, Sie müssen sich ausweisen. Wenn der Ausweis in der Wohnung liegt, kann ein Nachbar bestätigen, dass Sie dort wohnen. Nach der Öffnung ist ein Ausweis bzw. Nachweis erforderlich."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist ein neuer Profilzylinder im Preis enthalten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei abgeschlossenen Türen ist ein neuer Profilzylinder nicht im Preis inbegriffen. Material (z. B. Profilzylinder) nur, wenn ausdrücklich so vereinbart."
-      }
-    }
-  ]
-}
-</script>
+  
 </head>
 
 <body>
