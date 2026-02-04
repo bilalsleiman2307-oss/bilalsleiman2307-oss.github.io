@@ -1,74 +1,413 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Schlüsseldienst Wedding – 24h Notdienst | Trust Schlüsseldienst Berlin</title>
-  <meta name="description" content="Schlüsseldienst Wedding – 24/7 Notdienst. Türöffnung ab 95% beschädigungsfrei. Anfahrt 10–30 Minuten. Faire Festpreise. Jetzt anrufen.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Schlüsseldienst Wedding – 24/7 Notdienst | Trust Schlüsseldienst Berlin</title>
+  <meta name="description" content="Schlüsseldienst Wedding – 24/7 Notdienst. Türöffnung zu 95% beschädigungsfrei möglich. Anfahrt 10–30 Minuten. transparente preise. jetzt anrufen." />
+
+  <style>
+    :root{
+      --brand:#0b7fa6;
+      --brand2:#0a4f6e;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --bg:#f9fafb;
+      --card:#ffffff;
+      --shadow: 0 10px 30px rgba(17,24,39,.08);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg, #ffffff 0%, #ffffff 30%, var(--bg) 100%);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:12px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .brand img{
+      height:40px; width:auto;
+      border-radius:10px;
+      box-shadow: 0 6px 18px rgba(11,127,166,.18);
+    }
+
+    /* Desktop nav */
+    nav.desktop{
+      display:flex; gap:14px; align-items:center;
+    }
+    nav.desktop a{
+      text-decoration:none;
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:700;
+      color:var(--brand2);
+    }
+    nav.desktop a:hover{
+      background:rgba(11,127,166,.08);
+    }
+
+    /* Call */
+    .call{
+      display:inline-flex; align-items:center; justify-content:center;
+      background:var(--brand);
+      color:#fff;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:900;
+      box-shadow: 0 12px 26px rgba(11,127,166,.22);
+      white-space:nowrap;
+    }
+    .call:hover{filter:brightness(.98)}
+
+    /* Mobile menu */
+    .menu-btn{
+      display:none;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:900;
+      cursor:pointer;
+    }
+    #menuToggle{display:none}
+    nav.mobile{
+      display:none;
+      border-top:1px solid var(--line);
+      padding:10px 0 14px;
+    }
+    nav.mobile a{
+      display:block;
+      text-decoration:none;
+      padding:12px 10px;
+      border-radius:12px;
+      font-weight:800;
+      color:var(--brand2);
+    }
+    nav.mobile a:hover{background:rgba(11,127,166,.08)}
+
+    /* Hero */
+    .hero{
+      padding:26px 0 10px;
+    }
+    .hero-card{
+      background: radial-gradient(900px 280px at 30% 0%, rgba(11,127,166,.18), transparent 70%),
+                  #ffffff;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .kicker{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+      margin-bottom:10px;
+    }
+    .badge{
+      display:inline-flex; align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(11,127,166,.10);
+      color:var(--brand2);
+      font-weight:900;
+      font-size:13px;
+    }
+    h1{margin:6px 0 6px; font-size: clamp(26px, 4vw, 40px); line-height:1.15}
+    .lead{margin:0; color:var(--muted); font-size:16px; max-width:70ch}
+    .hero-actions{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;
+    }
+    .ghost{
+      display:inline-flex; align-items:center; justify-content:center;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--brand2);
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:900;
+    }
+    .ghost:hover{background:rgba(11,127,166,.06)}
+    .notes{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .notes span{
+      padding:6px 10px;
+      border:1px dashed rgba(11,127,166,.35);
+      border-radius:999px;
+      background:#fff;
+    }
+
+    /* Sections */
+    section{padding:26px 0}
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 10px 24px rgba(17,24,39,.06);
+    }
+    h2{margin:0 0 10px; font-size: clamp(20px, 2.4vw, 28px)}
+    h3{margin:0 0 8px; font-size:16px}
+    p{margin:0 0 10px}
+    ul{margin:10px 0 0; padding-left:18px}
+    .muted{color:var(--muted)}
+    .hr{height:1px; background:var(--line); margin:14px 0}
+
+    /* Price table */
+    .table-wrap{overflow:auto; border-radius: var(--radius); border:1px solid var(--line); background:#fff}
+    table{width:100%; border-collapse:collapse; min-width:640px}
+    th, td{padding:12px 14px; border-bottom:1px solid var(--line); text-align:left}
+    th{background:rgba(11,127,166,.06); color:var(--brand2); font-weight:900}
+    tr:last-child td{border-bottom:0}
+    .price-note{
+      margin-top:10px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* Footer */
+    footer{
+      padding:28px 0 40px;
+      border-top:1px solid var(--line);
+      background:#fff;
+    }
+    .footer-grid{
+      display:grid; gap:12px;
+      grid-template-columns: 1.2fr .8fr;
+      align-items:start;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .grid{grid-template-columns: 1fr}
+      nav.desktop{display:none}
+      .menu-btn{display:inline-flex}
+      nav.mobile{display:block}
+      #menuToggle:not(:checked) + nav.mobile{display:none}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 
 <body>
 
-<section class="bezirk-hero">
-  <h1>Schlüsseldienst Wedding</h1>
-  <p>
-    Ihr zuverlässiger <strong>Schlüsseldienst in Wedding</strong>.  
-    Wir sind 24 Stunden täglich erreichbar und in der Regel innerhalb von  
-    <strong>10–30 Minuten</strong> bei Ihnen vor Ort.
-  </p>
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <!-- Logo = immer Startseite -->
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <img src="assets/logo.jpeg" alt="Trust Schlüsseldienst Berlin" />
+        Trust Schlüsseldienst Berlin
+      </a>
 
-  <a class="call-btn" href="tel:+491638516782">Jetzt anrufen</a>
-</section>
+      <!-- Desktop Navigation -->
+      <nav class="desktop" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="index.html#bezirke">Bezirke</a>
+        <a href="#preise">Preise</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
 
-<section>
-  <h2>Türöffnung in Wedding – schnell & fair</h2>
-  <p>
-    Bei <strong>zugefallenen Türen</strong> ist eine Öffnung in  
-    <strong>95% der Fälle beschädigungsfrei</strong> möglich.  
-    Bei abgeschlossenen Türen erklären wir Ihnen die Optionen transparent  
-    <strong>vor Beginn der Arbeit</strong>.
-  </p>
-</section>
+      <!-- Mobile: Button + Checkbox Menü -->
+      <label class="menu-btn" for="menuToggle" aria-label="Menü öffnen">☰ Menü</label>
+      <a class="call" href="tel:+491638516782">Jetzt anrufen</a>
+    </div>
 
-<section>
-  <h2>Preise – transparent & fair</h2>
-  <ul>
-    <li>Zugefallene Tür ab <strong>59 €</strong></li>
-    <li>Abgeschlossene Tür ab <strong>89 €</strong></li>
-    <li>Zylinderschloss wechseln ab <strong>89 €</strong></li>
-  </ul>
+    <input id="menuToggle" type="checkbox" />
+    <nav class="mobile" aria-label="Mobile Navigation">
+      <a href="#leistungen" onclick="document.getElementById('menuToggle').checked=false;">Leistungen</a>
+      <a href="index.html#bezirke" onclick="document.getElementById('menuToggle').checked=false;">Bezirke</a>
+      <a href="#preise" onclick="document.getElementById('menuToggle').checked=false;">Preise</a>
+      <a href="#kontakt" onclick="document.getElementById('menuToggle').checked=false;">Kontakt</a>
+      <a href="index.html" onclick="document.getElementById('menuToggle').checked=false;">Zur Startseite</a>
+    </nav>
+  </div>
+</header>
 
-  <p class="hinweis">
-    Anfahrtskosten bitte telefonisch erfragen.
-  </p>
-</section>
+<main class="wrap">
 
-<section>
-  <h2>Wichtiger Hinweis zur Türöffnung</h2>
-  <p>
-    Vor der Türöffnung müssen Sie nachweisen, dass Sie berechtigt sind,  
-    die Wohnung zu betreten. Dies erfolgt durch einen Ausweis.  
-    Falls dieser sich in der Wohnung befindet, kann auch ein Nachbar  
-    die Wohnberechtigung bestätigen. Der Ausweis wird in diesem Fall  
-    <strong>nach der Öffnung</strong> vorgezeigt.
-  </p>
-</section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-card">
+      <div class="kicker">
+        <span class="badge">24/7 Notdienst · Wedding</span>
+        <span class="badge">Anfahrt 10–30 Minuten</span>
+      </div>
 
-<section>
-  <h2>Warum Trust Schlüsseldienst Berlin?</h2>
-  <ul>
-    <li>✔ transparente Festpreise</li>
-    <li>✔ schnelle Hilfe in Wedding</li>
-    <li>✔ 24/7 Notdienst – auch nachts & am Wochenende</li>
-    <li>✔ klare Kommunikation, keine versteckten Kosten</li>
-  </ul>
-</section>
+      <h1>Schlüsseldienst Wedding</h1>
+      <p class="lead">
+        Ihr seriöser Schlüsseldienst in Wedding. Schnelle Hilfe bei zugefallener Tür, Schlüsselverlust oder defektem Schloss.
+        Eine <strong>zugefallene Tür</strong> öffnen wir zu <strong>95%</strong> beschädigungsfrei (je nach Situation).
+      </p>
 
-<section class="cta">
-  <h2>Jetzt Schlüsseldienst in Wedding anrufen</h2>
-  <a class="call-btn" href="tel:+491638516782">Jetzt anrufen</a>
-</section>
+      <div class="hero-actions">
+        <a class="call" href="tel:+491638516782">Jetzt anrufen</a>
+        <a class="ghost" href="index.html">Zur Startseite</a>
+        <a class="ghost" href="#preise">Preise ansehen</a>
+      </div>
+
+      <div class="notes">
+        <span>transparente preise</span>
+        <span>ohne versteckte kosten</span>
+        <span>auch nachts & am wochenende</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen">
+    <h2>Leistungen in Wedding</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Türöffnung</h3>
+        <p class="muted">Zugefallene Tür, Schlüssel steckt innen oder Schlüssel verloren – wir helfen schnell und professionell.</p>
+      </div>
+      <div class="card">
+        <h3>Schloss- & Zylinderwechsel</h3>
+        <p class="muted">Einbau und Austausch hochwertiger schließzylinder – inklusive Beratung zur passenden Sicherheitsstufe.</p>
+      </div>
+      <div class="card">
+        <h3>Einbruchschutz</h3>
+        <p class="muted">Beratung und Nachrüstung (z. B. schutzbeschläge) – für mehr Sicherheit in Wohnung und Haus.</p>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="card">
+      <h3>Wichtiger Hinweis zur Legitimation</h3>
+      <p class="muted">
+        Ja, Sie müssen sich ausweisen. Wenn der Ausweis in der Wohnung liegt, kann ein Nachbar bestätigen,
+        dass Sie dort wohnen. Nach der Öffnung ist ein Ausweis bzw. Nachweis zwingend erforderlich.
+      </p>
+    </div>
+  </section>
+
+  <!-- PREISE -->
+  <section id="preise">
+    <h2>Preise – transparent & fair</h2>
+    <p class="muted">
+      Alle Preise sind Festpreise inklusive gesetzlicher Mehrwertsteuer. <strong>anfahrtskosten telefonisch erfragen</strong>.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Leistung</th>
+            <th>07:00–20:00 Uhr</th>
+            <th>20:00–00:00 Uhr</th>
+            <th>00:00–07:00 Uhr</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Zugefallene Tür</td>
+            <td>59 €</td>
+            <td>79 €</td>
+            <td>99 €</td>
+          </tr>
+          <tr>
+            <td>Abgeschlossene Tür</td>
+            <td>89 €</td>
+            <td>109 €</td>
+            <td>129 €</td>
+          </tr>
+          <tr>
+            <td>Zylinderschloss wechseln</td>
+            <td>89 €</td>
+            <td>109 €</td>
+            <td>129 €</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="price-note">
+      hinweis: material (z. b. profilzylinder) ist nur enthalten, wenn ausdrücklich so vereinbart.
+    </p>
+
+    <div class="hero-actions" style="margin-top:14px;">
+      <a class="call" href="tel:+491638516782">Jetzt anrufen</a>
+      <a class="ghost" href="index.html#preise">Zur Startseite: Preise</a>
+    </div>
+  </section>
+
+  <!-- BEZIRKE (kurz, damit du von hier auch weiter kommst) -->
+  <section id="bezirke">
+    <h2>Weitere Einsatzgebiete</h2>
+    <p class="muted">
+      Neben Wedding sind wir auch schnell in Gesundbrunnen, Mitte, Prenzlauer Berg, Pankow und Reinickendorf.
+      Alle Bezirke finden Sie auf der Startseite.
+    </p>
+    <div class="card">
+      <strong>Weiter zu allen Bezirken:</strong>
+      <a href="index.html#bezirke" style="color:var(--brand2); font-weight:900; text-decoration:none;">Einsatzgebiet ansehen</a>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <div class="card">
+      <p><strong>Telefon:</strong> <a href="tel:+491638516782" style="color:var(--brand2); font-weight:900; text-decoration:none;">+49 163 8516782</a></p>
+      <p class="muted" style="margin-bottom:0;">
+        24/7 erreichbar. Bitte nennen Sie beim Anruf kurz den Stadtteil (Wedding), Türart (zugefallen/abgeschlossen) und ob der Schlüssel innen steckt.
+      </p>
+
+      <div class="hero-actions" style="margin-top:14px;">
+        <a class="call" href="tel:+491638516782">Jetzt anrufen</a>
+        <a class="ghost" href="index.html">Zur Startseite</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <strong>Trust Schlüsseldienst Berlin</strong>
+        <div class="muted">24/7 notdienst · schnell & fair</div>
+      </div>
+      <div>
+        <a class="call" href="tel:+491638516782" style="width:100%;">Jetzt anrufen</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
+
