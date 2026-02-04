@@ -278,33 +278,27 @@ img {
 <header>
   <div class="wrap">
     <div class="topbar">
-      <!-- Logo = immer Startseite -->
-      <a class="brand" href="index.html" aria-label="Zur Startseite">
+
+      <!-- Burger -->
+      <label class="menu-btn" for="menuToggle" aria-label="Menü öffnen">☰</label>
+
+      <!-- Logo -->
+      <a class="brand" href="index.html">
         <img src="assets/logo.jpeg" alt="Trust Schlüsseldienst Berlin" />
         Trust Schlüsseldienst Berlin
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="desktop" aria-label="Hauptnavigation">
-        <a href="#leistungen">Leistungen</a>
-        <a href="index.html#bezirke">Bezirke</a>
-        <a href="#preise">Preise</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-
-      <!-- Mobile: Button + Checkbox Menü -->
-      <label class="menu-btn" for="menuToggle" aria-label="Menü öffnen">☰</label>
-      <a class="call" href="tel:+491638516782">Jetzt anrufen</a>
     </div>
 
     <input id="menuToggle" type="checkbox" />
-    <nav class="mobile" aria-label="Mobile Navigation">
-      <a href="#leistungen" onclick="document.getElementById('menuToggle').checked=false;">Leistungen</a>
-      <a href="index.html#bezirke" onclick="document.getElementById('menuToggle').checked=false;">Bezirke</a>
-      <a href="#preise" onclick="document.getElementById('menuToggle').checked=false;">Preise</a>
-      <a href="#kontakt" onclick="document.getElementById('menuToggle').checked=false;">Kontakt</a>
-      <a href="index.html" onclick="document.getElementById('menuToggle').checked=false;">Zur Startseite</a>
+
+    <nav class="mobile">
+      <a href="#leistungen" onclick="menuToggle.checked=false">Leistungen</a>
+      <a href="index.html#bezirke" onclick="menuToggle.checked=false">Bezirke</a>
+      <a href="#preise" onclick="menuToggle.checked=false">Preise</a>
+      <a href="#kontakt" onclick="menuToggle.checked=false">Kontakt</a>
     </nav>
+
   </div>
 </header>
 
