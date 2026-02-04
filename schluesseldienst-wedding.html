@@ -27,7 +27,7 @@
       background:linear-gradient(180deg, #ffffff 0%, #ffffff 30%, var(--bg) 100%);
       line-height:1.55;
     }
-    a{color:inherit}
+    a{color:inherit; text-decoration:none;}
     .wrap{max-width:1100px; margin:0 auto; padding:0 16px; width:100%;}
 
     /* Header */
@@ -38,25 +38,37 @@
       border-bottom:1px solid var(--line);
     }
     .topbar{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:12px 0;
-}
-      .topbar{ flex-wrap:wrap; }
-.brand{ min-width:0; }
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 0;
+      flex-wrap:nowrap; /* wichtig */
     }
+
+    /* Linker Block: Burger + Logo */
+    .left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+
     .brand{
       display:flex; align-items:center; gap:10px;
-      text-decoration:none;
+      text-decoration:none !important;
       font-weight:900;
       letter-spacing:.2px;
       white-space:nowrap;
+      min-width:0;
     }
+    .brand, .brand *{ text-decoration:none !important; }
+
     .brand img{
       height:40px; width:auto;
       border-radius:10px;
       box-shadow: 0 6px 18px rgba(11,127,166,.18);
+      flex:0 0 auto;
     }
 
     /* Desktop nav */
@@ -90,15 +102,19 @@
 
     /* Mobile menu */
     .menu-btn{
-  display:none;
-  border:1px solid var(--line);
-  background:#fff;
-  border-radius:8px;
-  padding:6px 10px;
-  font-size:18px;
-  line-height:1;
-  cursor:pointer;
-}
+      display:none;
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:12px;
+      padding:10px 12px;
+      font-size:18px;
+      line-height:1;
+      cursor:pointer;
+      min-width:44px;
+      height:44px;
+      align-items:center;
+      justify-content:center;
+    }
     #menuToggle{display:none}
     nav.mobile{
       display:none;
@@ -222,55 +238,31 @@
       #menuToggle:not(:checked) + nav.mobile{display:none}
       .footer-grid{grid-template-columns:1fr}
     }
+
     /* --- Mobile Fix: kein horizontales Scrollen --- */
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* --- Mobile Header & Buttons optimieren --- */
-@media (max-width: 520px) {
-
-  .topbar {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .brand {
-    width: 100%;
-    white-space: normal;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .menu-btn,
-  .call {
-    width: 48%;
-  }
-
-  .hero-actions a {
-    width: 100%;
-    text-align: center;
-  }
-
-  .call,
-  .ghost {
-    width: 100%;
-  }
-
-  .hero-card,
-  .card,
-  .table-wrap {
-    max-width: 100%;
-  }
-}
-
+    /* --- Mobile Header sauber (Burger neben Logo) --- */
+    @media (max-width: 520px) {
+      .topbar{
+        flex-wrap:nowrap !important;
+        align-items:center;
+        justify-content:flex-start;
+      }
+      .brand{
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      /* Buttons im Hero bleiben untereinander */
+      .hero-actions a{ width:100%; text-align:center; }
+      .call, .ghost{ width:100%; }
+    }
   </style>
 </head>
 
@@ -280,14 +272,16 @@ img {
   <div class="wrap">
     <div class="topbar">
 
-      <!-- Burger -->
-      <label class="menu-btn" for="menuToggle" aria-label="Menü öffnen">☰</label>
+      <div class="left">
+        <!-- Burger -->
+        <label class="menu-btn" for="menuToggle" aria-label="Menü öffnen">☰</label>
 
-      <!-- Logo -->
-      <a class="brand" href="index.html">
-        <img src="assets/logo.jpeg" alt="Trust Schlüsseldienst Berlin" />
-        Trust Schlüsseldienst Berlin
-      </a>
+        <!-- Logo -->
+        <a class="brand" href="index.html">
+          <img src="assets/logo.jpeg" alt="Trust Schlüsseldienst Berlin" />
+          Trust Schlüsseldienst Berlin
+        </a>
+      </div>
 
     </div>
 
@@ -412,7 +406,7 @@ img {
     </div>
   </section>
 
-  <!-- BEZIRKE (kurz, damit du von hier auch weiter kommst) -->
+  <!-- BEZIRKE -->
   <section id="bezirke">
     <h2>Weitere Einsatzgebiete</h2>
     <p class="muted">
