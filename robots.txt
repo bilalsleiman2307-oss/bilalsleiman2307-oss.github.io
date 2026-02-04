@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bilalsleiman2307-oss.github.io/sitemap.xml
