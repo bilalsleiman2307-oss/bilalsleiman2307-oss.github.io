@@ -385,47 +385,80 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "Wie schnell sind Sie vor Ort in Berlin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Je nach Verkehr sind wir in Berlin häufig in 10–30 Minuten bei Ihnen."
-      }
+      "@type": "Locksmith",
+      "@id": "https://www.trust-schluesseldienstberlin.de/#locksmith",
+      "name": "Trust Schlüsseldienst Berlin",
+      "url": "https://www.trust-schluesseldienstberlin.de/",
+      "telephone": "+491638516782",
+      "email": "trust.schluesseldienstberlin@gmail.com",
+      "image": "https://www.trust-schluesseldienstberlin.de/assets/logo.jpeg",
+      "logo": "https://www.trust-schluesseldienstberlin.de/assets/logo.jpeg",
+      "priceRange": "€€",
+      "areaServed": "Berlin",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Berlin",
+        "addressCountry": "DE"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/trust_schluesseldienst_berlin/"
+      ]
     },
     {
-      "@type": "Question",
-      "name": "Geht eine Türöffnung beschädigungsfrei?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei zugefallenen Türen ist eine Öffnung in 95% der Fälle beschädigungsfrei möglich. Bei abgeschlossenen Türen hängt es von Schloss, Tür und Situation ab – wir erklären das Vorgehen vorher."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was kostet ein Schlüsseldienst in Berlin?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wir arbeiten mit transparenten Festpreisen (inkl. MwSt.). Anfahrtskosten bitte telefonisch erfragen. Zusatzarbeiten werden vorher abgesprochen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Muss ich mich ausweisen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, Sie müssen sich ausweisen. Wenn der Ausweis in der Wohnung liegt, kann ein Nachbar bestätigen, dass Sie dort wohnen. Nach der Öffnung ist ein Ausweis bzw. Nachweis zwingend erforderlich."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Ist ein neuer Profilzylinder im Preis enthalten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei einer abgeschlossenen Tür ist ein neuer Profilzylinder nicht im Festpreis enthalten, außer es wurde ausdrücklich vereinbart."
-      }
+      "@type": "FAQPage",
+      "@id": "https://www.trust-schluesseldienstberlin.de/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie schnell sind Sie vor Ort in Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Je nach Verkehr sind wir in Berlin häufig in 10–30 Minuten bei Ihnen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Geht eine Türöffnung beschädigungsfrei?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei zugefallenen Türen ist eine Öffnung in 95% der Fälle beschädigungsfrei möglich. Bei abgeschlossenen Türen hängt es von Schloss, Tür und Situation ab – wir erklären das Vorgehen vorher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet ein Schlüsseldienst in Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wir arbeiten mit transparenten Festpreisen (inkl. MwSt.). Anfahrtskosten bitte telefonisch erfragen. Zusatzarbeiten werden vorher abgesprochen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Muss ich mich ausweisen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, Sie müssen sich ausweisen. Wenn der Ausweis in der Wohnung liegt, kann ein Nachbar bestätigen, dass Sie dort wohnen. Nach der Öffnung ist ein Ausweis bzw. Nachweis zwingend erforderlich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist ein neuer Profilzylinder im Preis enthalten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei einer abgeschlossenen Tür ist ein neuer Profilzylinder nicht im Festpreis enthalten, außer es wurde ausdrücklich vereinbart."
+          }
+        }
+      ]
     }
   ]
 }
