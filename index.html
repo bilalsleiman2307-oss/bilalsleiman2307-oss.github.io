@@ -1,4 +1,4 @@
-<!-- ========= index.html (NEUE, längere Startseite) ========= -->
+<!-- ========= index.html (angepasst: Logo-Text mobil + Notfälle als Kästchen) ========= -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -329,10 +329,24 @@
       .footer-grid{grid-template-columns:1fr}
       .top-actions{display:none}
     }
+
+    /* ✅ ÄNDERUNG #1: Auf Handy soll der Name sichtbar sein */
     @media (max-width: 520px){
       .brand img{height:34px}
-      .brand span{display:none;} /* Logo bleibt, Text weg */
+      .brand span{
+        display:block;             /* vorher: none */
+        font-size:14px;
+        font-weight:900;
+        max-width: 210px;          /* passt neben Logo */
+        line-height:1.1;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
       .hero-actions a{width:100%}
+    }
+    @media (max-width: 380px){
+      .brand span{max-width: 160px;}
     }
   </style>
 
@@ -605,13 +619,105 @@
 
       <div class="hr"></div>
 
+      <!-- ✅ ÄNDERUNG #2: Notfälle als Kästchen (wie bei Kontakt/Anfahrt) -->
       <div class="card">
-        <h3>Typische Notfälle</h3>
+        <h3>Typische Notfälle – wir helfen sofort</h3>
         <p class="muted">
-          <strong>Tür zugefallen</strong>, <strong>Schlüssel steckt innen</strong>, <strong>Schlüssel verloren</strong>, <strong>Schlüssel abgebrochen</strong>,
-          <strong>Schloss klemmt</strong> oder <strong>Zylinder defekt</strong> – in diesen Fällen hilft der
-          <strong>Schlüsseldienst in Berlin</strong> schnell und zuverlässig.
+          Diese Situationen gehören zu den häufigsten Gründen, warum Kunden einen <strong>Schlüsseldienst in Berlin</strong> anrufen:
         </p>
+
+        <div class="grid" style="margin-top:10px;">
+          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
+            <div class="iconline">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 21V3h10v18" stroke="#063a55" stroke-width="2"/>
+                  <path d="M9 12h6" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Tür zugefallen</h3>
+                <p class="muted">Schnelle Türöffnung, wenn der Schlüssel innen liegt oder die Tür ins Schloss gefallen ist.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
+            <div class="iconline">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M14 10a4 4 0 1 0-3 3.9" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M13 14h7" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M17 14v3" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Tür abgeschlossen</h3>
+                <p class="muted">Professionelle Öffnung mit klarer Absprache vor Beginn.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
+            <div class="iconline">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 12l3 3L21 4" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3 20h18" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Schlüssel verloren</h3>
+                <p class="muted">Schnelle Hilfe vor Ort – bei Bedarf auch Zylinderwechsel möglich.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
+            <div class="iconline">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2v6" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 8h12v14H6V8z" stroke="#0b7fa6" stroke-width="2"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Schlüssel abgebrochen</h3>
+                <p class="muted">Entfernung des Schlüsselrests und Wiederherstellung der Funktion.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
+            <div class="iconline">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 12h16" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M7 9l-3 3 3 3" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Schloss klemmt</h3>
+                <p class="muted">Wenn das Schloss hakt oder blockiert, prüfen wir die Ursache und helfen schnell.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
+            <div class="iconline">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M7 10V7a5 5 0 0 1 10 0v3" stroke="#063a55" stroke-width="2"/>
+                  <path d="M6 10h12v10H6V10z" stroke="#0b7fa6" stroke-width="2"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Zylinder defekt</h3>
+                <p class="muted">Austausch oder Lösung passend zur Situation – schnell und sauber.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -731,48 +837,6 @@
       </div>
     </section>
 
-    <!-- ===== LONG SEO CONTENT BLOCKS ===== -->
-    <section id="seo-text">
-      <h2>Schlüsselnotdienst Berlin: schnelle Hilfe bei Türproblemen</h2>
-      <div class="card">
-        <p class="muted">
-          Ein <strong>Schlüsselnotdienst in Berlin</strong> wird meistens in Stresssituationen gebraucht: Die Tür ist zugefallen,
-          der Schlüssel steckt innen, der Schlüssel wurde verloren oder das Schloss klemmt. In solchen Momenten zählt vor allem:
-          <strong>schnell erreichbar</strong>, <strong>seriös</strong> und <strong>fair</strong>. Trust Schlüsseldienst Berlin ist
-          als <strong>Schlüsseldienst Berlin 24/7</strong> für Sie da – Tag und Nacht, auch am Wochenende.
-        </p>
-
-        <div class="hr"></div>
-
-        <h3>Türöffnung Berlin – zugefallen vs. abgeschlossen</h3>
-        <p class="muted">
-          Bei einer <strong>zugefallenen Tür</strong> ist eine beschädigungsarme Öffnung oft möglich. Bei einer
-          <strong>abgeschlossenen Tür</strong> hängt es stärker vom Schloss, der Tür und der Situation ab.
-          Wir erklären die Optionen verständlich und starten erst nach klarer Absprache.
-        </p>
-
-        <h3>Günstiger Schlüsseldienst Berlin – fair bedeutet: klare Preise</h3>
-        <p class="muted">
-          Begriffe wie <strong>günstiger Schlüsseldienst</strong> oder <strong>faire Türöffnung</strong> stehen für Kunden meist
-          für Transparenz und Verlässlichkeit. Darum zeigen wir Festpreise klar und halten den Ablauf professionell – ohne
-          unnötige Texte oder Verwirrung.
-        </p>
-
-        <h3>Schlosswechsel / Zylinderwechsel</h3>
-        <p class="muted">
-          Nach <strong>Schlüsselverlust</strong> oder bei einem <strong>defekten Schloss</strong> kann ein
-          <strong>Schlosswechsel</strong> bzw. <strong>Zylinderwechsel</strong> sinnvoll sein. Wir beraten kurz, was nötig ist,
-          und setzen die passende Lösung sauber um.
-        </p>
-
-        <h3>Einbruchschutz in Berlin</h3>
-        <p class="muted">
-          Einbrüche passieren oft über Türen. Mit passenden Maßnahmen (z. B. Schutzbeschläge) lässt sich die Sicherheit erhöhen.
-          Wir beraten und unterstützen bei sinnvoller Nachrüstung.
-        </p>
-      </div>
-    </section>
-
     <!-- ===== BEZIRKE ===== -->
     <section id="bezirke">
       <h2>Schlüsseldienst Berlin – Bezirke & Stadtteile</h2>
@@ -783,13 +847,11 @@
       <div class="card">
         <h3>Bezirksseiten</h3>
         <div class="chips" style="margin-top:10px;">
-          <!-- LIVE/EXISTING -->
           <a class="chip" href="schluesseldienst-wedding.html">Wedding</a>
           <a class="chip" href="schluesseldienst-gesundbrunnen.html">Gesundbrunnen</a>
           <a class="chip" href="schluesseldienst-pankow.html">Pankow</a>
           <a class="chip" href="schluesseldienst-prenzlauerberg.html">Prenzlauer Berg</a>
 
-          <!-- Weitere Bezirke (Links können später befüllt werden, ohne Text “im Aufbau”) -->
           <a class="chip" href="schluesseldienst-reinickendorf.html">Reinickendorf</a>
           <a class="chip" href="schluesseldienst-moabit.html">Moabit</a>
           <a class="chip" href="schluesseldienst-mitte.html">Mitte</a>
@@ -809,13 +871,6 @@
           <a class="chip" href="schluesseldienst-tempelhof.html">Tempelhof</a>
           <a class="chip" href="schluesseldienst-treptow.html">Treptow</a>
         </div>
-
-        <div class="hr"></div>
-
-        <p class="muted">
-          Weitere Stadtteile/Bezirke: Charlottenburg-Wilmersdorf, Friedrichshain-Kreuzberg, Neukölln, Spandau,
-          Steglitz-Zehlendorf, Tempelhof-Schöneberg, Lichtenberg, Marzahn-Hellersdorf, Treptow-Köpenick.
-        </p>
       </div>
     </section>
 
