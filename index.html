@@ -5,500 +5,457 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Schlüsseldienst Berlin 24/7 – Schlüsselnotdienst & Türöffnung | Trust Schlüsseldienst Berlin</title>
-  <meta name="description" content="Trust Schlüsseldienst Berlin: 24/7 Schlüsselnotdienst & Türöffnung in Berlin. Anfahrt 10–30 Minuten. Transparente Festpreise. Für zugefallene Tür, Schlüsselverlust, Schloss- & Zylinderwechsel." />
+  <meta name="description" content="Trust Schlüsseldienst Berlin: 24/7 Schlüsselnotdienst & Türöffnung in Berlin. Zugefallene Tür: 95% ohne Schäden möglich. Klare Festpreise, schnelle Hilfe, Telefon: +49 163 8516782." />
 
+  <link rel="canonical" href="https://www.trust-schluesseldienstberlin.de/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#0b7fa6" />
-  <link rel="canonical" href="https://www.trust-schluesseldienstberlin.de/" />
 
-  <!-- Open Graph -->
+  <!-- Favicon (minimal, sicher) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- Social Vorschau -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Schlüsseldienst Berlin 24/7 – Schlüsselnotdienst & Türöffnung | Trust" />
-  <meta property="og:description" content="24/7 Notdienst in Berlin. Türöffnung (zugefallen/abgeschlossen), Schloss- & Zylinderwechsel. Anfahrt 10–30 Minuten. Transparente Festpreise." />
+  <meta property="og:title" content="Schlüsseldienst Berlin 24/7 – Trust Schlüsseldienst Berlin" />
+  <meta property="og:description" content="24/7 Schlüsselnotdienst in Berlin: Türöffnung (zugefallen/abgeschlossen), Schloss- & Zylinderwechsel, Einbruchschutz. Klare Festpreise. +49 163 8516782" />
   <meta property="og:url" content="https://www.trust-schluesseldienstberlin.de/" />
   <meta property="og:image" content="https://www.trust-schluesseldienstberlin.de/assets/logo.jpeg" />
   <meta name="twitter:card" content="summary" />
 
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
   <style>
     :root{
-      --bg:#071a24;          /* dunkler Hintergrund */
-      --bg2:#0a2a3a;
-      --brand:#0b7fa6;       /* Trust Blau */
-      --brand2:#0a5f82;
-      --ink:#0f172a;
-      --text:#eaf2f7;
-      --muted:#b6c7d4;
-      --muted2:#7f98aa;
-      --card:#0c2230;
-      --card2:#0b1f2b;
-      --line: rgba(255,255,255,.10);
-      --line2: rgba(11,127,166,.25);
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
-      --shadow2: 0 14px 26px rgba(0,0,0,.22);
-      --r:18px;
-      --r2:14px;
+      --brand:#0b7fa6;
+      --brand2:#0a4f6e;
+      --brand3:#06384d;
+
+      --text:#0b1220;
+      --muted:#5b6472;
+      --line:rgba(255,255,255,.12);
+
+      --bg1:#062c3d;
+      --bg2:#0b6f90;
+      --bg3:#f3f6f9;
+
+      --card: rgba(255,255,255,.10);
+      --card2:#ffffff;
+
+      --shadow: 0 14px 40px rgba(2, 10, 20, .18);
+      --shadow2: 0 12px 30px rgba(11,127,166,.18);
+      --radius:18px;
     }
 
     *{box-sizing:border-box}
-    html,body{width:100%; max-width:100%; overflow-x:hidden;}
+    html, body { width:100%; max-width:100%; overflow-x:hidden; }
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 10% 0%, rgba(11,127,166,.22), transparent 60%),
-        radial-gradient(700px 420px at 90% 10%, rgba(10,95,130,.18), transparent 60%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 45%, #071a24 100%);
-      line-height:1.65;
+        radial-gradient(1100px 380px at 20% 0%, rgba(255,255,255,.18), transparent 60%),
+        linear-gradient(180deg, #08364b 0%, #0b7fa6 18%, #eaf1f6 55%, #ffffff 100%);
+      line-height:1.55;
     }
-    a{color:inherit}
-    img{max-width:100%; height:auto}
-    .wrap{max-width:1140px; margin:0 auto; padding:0 16px; width:100%;}
-    .muted{color:var(--muted)}
-    .muted2{color:var(--muted2)}
-    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;}
 
-    /* ===== Header (dunkel + Verlauf) ===== */
+    a{color:inherit}
+    .wrap{max-width:1150px; margin:0 auto; padding:0 16px; width:100%;}
+
+    /* Header */
     header{
-      position:sticky; top:0; z-index:60;
+      position:sticky; top:0; z-index:80;
       background:
-        linear-gradient(90deg, rgba(11,127,166,.26) 0%, rgba(10,95,130,.14) 40%, rgba(7,26,36,.88) 100%);
+        linear-gradient(90deg, rgba(11,127,166,.94) 0%, rgba(6,56,77,.94) 70%),
+        rgba(255,255,255,.04);
       backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
+      border-bottom:1px solid rgba(255,255,255,.18);
     }
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      padding:10px 0;
+      padding:12px 0;
     }
 
-    .left{
-      display:flex;
-      align-items:center;
-      gap:12px;
+    .leftbar{
+      display:flex; align-items:center; gap:12px;
       min-width:0;
     }
 
     .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
+      display:flex; align-items:center; gap:10px;
       text-decoration:none;
       font-weight:900;
       letter-spacing:.2px;
+      color:#fff;
       min-width:0;
     }
     .brand img{
-      height:38px;
-      width:auto;
+      height:38px; width:auto;
       border-radius:12px;
       background:#fff;
       padding:6px;
-      box-shadow: 0 12px 24px rgba(11,127,166,.18);
+      box-shadow: 0 10px 26px rgba(0,0,0,.18);
     }
     .brand span{
-      display:block;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
-      font-size:16px;
-      color:#eaf6ff;
+      max-width:56vw;
     }
 
-    /* Desktop nav */
+    .menu-btn{
+      display:none;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      border-radius:14px;
+      padding:10px 12px;
+      font-size:18px;
+      line-height:1;
+      cursor:pointer;
+      box-shadow: 0 10px 22px rgba(0,0,0,.14);
+    }
+
     nav.desktop{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      margin-left:6px;
+      display:flex; gap:10px; align-items:center;
     }
     nav.desktop a{
       text-decoration:none;
       padding:10px 12px;
-      border-radius:12px;
-      font-weight:900;
-      color:#d9eefb;
+      border-radius:14px;
+      font-weight:800;
+      color:#eaf6fb;
       border:1px solid transparent;
     }
     nav.desktop a:hover{
-      background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.08);
+      background:rgba(255,255,255,.10);
+      border-color:rgba(255,255,255,.18);
     }
 
-    /* Top CTA */
-    .call-top{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      background:linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
-      color:#fff;
+    .actions{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
       text-decoration:none;
-      padding:12px 14px;
+      padding:10px 14px;
       border-radius:14px;
       font-weight:900;
-      box-shadow: 0 18px 42px rgba(11,127,166,.30);
       white-space:nowrap;
-      border:1px solid rgba(255,255,255,.16);
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 12px 26px rgba(0,0,0,.14);
+      color:#fff;
+      background:rgba(255,255,255,.10);
     }
-    .call-top:hover{filter:brightness(.98)}
-    .icon{width:18px;height:18px;display:inline-block;vertical-align:middle;fill:currentColor}
-
-    /* Mobile menu button */
-    .menu-btn{
-      display:none;
-      width:44px; height:44px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.06);
-      box-shadow: 0 12px 22px rgba(0,0,0,.22);
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(11,127,166,1), rgba(6,56,77,1));
+      border-color: rgba(255,255,255,.22);
+      box-shadow: var(--shadow2);
     }
-    .menu-btn svg{width:22px;height:22px;fill:#eaf6ff}
+    .btn.light{
+      background: rgba(255,255,255,.92);
+      color: var(--brand3);
+      border-color: rgba(255,255,255,.65);
+    }
+    .btn:hover{filter:brightness(1.02)}
+    .btn svg{width:18px;height:18px;flex:0 0 auto}
 
-    /* Mobile menu panel (sauber) */
+    /* Mobile menu */
     #menuToggle{display:none}
-    .mobile-panel{
+    nav.mobile{
       display:none;
+      border-top:1px solid rgba(255,255,255,.18);
       padding:12px 0 16px;
-      border-top:1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(7,26,36,.92) 0%, rgba(7,26,36,.98) 100%);
     }
-    .mobile-links{
+    .mobile .quick{
       display:grid;
       gap:10px;
+      margin:10px 0 14px;
     }
-    .mobile-links a{
+    .mobile a.link{
+      display:block;
       text-decoration:none;
       padding:12px 12px;
       border-radius:14px;
       font-weight:900;
-      color:#eaf6ff;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.06);
+      color:#eaf6fb;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
     }
-    .mobile-links a:hover{background:rgba(255,255,255,.08)}
-    #menuToggle:checked + .mobile-panel{display:block}
+    .mobile a.link:hover{background:rgba(255,255,255,.12)}
+    .mobile .sep{
+      height:1px; background:rgba(255,255,255,.18); margin:12px 0;
+    }
 
-    /* ===== Hero ===== */
-    .hero{padding:22px 0 14px;}
+    /* Hero */
+    .hero{padding:28px 0 10px;}
     .hero-card{
-      border-radius:var(--r);
-      border:1px solid rgba(255,255,255,.10);
-      background:
-        radial-gradient(900px 380px at 10% 0%, rgba(11,127,166,.26), transparent 60%),
-        radial-gradient(700px 320px at 95% 10%, rgba(10,95,130,.18), transparent 55%),
-        linear-gradient(135deg, rgba(12,34,48,.96) 0%, rgba(11,31,43,.96) 55%, rgba(11,127,166,.10) 100%);
-      box-shadow: var(--shadow);
-      padding:18px;
-      overflow:hidden;
       position:relative;
+      overflow:hidden;
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      border:1px solid rgba(255,255,255,.18);
+      background:
+        radial-gradient(900px 360px at 20% 0%, rgba(255,255,255,.28), transparent 62%),
+        linear-gradient(135deg, rgba(255,255,255,.78), rgba(255,255,255,.48)),
+        linear-gradient(135deg, rgba(11,127,166,.22), rgba(6,56,77,.18));
+      padding:18px;
     }
     .hero-card:before{
       content:"";
-      position:absolute; inset:-1px;
-      background: linear-gradient(115deg, rgba(11,127,166,.18), rgba(255,255,255,.04), transparent 55%);
-      opacity:.75;
+      position:absolute; inset:-40px -60px auto auto;
+      width:380px; height:380px;
+      background: radial-gradient(circle at 30% 30%, rgba(11,127,166,.30), transparent 60%);
+      transform: rotate(15deg);
       pointer-events:none;
     }
-    .hero-card > *{position:relative; z-index:1}
-
     .kicker{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:flex-start;
       margin-bottom:10px;
     }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
       border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.70);
+      border:1px solid rgba(11,127,166,.18);
+      color:var(--brand3);
       font-weight:900;
-      color:#eaf6ff;
-      font-size:13px;
+      box-shadow: 0 10px 24px rgba(11,127,166,.10);
     }
-
     h1{
-      margin:10px 0 10px;
-      font-size: clamp(28px, 4.5vw, 46px);
-      line-height:1.12;
+      margin:8px 0 8px;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height:1.10;
       letter-spacing:-.3px;
     }
     .lead{
       margin:0;
-      color:var(--muted);
-      font-size:16px;
-      max-width:82ch;
+      color:rgba(11,18,32,.78);
+      font-size:17px;
+      max-width:75ch;
+      font-weight:650;
     }
-
-    /* Actions: genau Reihenfolge: Anrufen / WhatsApp / Preise */
     .hero-actions{
-      display:grid;
-      gap:10px;
+      display:flex; flex-wrap:wrap; gap:10px;
       margin-top:14px;
-      max-width:420px;
     }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      text-decoration:none;
-      font-weight:950;
-      border-radius:14px;
-      padding:12px 14px;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: var(--shadow2);
-      width:100%;
-    }
-    .btn.primary{
-      background:linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
-      color:#fff;
-      border-color:rgba(255,255,255,.18);
-    }
-    .btn.primary:hover{filter:brightness(.99)}
-    .btn.whatsapp{
-      background:linear-gradient(135deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,.06) 100%);
-      color:#eaf6ff;
-      border-color:rgba(255,255,255,.14);
-    }
-    .btn.ghost{
-      background:linear-gradient(135deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.05) 100%);
-      color:#eaf6ff;
-    }
-    .note-pills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+    .subnote{
       margin-top:12px;
-    }
-    .note-pills span{
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px dashed rgba(255,255,255,.16);
-      color:#dbeaf4;
-      font-weight:850;
+      display:flex; flex-wrap:wrap; gap:10px;
+      color:rgba(11,18,32,.72);
       font-size:13px;
     }
-
-    /* ===== Sections & Cards ===== */
-    section{padding:28px 0}
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:12px;
+    .subnote span{
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.74);
+      border:1px solid rgba(11,127,166,.18);
     }
-    h2{
-      margin:0;
-      font-size: clamp(22px, 2.8vw, 34px);
+
+    /* Sections */
+    section{padding:28px 0}
+    .section-title{
+      margin:0 0 10px;
+      font-size: clamp(20px, 2.6vw, 30px);
       letter-spacing:-.2px;
     }
-    h3{margin:0 0 8px; font-size:16px; letter-spacing:-.1px}
+    .section-lead{margin:0 0 14px; color:var(--muted); max-width:80ch}
 
     .grid{
-      display:grid;
-      gap:14px;
+      display:grid; gap:14px;
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    .grid.two{grid-template-columns: repeat(2, minmax(0, 1fr));}
-
-    /* Einheitlicher Verlauf bei ALLEN Kästen */
     .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(6,56,77,.10);
       background:
-        radial-gradient(620px 220px at 15% 0%, rgba(11,127,166,.16), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.05) 100%);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:var(--r);
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.86));
+      box-shadow: 0 12px 30px rgba(2, 10, 20, .08);
       padding:16px;
-      box-shadow: var(--shadow2);
     }
-    .card strong{color:#f0fbff}
-    .card p{margin:0 0 10px; color:var(--muted)}
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(11,127,166,.18);
-      border:1px solid rgba(11,127,166,.25);
-      color:#eaf6ff;
-      font-weight:950;
-      font-size:13px;
+    .card.dark{
+      border:1px solid rgba(255,255,255,.16);
+      background:
+        radial-gradient(600px 220px at 20% 0%, rgba(255,255,255,.16), transparent 70%),
+        linear-gradient(135deg, rgba(11,127,166,.30), rgba(6,56,77,.44));
+      color:#eaf6fb;
+      box-shadow: 0 18px 44px rgba(2, 10, 20, .18);
     }
+    .card.dark .muted{color:rgba(234,246,251,.82)}
+    .card h3{margin:0 0 8px; font-size:16px}
+    .muted{color:var(--muted)}
 
-    .divider{
-      height:1px;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.14) 30%, rgba(11,127,166,.22) 50%, rgba(255,255,255,.14) 70%, transparent 100%);
-      margin:18px 0;
+    .iconrow{
+      display:flex; gap:10px; align-items:center;
+      margin-bottom:10px;
     }
+    .ico{
+      width:42px; height:42px;
+      border-radius:14px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(11,127,166,.22), rgba(6,56,77,.12));
+      border:1px solid rgba(11,127,166,.18);
+    }
+    .ico svg{width:22px; height:22px; fill: none; stroke: var(--brand3); stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+    .card.dark .ico{background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.18)}
+    .card.dark .ico svg{stroke:#ffffff}
 
-    /* Preise */
+    /* Price table */
     .table-wrap{
       overflow:auto;
-      border-radius:var(--r);
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);
-      box-shadow: var(--shadow2);
+      border-radius: var(--radius);
+      border:1px solid rgba(6,56,77,.12);
+      background:rgba(255,255,255,.92);
+      box-shadow: 0 12px 30px rgba(2,10,20,.08);
     }
-    table{width:100%; border-collapse:collapse; min-width:720px}
-    th,td{padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.10); text-align:left}
+    table{width:100%; border-collapse:collapse; min-width:680px}
+    th,td{padding:12px 14px; border-bottom:1px solid rgba(6,56,77,.10); text-align:left}
     th{
-      background:rgba(11,127,166,.16);
-      color:#eaf6ff;
-      font-weight:950;
+      background: linear-gradient(135deg, rgba(11,127,166,.16), rgba(6,56,77,.08));
+      color:var(--brand3);
+      font-weight:900;
     }
     tr:last-child td{border-bottom:0}
-    .price-note{margin-top:10px; font-size:13px; color:var(--muted);}
+    .price-note{margin-top:10px; color:var(--muted); font-size:13px; max-width:90ch}
 
-    /* Bezirke Chips */
+    /* Bezirke chips */
     .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+      display:flex; flex-wrap:wrap; gap:10px;
     }
     .chip{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
+      display:inline-flex; align-items:center; justify-content:center;
       padding:10px 14px;
       border-radius:999px;
       text-decoration:none;
-      font-weight:950;
-      color:#eaf6ff;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: 0 12px 20px rgba(0,0,0,.18);
+      font-weight:900;
+      color:var(--brand3);
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(11,127,166,.18);
+      box-shadow: 0 10px 24px rgba(11,127,166,.08);
     }
-    .chip:hover{background:rgba(255,255,255,.08)}
+    .chip:hover{filter:brightness(1.02)}
 
     /* FAQ (Accordion) */
-    details.faq{
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      background:
-        radial-gradient(620px 220px at 15% 0%, rgba(11,127,166,.14), transparent 60%),
-        rgba(255,255,255,.05);
-      box-shadow: 0 12px 20px rgba(0,0,0,.18);
-      padding:12px 14px;
+    .faq{
+      display:grid; gap:12px;
     }
-    details.faq summary{
+    details{
+      border-radius: var(--radius);
+      border:1px solid rgba(6,56,77,.10);
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 12px 30px rgba(2,10,20,.06);
+      padding:0;
+      overflow:hidden;
+    }
+    summary{
       cursor:pointer;
-      font-weight:950;
-      color:#eaf6ff;
       list-style:none;
-      outline:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
+      padding:14px 16px;
+      font-weight:900;
+      color:var(--brand3);
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
-    details.faq summary::-webkit-details-marker{display:none}
-    .plus{
-      width:26px;height:26px;border-radius:10px;
-      display:inline-flex;align-items:center;justify-content:center;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
+    summary::-webkit-details-marker{display:none}
+    .faq-body{padding:0 16px 14px; color:var(--muted)}
+    .chev{
+      width:14px; height:14px;
+      border-right:2px solid rgba(6,56,77,.55);
+      border-bottom:2px solid rgba(6,56,77,.55);
+      transform: rotate(45deg);
+      transition: transform .18s ease;
       flex:0 0 auto;
+      margin-left:auto;
     }
-    .plus svg{width:16px;height:16px;fill:#eaf6ff}
-    details.faq[open] .plus{background:rgba(11,127,166,.18); border-color:rgba(11,127,166,.28)}
-    details.faq p{margin:10px 0 0; color:var(--muted)}
+    details[open] .chev{transform: rotate(225deg);}
+
+    /* Contact */
+    .contact-box{
+      border-radius: calc(var(--radius) + 6px);
+      border:1px solid rgba(6,56,77,.10);
+      background:
+        radial-gradient(700px 260px at 20% 0%, rgba(11,127,166,.16), transparent 70%),
+        rgba(255,255,255,.92);
+      box-shadow: 0 14px 36px rgba(2,10,20,.10);
+      padding:16px;
+    }
+    .contact-row{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:12px;
+    }
 
     /* Footer */
     footer{
-      padding:26px 0 42px;
-      border-top:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(7,26,36,.65) 0%, rgba(7,26,36,.92) 100%);
-    }
-    .footer-row{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-    .footer-links{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
       margin-top:10px;
-      font-weight:900;
-      color:#d9eefb;
+      background:
+        linear-gradient(90deg, rgba(6,56,77,.96), rgba(11,127,166,.92));
+      color:#eaf6fb;
+      border-top:1px solid rgba(255,255,255,.16);
+      padding:26px 0 38px;
     }
+    .footer-grid{
+      display:grid; gap:14px;
+      grid-template-columns: 1.3fr .7fr;
+      align-items:start;
+    }
+    .footer-small{color:rgba(234,246,251,.85); font-size:13px}
     .footer-links a{
+      color:#eaf6fb;
       text-decoration:none;
-      border-bottom:1px solid rgba(11,127,166,.35);
+      font-weight:900;
+      border-bottom:1px solid rgba(255,255,255,.22);
       padding-bottom:2px;
     }
-    .footer-links a:hover{border-bottom-color:rgba(11,127,166,.70)}
 
-    /* Floating Call (unten rechts) */
+    /* Floating Call Button */
     .float-call{
       position:fixed;
       right:18px;
       bottom:18px;
-      width:66px;
-      height:66px;
+      width:62px; height:62px;
       border-radius:999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      background: linear-gradient(135deg, rgba(11,127,166,1), rgba(6,56,77,1));
+      box-shadow: 0 18px 44px rgba(2,10,20,.28);
+      border:1px solid rgba(255,255,255,.22);
+      display:grid;
+      place-items:center;
+      z-index:120;
       text-decoration:none;
-      color:#fff;
-      background:linear-gradient(135deg, var(--brand) 0%, var(--brand2) 100%);
-      box-shadow: 0 20px 55px rgba(11,127,166,.38);
-      z-index:80;
-      border:1px solid rgba(255,255,255,.18);
     }
-    .float-call svg{width:28px; height:28px; fill:#fff}
-    .float-call::after{
+    .float-call svg{width:26px; height:26px; fill:none; stroke:#fff; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;}
+    .float-call::before{
       content:"";
       position:absolute;
-      inset:-8px;
+      inset:-6px;
       border-radius:999px;
       border:2px solid rgba(11,127,166,.35);
-      animation:pulse 1.6s infinite;
+      animation:pulse 1.4s infinite ease-out;
     }
     @keyframes pulse{
-      0%{transform:scale(.92); opacity:.95}
-      70%{transform:scale(1.18); opacity:0}
-      100%{transform:scale(1.18); opacity:0}
+      0%{transform:scale(.92); opacity:.7}
+      80%{transform:scale(1.25); opacity:0}
+      100%{opacity:0}
     }
 
     /* Responsive */
     @media (max-width: 980px){
       nav.desktop{display:none}
       .menu-btn{display:inline-flex}
-      .call-top{display:none}
+      nav.mobile{display:block}
+      #menuToggle:not(:checked) + nav.mobile{display:none}
       .grid{grid-template-columns:1fr}
-      .grid.two{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
     }
     @media (max-width: 520px){
-      .brand img{height:36px}
-      .brand span{font-size:15px}
-      .hero-actions{max-width:100%}
-      .float-call{right:14px; bottom:14px; width:62px; height:62px;}
+      .topbar{gap:10px}
+      .brand span{max-width:46vw}
+      .actions{display:none} /* Desktop actions ausblenden, mobile nutzt Burger */
+      .hero-actions .btn{width:100%}
     }
   </style>
 
-  <!-- Structured Data: WebSite + Locksmith + FAQ -->
+  <!-- Structured Data: LocalBusiness (Locksmith) + FAQ + WebSite -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -516,9 +473,8 @@
         "name":"Trust Schlüsseldienst Berlin",
         "url":"https://www.trust-schluesseldienstberlin.de/",
         "image":"https://www.trust-schluesseldienstberlin.de/assets/logo.jpeg",
-        "telephone":"+49 163 8516782",
+        "telephone":"+491638516782",
         "email":"trust.schluesseldienstberlin@gmail.com",
-        "priceRange":"€€",
         "address":{
           "@type":"PostalAddress",
           "streetAddress":"Ramlerstr 2",
@@ -526,9 +482,19 @@
           "addressLocality":"Berlin",
           "addressCountry":"DE"
         },
-        "areaServed":[{"@type":"City","name":"Berlin"}],
+        "areaServed":{
+          "@type":"City",
+          "name":"Berlin"
+        },
         "openingHoursSpecification":[
-          {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}
+          {
+            "@type":"OpeningHoursSpecification",
+            "dayOfWeek":[
+              "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+            ],
+            "opens":"00:00",
+            "closes":"23:59"
+          }
         ],
         "sameAs":[
           "https://www.instagram.com/trust_schluesseldienst_berlin"
@@ -540,28 +506,43 @@
         "mainEntity":[
           {
             "@type":"Question",
-            "name":"Schlüsseldienst in der Nähe – wie schnell sind Sie vor Ort?",
-            "acceptedAnswer":{"@type":"Answer","text":"In Berlin sind wir in der Regel in 10–30 Minuten bei Ihnen (je nach Verkehr und Bezirk)."}
+            "name":"Wie schnell ist ein Schlüsseldienst in Berlin vor Ort?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"In Berlin sind wir je nach Verkehr und Entfernung in der Regel in 10–30 Minuten bei Ihnen. Am Telefon nennen wir Ihnen eine realistische Einschätzung für Ihren Standort."
+            }
           },
           {
             "@type":"Question",
             "name":"Türöffnung Berlin: Geht das ohne Schäden?",
-            "acceptedAnswer":{"@type":"Answer","text":"Eine zugefallene Tür öffnen wir in 95% der Fälle ohne Schäden."}
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Bei einer zugefallenen Tür ist eine Öffnung in 95% der Fälle ohne Schäden möglich (je nach Situation). Wir arbeiten sauber und erklären den Ablauf vor Beginn."
+            }
           },
           {
             "@type":"Question",
             "name":"Was kostet ein Schlüsseldienst in Berlin?",
-            "acceptedAnswer":{"@type":"Answer","text":"Wir arbeiten mit transparenten Festpreisen (inkl. MwSt.). Die Preise finden Sie im Bereich „Preise“. Anfahrtskosten bitte telefonisch erfragen."}
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Wir arbeiten mit klaren Festpreisen inklusive MwSt. Die Preise finden Sie auf dieser Seite unter „Preise“. Anfahrtskosten bitte telefonisch erfragen."
+            }
           },
           {
             "@type":"Question",
-            "name":"Schlüsseldienst Berlin 24/7 – auch nachts & am Wochenende?",
-            "acceptedAnswer":{"@type":"Answer","text":"Ja. Unser Schlüsselnotdienst ist rund um die Uhr erreichbar – auch nachts, an Wochenenden und Feiertagen."}
+            "name":"Ist ein Profilzylinder inklusive?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Bei einer abgeschlossenen Türöffnung ist ein neuer Profilzylinder in der Regel nicht im Preis enthalten. Falls ein Austausch nötig ist, sprechen wir das vorher mit Ihnen ab."
+            }
           },
           {
             "@type":"Question",
-            "name":"Ist bei einer abgeschlossenen Tür ein Profilzylinder im Preis enthalten?",
-            "acceptedAnswer":{"@type":"Answer","text":"Bei einer abgeschlossenen Tür ist ein Profilzylinder in der Regel nicht im Preis enthalten, sofern nicht ausdrücklich vereinbart."}
+            "name":"Ist der Schlüsseldienst Berlin 24/7 erreichbar?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Ja. Unser Schlüsselnotdienst ist rund um die Uhr erreichbar – auch nachts, am Wochenende und an Feiertagen."
+            }
           }
         ]
       }
@@ -572,583 +553,535 @@
 
 <body>
 
-  <!-- Floating Call -->
-  <a class="float-call" href="tel:+491638516782" aria-label="Jetzt anrufen">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.6.6 4 .6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.3 22 2 13.7 2 3c0-.6.4-1 1-1h4.2c.6 0 1 .4 1 1 0 1.4.2 2.8.6 4 .1.4 0 .8-.3 1.1L6.6 10.8z"/>
-    </svg>
-  </a>
+<header>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="leftbar">
+        <label class="menu-btn" for="menuToggle" aria-label="Menü öffnen">☰</label>
 
-  <header>
-    <div class="wrap">
-      <div class="topbar">
-        <div class="left">
-          <label class="menu-btn" for="menuToggle" aria-label="Menü öffnen">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/>
-            </svg>
-          </label>
-
-          <a class="brand" href="index.html" aria-label="Zur Startseite">
-            <img src="assets/logo.jpeg" alt="Trust Schlüsseldienst Berlin Logo" />
-            <span>Trust Schlüsseldienst Berlin</span>
-          </a>
-
-          <nav class="desktop" aria-label="Hauptnavigation">
-            <a href="#leistungen">Leistungen</a>
-            <a href="#preise">Preise</a>
-            <a href="#bezirke">Bezirke</a>
-            <a href="#faq">FAQ</a>
-            <a href="#kontakt">Kontakt</a>
-            <a href="#impressum">Impressum</a>
-          </nav>
-        </div>
-
-        <a class="call-top" href="tel:+491638516782">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.6.6 4 .6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.3 22 2 13.7 2 3c0-.6.4-1 1-1h4.2c.6 0 1 .4 1 1 0 1.4.2 2.8.6 4 .1.4 0 .8-.3 1.1L6.6 10.8z"/>
-          </svg>
-          Jetzt anrufen
+        <a class="brand" href="/" aria-label="Zur Startseite">
+          <img src="/assets/logo.jpeg" alt="Trust Schlüsseldienst Berlin Logo" />
+          <span>Trust Schlüsseldienst Berlin</span>
         </a>
       </div>
 
-      <input id="menuToggle" type="checkbox" />
+      <nav class="desktop" aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#preise">Preise</a>
+        <a href="#bezirke">Einsatzgebiet</a>
+        <a href="#faq">FAQ</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
 
-      <div class="mobile-panel">
-        <div class="mobile-links" aria-label="Mobile Navigation">
-          <a href="#leistungen" onclick="menuToggle.checked=false">Leistungen</a>
-          <a href="#preise" onclick="menuToggle.checked=false">Preise</a>
-          <a href="#bezirke" onclick="menuToggle.checked=false">Bezirke</a>
-          <a href="#faq" onclick="menuToggle.checked=false">FAQ</a>
-          <a href="#kontakt" onclick="menuToggle.checked=false">Kontakt</a>
-          <a href="#impressum" onclick="menuToggle.checked=false">Impressum</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="wrap">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-card">
-        <div class="kicker">
-          <span class="badge">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7zm0 9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>
-            Schlüsseldienst Berlin 24/7 · Notdienst
-          </span>
-          <span class="badge">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4h1v5h4v1h-5z"/><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/></svg>
-            Anfahrt 10–30 Minuten
-          </span>
-          <span class="badge">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7 7 .6-5.3 4.6 1.7 7.1L12 18.7 5.6 21.3l1.7-7.1L2 9.6 9 9z"/></svg>
-            Fair · Seriös · Transparent
-          </span>
-        </div>
-
-        <h1>Schlüsseldienst Berlin – 24/7 Schlüsselnotdienst & Türöffnung</h1>
-
-        <p class="lead">
-          Trust Schlüsseldienst Berlin ist Ihr <strong>Schlüsselnotdienst</strong> für schnelle Hilfe bei
-          <strong>zugefallener Tür</strong>, <strong>abgeschlossener Tür</strong>, <strong>Schlüsselverlust</strong>,
-          <strong>Schlüssel abgebrochen</strong> oder <strong>defektem Schloss</strong>.
-          Bei <strong>zugefallenen Türen</strong> ist eine Öffnung in <strong>95%</strong> der Fälle <strong>ohne Schäden</strong> möglich.
-        </p>
-
-        <!-- Genau: Anrufen / WhatsApp / Preise -->
-        <div class="hero-actions">
-          <a class="btn primary" href="tel:+491638516782">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.6.6 4 .6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.3 22 2 13.7 2 3c0-.6.4-1 1-1h4.2c.6 0 1 .4 1 1 0 1.4.2 2.8.6 4 .1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
-            Jetzt anrufen
-          </a>
-
-          <a class="btn whatsapp" href="https://wa.me/491638516782" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12.04 2C6.58 2 2.12 6.46 2.12 11.92c0 1.93.56 3.82 1.62 5.44L2 22l4.83-1.67a9.86 9.86 0 0 0 5.21 1.45h.01c5.46 0 9.92-4.46 9.92-9.92C21.97 6.46 17.5 2 12.04 2zm5.78 14.23c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.23-4.88-4.43-.14-.2-1.16-1.55-1.16-2.96 0-1.41.74-2.11 1-2.39.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.57.82 2 .89 2.14.07.14.12.31.02.5-.1.2-.15.31-.29.48-.14.17-.3.39-.42.52-.14.14-.29.29-.13.57.16.28.69 1.14 1.48 1.85 1.02.91 1.88 1.19 2.16 1.33.28.14.44.12.61-.07.17-.2.7-.82.88-1.1.18-.28.37-.23.62-.14.25.09 1.58.75 1.85.88.27.14.45.21.52.33.07.12.07.68-.17 1.36z"/>
-            </svg>
-            WhatsApp
-          </a>
-
-          <a class="btn ghost" href="#preise">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h10l2 4v14H3V7l4-4zm1.2 2L6 7h12l-2.2-2H8.2zM5 9v10h14V9H5zm3 2h8v2H8v-2zm0 4h6v2H8v-2z"/></svg>
-            Preise ansehen
-          </a>
-        </div>
-
-        <div class="note-pills">
-          <span>Transparente Festpreise</span>
-          <span>24/7 erreichbar</span>
-          <span>Sauberer Ablauf</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- PROBLEME (KÄSTEN) -->
-    <section id="probleme">
-      <div class="section-head">
-        <h2>Hilfe bei Türproblemen in Berlin</h2>
-      </div>
-      <p class="muted" style="margin:0 0 14px;">
-        Wenn Sie nach <strong>Türöffnung Berlin</strong>, <strong>Schlüsselnotdienst</strong> oder <strong>Schlüsseldienst in der Nähe</strong> suchen:
-        Hier sind die häufigsten Fälle – klar erklärt, damit Sie sofort wissen, was zu tun ist.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <div class="pill">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20H6V2zm2 2v16h8V4H8zm3 7h2v2h-2v-2z"/></svg>
-            Zugefallene Tür
-          </div>
-          <p style="margin-top:10px;">
-            Schlüssel steckt innen? Wir öffnen zügig – bei zugefallenen Türen in <strong>95%</strong> der Fälle <strong>ohne Schäden</strong>.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="pill">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 9h-1V7a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2zm-7-2a2 2 0 0 1 4 0v2h-4V7z"/></svg>
-            Abgeschlossene Tür
-          </div>
-          <p style="margin-top:10px;">
-            Wenn die Tür abgeschlossen ist, prüfen wir die Situation vor Ort und erklären den Ablauf vor Beginn – seriös und transparent.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="pill">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14a5 5 0 0 1 7.9-4l2.6-2.6 1.4 1.4-2.6 2.6A5 5 0 0 1 10 19H7v-5zm3 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-            Schlüssel verloren
-          </div>
-          <p style="margin-top:10px;">
-            Schlüssel weg? Wir helfen bei Türöffnung und beraten bei Bedarf zu <strong>Zylinderwechsel</strong> (Profilzylinder).
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="pill">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/></svg>
-            Schloss defekt
-          </div>
-          <p style="margin-top:10px;">
-            Schloss klemmt oder Zylinder dreht schwer? Wir prüfen kurz und setzen die passende Lösung um.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="pill">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.4 9.7-8 10-4.6-.3-8-5-8-10V6l8-4zm0 4.2L6 8.2V12c0 3.6 2.3 6.9 6 7.8 3.7-.9 6-4.2 6-7.8V8.2l-6-2z"/></svg>
-            Einbruchschutz
-          </div>
-          <p style="margin-top:10px;">
-            Mehr Sicherheit für Wohnung & Haus: sinnvolle Nachrüstung – passend zu Ihrer Tür und Ihrem Schloss.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="pill">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4h1v5h4v1h-5z"/><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/></svg>
-            24/7 Notdienst
-          </div>
-          <p style="margin-top:10px;">
-            Rund um die Uhr erreichbar – auch nachts, am Wochenende und an Feiertagen in Berlin.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- LEISTUNGEN -->
-    <section id="leistungen">
-      <div class="section-head">
-        <h2>Leistungen – Türöffnung, Schlosswechsel, Zylinderwechsel</h2>
-      </div>
-      <p class="muted" style="margin:0 0 14px;">
-        Als <strong>Schlüsseldienst Berlin</strong> verbinden wir schnelle Hilfe mit einem sauberen, professionellen Ablauf.
-        Auch Begriffe wie <strong>günstiger Schlüsseldienst</strong>, <strong>faire Türöffnung</strong> oder <strong>Schlüsselnotdienst Berlin</strong> gehören zu dem,
-        wonach viele suchen – bei uns mit klaren Informationen und Festpreisen.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Türöffnung Berlin (Notdienst)</h3>
-          <p>Tür zugefallen oder Schlüssel innen? Wir sind schnell vor Ort und öffnen fokussiert.</p>
-          <p class="muted2">Keyword-Fokus: Türöffnung Berlin · Schlüsseldienst in der Nähe · Schlüsselnotdienst</p>
-        </div>
-        <div class="card">
-          <h3>Schlosswechsel</h3>
-          <p>Austausch von Einsteckschloss oder Türschloss bei Defekt – fachgerecht und sauber.</p>
-          <p class="muted2">Keyword-Fokus: Schlosswechsel Berlin · Türschloss wechseln</p>
-        </div>
-        <div class="card">
-          <h3>Zylinderwechsel (Profilzylinder)</h3>
-          <p>Wechsel des Profilzylinders nach Verlust/Umzug oder bei Sicherheitswunsch.</p>
-          <p class="muted2">Keyword-Fokus: Zylinderwechsel Berlin · Profilzylinder wechseln</p>
-        </div>
-        <div class="card">
-          <h3>Schlüssel abgebrochen</h3>
-          <p>Abgebrochener Schlüssel im Schloss? Wir kümmern uns um die Entfernung und Funktion.</p>
-          <p class="muted2">Keyword-Fokus: Schlüssel abgebrochen · Schloss klemmt</p>
-        </div>
-        <div class="card">
-          <h3>Einbruchschutz</h3>
-          <p>Beratung und Nachrüstung für mehr Schutz – passend zur Tür.</p>
-          <p class="muted2">Keyword-Fokus: Einbruchschutz Berlin · Sicherheit</p>
-        </div>
-        <div class="card">
-          <h3>Schlüsselnotdienst Berlin 24/7</h3>
-          <p>24/7 erreichbar – schnelle Hilfe, klare Preisabsprache.</p>
-          <p class="muted2">Keyword-Fokus: Schlüsseldienst Berlin 24/7 · Notdienst</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABLAUF (extra lang) -->
-    <section id="ablauf">
-      <div class="section-head">
-        <h2>So läuft die Türöffnung ab</h2>
-      </div>
-
-      <div class="grid two">
-        <div class="card">
-          <h3>1) Kurzer Kontakt</h3>
-          <p>Nennen Sie <strong>Bezirk/Stadtteil</strong> und ob die Tür <strong>zugefallen</strong> oder <strong>abgeschlossen</strong> ist.</p>
-        </div>
-        <div class="card">
-          <h3>2) Anfahrt in Berlin</h3>
-          <p>In Berlin sind wir in der Regel in <strong>10–30 Minuten</strong> bei Ihnen (je nach Verkehr und Bezirk).</p>
-        </div>
-        <div class="card">
-          <h3>3) Öffnung & Abschluss</h3>
-          <p>Bei zugefallenen Türen ist eine Öffnung in <strong>95%</strong> der Fälle <strong>ohne Schäden</strong> möglich.</p>
-        </div>
-        <div class="card">
-          <h3>4) Transparente Preisübersicht</h3>
-          <p>Sie erhalten eine klare Preisübersicht gemäß Festpreisen bzw. Absprache.</p>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:14px;">
-        <h3>Warum viele „günstiger Schlüsseldienst“ suchen</h3>
-        <p>
-          „Günstig“ bedeutet im Alltag meist: <strong>fair</strong>, <strong>verständlich</strong>, <strong>seriös</strong> – ohne Überraschungen.
-          Darum zeigen wir Festpreise und halten den Ablauf klar.
-        </p>
-        <p class="muted2">
-          Keyword-Fokus: Schlüsseldienst Berlin günstig · günstige Türöffnung · fairer Schlüsseldienst · seriöser Schlüsseldienst
-        </p>
-      </div>
-    </section>
-
-    <!-- PREISE -->
-    <section id="preise">
-      <div class="section-head">
-        <h2>Preise – transparente Festpreise</h2>
-      </div>
-      <p class="muted" style="margin:0 0 14px;">
-        Alle Preise sind Festpreise inklusive gesetzlicher Mehrwertsteuer. <strong>Anfahrtskosten bitte telefonisch erfragen.</strong>
-      </p>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Leistung</th>
-              <th>07:00–20:00 Uhr</th>
-              <th>20:00–00:00 Uhr</th>
-              <th>00:00–07:00 Uhr</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Zugefallene Tür</td>
-              <td>59 €</td>
-              <td>79 €</td>
-              <td>99 €</td>
-            </tr>
-            <tr>
-              <td>Abgeschlossene Tür</td>
-              <td>89 €</td>
-              <td>109 €</td>
-              <td>129 €</td>
-            </tr>
-            <tr>
-              <td>Zylinderwechsel</td>
-              <td>89 €</td>
-              <td>109 €</td>
-              <td>129 €</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="price-note">
-        Hinweis: Bei <strong>abgeschlossener Tür</strong> ist ein <strong>Profilzylinder</strong> in der Regel <strong>nicht im Preis enthalten</strong>,
-        sofern nicht ausdrücklich vereinbart.
-      </p>
-
-      <div class="hero-actions" style="margin-top:12px; max-width:420px;">
-        <a class="btn primary" href="tel:+491638516782">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.6.6 4 .6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.3 22 2 13.7 2 3c0-.6.4-1 1-1h4.2c.6 0 1 .4 1 1 0 1.4.2 2.8.6 4 .1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
+      <div class="actions" aria-label="Schnellaktionen">
+        <a class="btn primary" href="tel:+491638516782" aria-label="Jetzt anrufen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 20 20 0 0 1-8.7-3.1A19.5 19.5 0 0 1 5.2 12 20 20 0 0 1 2.1 3.2 2 2 0 0 1 4.1 1h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 8.5a16 16 0 0 0 7.4 7.4l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/></svg>
           Jetzt anrufen
         </a>
-        <a class="btn whatsapp" href="https://wa.me/491638516782" target="_blank" rel="noopener">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12.04 2C6.58 2 2.12 6.46 2.12 11.92c0 1.93.56 3.82 1.62 5.44L2 22l4.83-1.67a9.86 9.86 0 0 0 5.21 1.45h.01c5.46 0 9.92-4.46 9.92-9.92C21.97 6.46 17.5 2 12.04 2zm5.78 14.23c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.23-4.88-4.43-.14-.2-1.16-1.55-1.16-2.96 0-1.41.74-2.11 1-2.39.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.57.82 2 .89 2.14.07.14.12.31.02.5-.1.2-.15.31-.29.48-.14.17-.3.39-.42.52-.14.14-.29.29-.13.57.16.28.69 1.14 1.48 1.85 1.02.91 1.88 1.19 2.16 1.33.28.14.44.12.61-.07.17-.2.7-.82.88-1.1.18-.28.37-.23.62-.14.25.09 1.58.75 1.85.88.27.14.45.21.52.33.07.12.07.68-.17 1.36z"/>
-          </svg>
+
+        <a class="btn light" href="https://wa.me/491638516782?text=Hallo%20Trust%20Schl%C3%BCsseldienst%20Berlin%20-%20ich%20brauche%20Hilfe%20bei%20einer%20T%C3%BCr%C3%B6ffnung." target="_blank" rel="noopener" aria-label="WhatsApp öffnen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L4 20l1.2-3.3A8.5 8.5 0 1 1 20 11.5z"/></svg>
           WhatsApp
         </a>
       </div>
-    </section>
+    </div>
 
-    <!-- SEO LANGER BLOCK (ohne komische Sätze) -->
-    <section id="seo">
-      <div class="section-head">
-        <h2>Schlüsseldienst Berlin: fair, seriös, transparent</h2>
+    <input id="menuToggle" type="checkbox" />
+
+    <nav class="mobile" aria-label="Mobile Navigation">
+      <!-- Reihenfolge wie gewünscht: Anrufen, WhatsApp, Preise -->
+      <div class="quick">
+        <a class="link" href="tel:+491638516782">Jetzt anrufen</a>
+        <a class="link" href="https://wa.me/491638516782?text=Hallo%20Trust%20Schl%C3%BCsseldienst%20Berlin%20-%20ich%20brauche%20Hilfe%20bei%20einer%20T%C3%BCr%C3%B6ffnung." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="link" href="#preise" onclick="menuToggle.checked=false">Preise</a>
       </div>
 
-      <div class="grid two">
-        <div class="card">
-          <h3>Günstiger Schlüsseldienst Berlin</h3>
-          <p>
-            Viele suchen nach <strong>Schlüsseldienst Berlin günstig</strong> oder <strong>günstige Türöffnung</strong>.
-            Bei Trust Schlüsseldienst Berlin stehen <strong>faire Preise</strong> und ein <strong>professioneller Ablauf</strong> im Mittelpunkt –
-            inklusive klarer Festpreise und verständlicher Kommunikation.
-          </p>
-        </div>
+      <div class="sep"></div>
 
-        <div class="card">
-          <h3>Schlüsseldienst in der Nähe</h3>
-          <p>
-            Ob „<strong>Schlüsseldienst in der Nähe</strong>“ oder „<strong>Schlüsselnotdienst Berlin</strong>“:
-            Wir sind 24/7 erreichbar und helfen in vielen Bezirken – schnell, zuverlässig und seriös.
-          </p>
-        </div>
+      <a class="link" href="#leistungen" onclick="menuToggle.checked=false">Leistungen</a>
+      <a class="link" href="#bezirke" onclick="menuToggle.checked=false">Einsatzgebiet</a>
+      <a class="link" href="#faq" onclick="menuToggle.checked=false">FAQ</a>
+      <a class="link" href="#kontakt" onclick="menuToggle.checked=false">Kontakt</a>
+      <a class="link" href="/impressum.html">Impressum</a>
+    </nav>
+  </div>
+</header>
 
-        <div class="card">
-          <h3>Türöffnung Berlin – Notdienst</h3>
-          <p>
-            Bei <strong>zugefallener Tür</strong> ist eine Öffnung in <strong>95%</strong> der Fälle <strong>ohne Schäden</strong> möglich.
-            Bei <strong>abgeschlossener Tür</strong> prüfen wir vor Ort die Situation und erklären die nächsten Schritte vor Beginn.
-          </p>
-        </div>
+<main class="wrap">
 
-        <div class="card">
-          <h3>Schlosswechsel & Zylinderwechsel</h3>
-          <p>
-            Nach <strong>Schlüsselverlust</strong>, bei einem <strong>defekten Schloss</strong> oder bei Wunsch nach mehr Sicherheit:
-            <strong>Schlosswechsel</strong> und <strong>Zylinderwechsel (Profilzylinder)</strong> sind wichtige Leistungen im Schlüsseldienst.
-          </p>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-card">
+      <div class="kicker">
+        <span class="pill">Schlüsseldienst Berlin 24/7 · Notdienst</span>
+        <span class="pill">Anfahrt 10–30 Minuten</span>
+        <span class="pill">Fair · Seriös · Transparent</span>
       </div>
 
-      <div class="card" style="margin-top:14px;">
-        <h3>Weitere Keywords, die auf dieser Seite abgedeckt sind</h3>
-        <p class="muted">
-          Schlüsselnotdienst · Schlüsseldienst Berlin 24/7 · Tür öffnen · Türöffnung Notdienst · fairer Schlüsseldienst · seriöser Schlüsseldienst ·
-          günstige Türöffnung · Schloss wechseln · Profilzylinder wechseln · Schlüssel verloren · Schlüssel abgebrochen · Schloss defekt · Einbruchschutz Berlin
-        </p>
-      </div>
-    </section>
+      <h1>Schlüsseldienst Berlin – 24/7 Schlüsselnotdienst &amp; Türöffnung</h1>
 
-    <!-- BEZIRKE (nur Bezirke – ohne "im Aufbau") -->
-    <section id="bezirke">
-      <div class="section-head">
-        <h2>Einsatzgebiete – Bezirke & Stadtteile</h2>
-      </div>
-      <p class="muted" style="margin:0 0 14px;">
-        Schlüsseldienst Berlin in vielen Bezirken – wählen Sie Ihren Bezirk:
+      <p class="lead">
+        Sie suchen einen <strong>Schlüsseldienst in der Nähe</strong> in Berlin? Trust Schlüsseldienst Berlin ist Ihr
+        <strong>Schlüsselnotdienst</strong> für schnelle Hilfe bei <strong>zugefallener Tür</strong>, <strong>abgeschlossener Tür</strong>,
+        <strong>Schlüsselverlust</strong>, <strong>Schlüssel abgebrochen</strong> oder <strong>defektem Schloss</strong>.
+        Klare Preisabsprache, professioneller Ablauf und zuverlässige Arbeit – rund um die Uhr.
       </p>
 
-      <div class="chips">
-        <!-- live -->
-        <a class="chip" href="schluesseldienst-wedding.html">Wedding</a>
-        <a class="chip" href="schluesseldienst-pankow.html">Pankow</a>
-        <a class="chip" href="schluesseldienst-prenzlauerberg.html">Prenzlauer Berg</a>
+      <div class="hero-actions" style="margin-top:14px;">
+        <a class="btn primary" href="tel:+491638516782">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 20 20 0 0 1-8.7-3.1A19.5 19.5 0 0 1 5.2 12 20 20 0 0 1 2.1 3.2 2 2 0 0 1 4.1 1h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 8.5a16 16 0 0 0 7.4 7.4l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/></svg>
+          Jetzt anrufen
+        </a>
 
-        <!-- weitere Links (später Seiten erstellen – hier KEIN Text “im Aufbau”) -->
-        <a class="chip" href="schluesseldienst-gesundbrunnen.html">Gesundbrunnen</a>
-        <a class="chip" href="schluesseldienst-mitte.html">Mitte</a>
-        <a class="chip" href="schluesseldienst-moabit.html">Moabit</a>
-        <a class="chip" href="schluesseldienst-reinickendorf.html">Reinickendorf</a>
-        <a class="chip" href="schluesseldienst-kreuzberg.html">Kreuzberg</a>
-        <a class="chip" href="schluesseldienst-friedrichshain.html">Friedrichshain</a>
-        <a class="chip" href="schluesseldienst-neukoelln.html">Neukölln</a>
-        <a class="chip" href="schluesseldienst-charlottenburg.html">Charlottenburg</a>
-        <a class="chip" href="schluesseldienst-wilmersdorf.html">Wilmersdorf</a>
-        <a class="chip" href="schluesseldienst-schoeneberg.html">Schöneberg</a>
-        <a class="chip" href="schluesseldienst-spandau.html">Spandau</a>
-        <a class="chip" href="schluesseldienst-steglitz-zehlendorf.html">Steglitz-Zehlendorf</a>
-        <a class="chip" href="schluesseldienst-tempelhof.html">Tempelhof</a>
-        <a class="chip" href="schluesseldienst-lichtenberg.html">Lichtenberg</a>
-        <a class="chip" href="schluesseldienst-marzahn-hellersdorf.html">Marzahn-Hellersdorf</a>
-        <a class="chip" href="schluesseldienst-treptow-koepenick.html">Treptow-Köpenick</a>
-        <a class="chip" href="schluesseldienst-franzoesisch-buchholz.html">Französisch Buchholz</a>
-        <a class="chip" href="schluesseldienst-koepenick.html">Köpenick</a>
-      </div>
-    </section>
+        <a class="btn light" href="https://wa.me/491638516782?text=Hallo%20Trust%20Schl%C3%BCsseldienst%20Berlin%20-%20ich%20brauche%20Hilfe%20bei%20einer%20T%C3%BCr%C3%B6ffnung." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L4 20l1.2-3.3A8.5 8.5 0 1 1 20 11.5z"/></svg>
+          WhatsApp
+        </a>
 
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="section-head">
-        <h2>FAQ – Schlüsseldienst Berlin 24/7</h2>
-      </div>
-      <p class="muted" style="margin:0 0 14px;">
-        Antworten zu Türöffnung, Preisen, Anfahrt und Ablauf.
-      </p>
-
-      <div class="grid two">
-        <details class="faq">
-          <summary>
-            Schlüsseldienst in der Nähe – wie schnell sind Sie vor Ort?
-            <span class="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v14h-2zM5 11h14v2H5z"/></svg></span>
-          </summary>
-          <p>In Berlin sind wir in der Regel in <strong>10–30 Minuten</strong> bei Ihnen (je nach Verkehr und Bezirk).</p>
-        </details>
-
-        <details class="faq">
-          <summary>
-            Türöffnung Berlin: Geht das ohne Schäden?
-            <span class="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v14h-2zM5 11h14v2H5z"/></svg></span>
-          </summary>
-          <p>Eine <strong>zugefallene Tür</strong> öffnen wir in <strong>95%</strong> der Fälle <strong>ohne Schäden</strong>.</p>
-        </details>
-
-        <details class="faq">
-          <summary>
-            Was kostet ein Schlüsseldienst in Berlin?
-            <span class="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v14h-2zM5 11h14v2H5z"/></svg></span>
-          </summary>
-          <p>Wir arbeiten mit <strong>transparenten Festpreisen</strong> (inkl. MwSt.). Details finden Sie unter <strong>Preise</strong>. <strong>Anfahrtskosten bitte telefonisch erfragen.</strong></p>
-        </details>
-
-        <details class="faq">
-          <summary>
-            Schlüsseldienst Berlin 24/7 – auch nachts & am Wochenende?
-            <span class="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v14h-2zM5 11h14v2H5z"/></svg></span>
-          </summary>
-          <p>Ja. Unser <strong>Schlüsselnotdienst Berlin 24/7</strong> ist rund um die Uhr erreichbar – auch nachts, am Wochenende und an Feiertagen.</p>
-        </details>
-
-        <details class="faq">
-          <summary>
-            Ist bei einer abgeschlossenen Tür ein Profilzylinder im Preis enthalten?
-            <span class="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v14h-2zM5 11h14v2H5z"/></svg></span>
-          </summary>
-          <p>Bei <strong>abgeschlossener Tür</strong> ist ein <strong>Profilzylinder</strong> in der Regel <strong>nicht im Preis enthalten</strong>, sofern nicht ausdrücklich vereinbart.</p>
-        </details>
-
-        <details class="faq">
-          <summary>
-            Was soll ich beim Anruf sagen?
-            <span class="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v14h-2zM5 11h14v2H5z"/></svg></span>
-          </summary>
-          <p>Nennen Sie bitte kurz <strong>Bezirk/Stadtteil</strong> und ob die Tür <strong>zugefallen</strong> oder <strong>abgeschlossen</strong> ist.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- KONTAKT -->
-    <section id="kontakt">
-      <div class="section-head">
-        <h2>Kontakt</h2>
+        <a class="btn" href="#preise">
+          Preise ansehen
+        </a>
       </div>
 
-      <div class="grid two">
-        <div class="card">
-          <h3>Jetzt anrufen</h3>
-          <p><strong>Telefon:</strong> <a href="tel:+491638516782" style="text-decoration:none; font-weight:950; color:#f0fbff;">+49 163 8516782</a></p>
-          <div style="margin-top:12px;">
-            <a class="btn primary" href="tel:+491638516782" style="max-width:420px;">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.6.6 4 .6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.3 22 2 13.7 2 3c0-.6.4-1 1-1h4.2c.6 0 1 .4 1 1 0 1.4.2 2.8.6 4 .1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
-              Jetzt anrufen
-            </a>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>WhatsApp</h3>
-          <p><strong>WhatsApp:</strong> <a href="https://wa.me/491638516782" target="_blank" rel="noopener" style="text-decoration:none; font-weight:950; color:#f0fbff;">Chat starten</a></p>
-          <p class="muted2">Schnell schreiben – wir antworten so zügig wie möglich.</p>
-          <div style="margin-top:12px;">
-            <a class="btn whatsapp" href="https://wa.me/491638516782" target="_blank" rel="noopener" style="max-width:420px;">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12.04 2C6.58 2 2.12 6.46 2.12 11.92c0 1.93.56 3.82 1.62 5.44L2 22l4.83-1.67a9.86 9.86 0 0 0 5.21 1.45h.01c5.46 0 9.92-4.46 9.92-9.92C21.97 6.46 17.5 2 12.04 2zm5.78 14.23c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.23-4.88-4.43-.14-.2-1.16-1.55-1.16-2.96 0-1.41.74-2.11 1-2.39.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.57.82 2 .89 2.14.07.14.12.31.02.5-.1.2-.15.31-.29.48-.14.17-.3.39-.42.52-.14.14-.29.29-.13.57.16.28.69 1.14 1.48 1.85 1.02.91 1.88 1.19 2.16 1.33.28.14.44.12.61-.07.17-.2.7-.82.88-1.1.18-.28.37-.23.62-.14.25.09 1.58.75 1.85.88.27.14.45.21.52.33.07.12.07.68-.17 1.36z"/>
-              </svg>
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- IMPRESSUM (nur Link im Footer, aber hier als Abschnitt für Anker/SEO) -->
-    <section id="impressum">
-      <div class="section-head">
-        <h2>Impressum</h2>
-      </div>
-
-      <details class="faq">
-        <summary>
-          Impressum anzeigen
-          <span class="plus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v14h-2zM5 11h14v2H5z"/></svg></span>
-        </summary>
-        <p>
-          <strong>Angaben gemäß § 5 TMG:</strong><br>
-          Trust Schlüsseldienst Berlin<br>
-          Adresse: Ramlerstr 2, 13355 Berlin
-        </p>
-        <p>
-          <strong>Kontakt:</strong><br>
-          Tel: 49+ 163 8516782<br>
-          E-Mail: trust.schluesseldienstberlin@gmail.com<br>
-          Webseite: https://trust-schluesseldienstberlin.de
-        </p>
-        <p><strong>Umsatzsteuer-ID:</strong> Wird nachgereicht.</p>
-      </details>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="footer-row">
-        <div>
-          <strong style="color:#eaf6ff;">Trust Schlüsseldienst Berlin</strong>
-          <div class="muted2">Schlüsseldienst Berlin 24/7 · Schlüsselnotdienst · Türöffnung</div>
-
-          <div class="footer-links">
-            <a href="#impressum">Impressum</a>
-            <a href="#kontakt">Kontakt</a>
-            <a href="#preise">Preise</a>
-            <a href="#bezirke">Bezirke</a>
-          </div>
-        </div>
-
-        <div style="min-width:260px;">
-          <a class="btn primary" href="tel:+491638516782" style="max-width:320px;">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.6.6 4 .6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.3 22 2 13.7 2 3c0-.6.4-1 1-1h4.2c.6 0 1 .4 1 1 0 1.4.2 2.8.6 4 .1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
-            Jetzt anrufen
-          </a>
-          <div style="height:10px"></div>
-          <a class="btn whatsapp" href="https://wa.me/491638516782" target="_blank" rel="noopener" style="max-width:320px;">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12.04 2C6.58 2 2.12 6.46 2.12 11.92c0 1.93.56 3.82 1.62 5.44L2 22l4.83-1.67a9.86 9.86 0 0 0 5.21 1.45h.01c5.46 0 9.92-4.46 9.92-9.92C21.97 6.46 17.5 2 12.04 2zm5.78 14.23c-.24.68-1.42 1.3-1.95 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.63-.6-2.87-1.24-4.74-4.23-4.88-4.43-.14-.2-1.16-1.55-1.16-2.96 0-1.41.74-2.11 1-2.39.26-.28.58-.35.77-.35h.55c.18 0 .42-.07.66.5.24.57.82 2 .89 2.14.07.14.12.31.02.5-.1.2-.15.31-.29.48-.14.17-.3.39-.42.52-.14.14-.29.29-.13.57.16.28.69 1.14 1.48 1.85 1.02.91 1.88 1.19 2.16 1.33.28.14.44.12.61-.07.17-.2.7-.82.88-1.1.18-.28.37-.23.62-.14.25.09 1.58.75 1.85.88.27.14.45.21.52.33.07.12.07.68-.17 1.36z"/>
-            </svg>
-            WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <div class="muted2" style="margin-top:16px; font-size:12px;">
-        © <span id="year"></span> Trust Schlüsseldienst Berlin
+      <div class="subnote">
+        <span>Türöffnung: zugefallen 95% ohne Schäden möglich</span>
+        <span>Festpreise inkl. MwSt.</span>
+        <span>Anfahrtskosten telefonisch erfragen</span>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <!-- PROBLEME (als Kästen, nicht untereinander im Text) -->
+  <section id="probleme">
+    <h2 class="section-title">Häufige Türprobleme – schnelle Hilfe in Berlin</h2>
+    <p class="section-lead">
+      Ob Wohnungstür oder Haustür: Wir helfen bei typischen Notfällen rund ums Schloss – sauber, zügig und mit klarer Absprache.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/><path d="M12 12v3"/></svg>
+          </div>
+          <h3>Zugefallene Tür</h3>
+        </div>
+        <p class="muted">
+          Wenn die Tür zu ist und der Schlüssel innen steckt: Eine Öffnung ist in <strong>95% ohne Schäden möglich</strong> (je nach Situation).
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 7h8v10H8z"/><path d="M12 11h.01"/><path d="M4 10v10h16V10"/></svg>
+          </div>
+          <h3>Abgeschlossene Tür</h3>
+        </div>
+        <p class="muted">
+          Wenn abgeschlossen wurde oder der Schlüssel fehlt: Wir prüfen die Situation und erklären den Ablauf <strong>vor Beginn</strong>.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 10a5 5 0 1 1 10 0v3H7z"/><path d="M9 21h6"/><path d="M12 13v3"/></svg>
+          </div>
+          <h3>Schlüssel verloren</h3>
+        </div>
+        <p class="muted">
+          Schlüssel weg? Wir öffnen die Tür und beraten auf Wunsch zu <strong>Zylinderwechsel</strong> und Sicherheit.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M14 7l3 3"/><path d="M6 21l6-6"/><path d="M9 12l3 3"/><path d="M8 8l4 4"/><path d="M5 5l4 4"/></svg>
+          </div>
+          <h3>Schlüssel abgebrochen</h3>
+        </div>
+        <p class="muted">
+          Abgebrochener Schlüssel im Schloss? Wir kümmern uns um Entfernung und Funktion – ohne unnötige Experimente.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 10h16"/><path d="M7 10V6a5 5 0 0 1 10 0v4"/><path d="M7 10v10h10V10"/></svg>
+          </div>
+          <h3>Schloss klemmt / defekt</h3>
+        </div>
+        <p class="muted">
+          Tür lässt sich schwer schließen oder öffnen? Wir prüfen Schloss/Zylinder und lösen das Problem fachgerecht.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 5-3.5 8.5-8 8.5S4 18 4 13V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>Einbruchschutz</h3>
+        </div>
+        <p class="muted">
+          Beratung und Nachrüstung für mehr Schutz – passend zur Tür und zu Ihrer Wohnsituation in Berlin.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen">
+    <h2 class="section-title">Leistungen – Schlüsseldienst &amp; Türöffnung in Berlin</h2>
+    <p class="section-lead">
+      Trust Schlüsseldienst Berlin steht für seriöse Hilfe: Türöffnungen, Schloss- &amp; Zylinderwechsel sowie sinnvolle Sicherheitslösungen.
+    </p>
+
+    <div class="grid">
+      <div class="card dark">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M7 17h10"/></svg>
+          </div>
+          <h3>Türöffnung Berlin</h3>
+        </div>
+        <p class="muted">
+          Zugefallen oder abgeschlossen – wir öffnen professionell und erklären die Schritte klar.
+          Für zugefallene Türen gilt: <strong>95% ohne Schäden möglich</strong> (je nach Situation).
+        </p>
+      </div>
+
+      <div class="card dark">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 8h12v12H6z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M10 14h4"/></svg>
+          </div>
+          <h3>Schlosswechsel &amp; Zylinderwechsel</h3>
+        </div>
+        <p class="muted">
+          Wenn nötig tauschen wir Schloss oder Zylinder fachgerecht.
+          <strong>Hinweis:</strong> Bei <strong>abgeschlossener Türöffnung</strong> ist ein neuer <strong>Profilzylinder</strong> in der Regel <strong>nicht</strong> im Preis enthalten.
+        </p>
+      </div>
+
+      <div class="card dark">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 5-3.5 8.5-8 8.5S4 18 4 13V7l8-4z"/><path d="M12 11v5"/><path d="M10 13h4"/></svg>
+          </div>
+          <h3>Einbruchschutz</h3>
+        </div>
+        <p class="muted">
+          Nachrüstung und Beratung für mehr Sicherheit – z. B. Schutzbeschläge und sinnvolle Maßnahmen rund um Tür &amp; Schloss.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABLAUF -->
+  <section id="ablauf">
+    <h2 class="section-title">So läuft der Schlüsselnotdienst ab</h2>
+    <p class="section-lead">
+      Ein klarer Ablauf sorgt für Vertrauen: kurze Abfrage am Telefon, Anfahrt, Öffnung und Abschluss – ohne unnötiges Drumherum.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 20 20 0 0 1-8.7-3.1A19.5 19.5 0 0 1 5.2 12 20 20 0 0 1 2.1 3.2 2 2 0 0 1 4.1 1h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 8.5a16 16 0 0 0 7.4 7.4l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/></svg>
+          </div>
+          <h3>1) Kurz anrufen</h3>
+        </div>
+        <p class="muted">
+          Stadtteil/Bezirk, Türzustand (zugefallen/abgeschlossen) und Situation – damit wir direkt passend helfen.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M7 12l-2-2"/><path d="M7 12l-2 2"/><path d="M17 12l2-2"/><path d="M17 12l2 2"/></svg>
+          </div>
+          <h3>2) Anfahrt</h3>
+        </div>
+        <p class="muted">
+          In Berlin sind wir je nach Verkehr und Entfernung in <strong>10–30 Minuten</strong> bei Ihnen.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="iconrow">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 10h8v10H8z"/><path d="M12 14v2"/><path d="M6 10V8a6 6 0 0 1 12 0v2"/></svg>
+          </div>
+          <h3>3) Öffnung &amp; Abschluss</h3>
+        </div>
+        <p class="muted">
+          Sauberes Arbeiten, klare Absprache – danach Abschluss und auf Wunsch kurzer Hinweis zur Sicherheit.
+        </p>
+      </div>
+    </div>
+
+    <div class="hero-actions" style="margin-top:14px;">
+      <a class="btn primary" href="tel:+491638516782">Jetzt anrufen</a>
+      <a class="btn light" href="https://wa.me/491638516782?text=Hallo%20Trust%20Schl%C3%BCsseldienst%20Berlin%20-%20ich%20brauche%20Hilfe%20bei%20einer%20T%C3%BCr%C3%B6ffnung." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- PREISE -->
+  <section id="preise">
+    <h2 class="section-title">Preise – klare Festpreise (inkl. MwSt.)</h2>
+    <p class="section-lead">
+      Transparente Preise sind wichtig. Hier finden Sie unsere Festpreise. <strong>Anfahrtskosten bitte telefonisch erfragen.</strong>
+    </p>
+
+    <div class="table-wrap" role="region" aria-label="Preistabelle">
+      <table>
+        <thead>
+          <tr>
+            <th>Leistung</th>
+            <th>07:00–20:00 Uhr</th>
+            <th>20:00–00:00 Uhr</th>
+            <th>00:00–07:00 Uhr</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Zugefallene Tür</td>
+            <td>59 €</td>
+            <td>79 €</td>
+            <td>99 €</td>
+          </tr>
+          <tr>
+            <td>Abgeschlossene Tür</td>
+            <td>89 €</td>
+            <td>109 €</td>
+            <td>129 €</td>
+          </tr>
+          <tr>
+            <td>Zylinderwechsel</td>
+            <td>89 €</td>
+            <td>109 €</td>
+            <td>129 €</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="price-note">
+      <strong>Hinweis:</strong> Bei <strong>abgeschlossener Türöffnung</strong> ist ein neuer <strong>Profilzylinder</strong> in der Regel <strong>nicht</strong> im Preis enthalten.
+      Falls ein Austausch nötig ist, sprechen wir das vorher mit Ihnen ab.
+    </p>
+
+    <div class="hero-actions" style="margin-top:14px;">
+      <a class="btn primary" href="tel:+491638516782">Jetzt anrufen</a>
+      <a class="btn light" href="https://wa.me/491638516782?text=Hallo%20Trust%20Schl%C3%BCsseldienst%20Berlin%20-%20ich%20m%C3%B6chte%20kurz%20die%20Preise%20und%20die%20Situation%20abkl%C3%A4ren." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- EINSATZGEBIET -->
+  <section id="bezirke">
+    <h2 class="section-title">Einsatzgebiet – Schlüsseldienst in Berlin</h2>
+    <p class="section-lead">
+      Wir sind berlinweit im Einsatz. Für manche Bezirke gibt es bereits eigene Seiten – alle anderen erreichen Sie direkt über Kontakt.
+    </p>
+
+    <div class="chips" aria-label="Bezirke in Berlin">
+      <!-- Live Seiten -->
+      <a class="chip" href="/schluesseldienst-wedding.html">Wedding</a>
+      <a class="chip" href="/schluesseldienst-pankow.html">Pankow</a>
+      <a class="chip" href="/schluesseldienst-prenzlauerberg.html">Prenzlauer Berg</a>
+
+      <!-- Weitere Bezirke (führen zum Kontakt statt 404) -->
+      <a class="chip" href="#kontakt">Gesundbrunnen</a>
+      <a class="chip" href="#kontakt">Mitte</a>
+      <a class="chip" href="#kontakt">Moabit</a>
+      <a class="chip" href="#kontakt">Reinickendorf</a>
+      <a class="chip" href="#kontakt">Kreuzberg</a>
+      <a class="chip" href="#kontakt">Friedrichshain</a>
+      <a class="chip" href="#kontakt">Neukölln</a>
+      <a class="chip" href="#kontakt">Charlottenburg</a>
+      <a class="chip" href="#kontakt">Wilmersdorf</a>
+      <a class="chip" href="#kontakt">Schöneberg</a>
+      <a class="chip" href="#kontakt">Marzahn</a>
+      <a class="chip" href="#kontakt">Lichtenberg</a>
+      <a class="chip" href="#kontakt">Köpenick</a>
+      <a class="chip" href="#kontakt">Französisch Buchholz</a>
+      <a class="chip" href="#kontakt">Spandau</a>
+      <a class="chip" href="#kontakt">Zehlendorf</a>
+      <a class="chip" href="#kontakt">Steglitz</a>
+      <a class="chip" href="#kontakt">Tempelhof</a>
+      <a class="chip" href="#kontakt">Treptow</a>
+    </div>
+  </section>
+
+  <!-- SEO-LANGER INHALT (ohne komische Gesprächs-Texte, aber keyword-stark & sauber) -->
+  <section id="wissen">
+    <h2 class="section-title">Schlüsselnotdienst, Türöffnung &amp; Schlosswechsel – was ist wichtig?</h2>
+    <p class="section-lead">
+      Wer in Berlin einen <strong>günstigen Schlüsseldienst</strong> sucht, will vor allem: schnelle Erreichbarkeit, faire Preise und seriöse Arbeit.
+      Genau darauf ist Trust Schlüsseldienst Berlin ausgerichtet – mit klarer Absprache und einem sauberen Ablauf.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Günstiger Schlüsseldienst Berlin</h3>
+        <p class="muted">
+          „Günstig“ heißt nicht billig um jeden Preis – sondern <strong>fair</strong>, <strong>transparent</strong> und ohne Überraschungen.
+          Deshalb zeigen wir Festpreise und klären Details am Telefon.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Türöffnung in der Nähe</h3>
+        <p class="muted">
+          Wenn Sie „Schlüsseldienst in der Nähe“ googeln, zählt jede Minute. Wir sind berlinweit unterwegs und helfen schnell – tagsüber und nachts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Schloss klemmt / Zylinder tauschen</h3>
+        <p class="muted">
+          Ein defektes Schloss oder ein schwergängiger Zylinder kann Sicherheitsrisiken verursachen. Wir tauschen bei Bedarf fachgerecht aus.
+        </p>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="grid">
+      <div class="card dark">
+        <h3>Tür zugefallen – was tun?</h3>
+        <p class="muted">
+          Ruhe bewahren, nicht am Schloss herumprobieren. Anrufen oder WhatsApp – wir klären kurz die Lage und helfen.
+          Bei zugefallenen Türen ist eine Öffnung in <strong>95% ohne Schäden möglich</strong> (je nach Situation).
+        </p>
+      </div>
+
+      <div class="card dark">
+        <h3>Schlüssel abgebrochen – schnelle Lösung</h3>
+        <p class="muted">
+          Ein abgebrochener Schlüssel im Schloss muss sauber entfernt werden, damit der Zylinder wieder funktioniert.
+          Wir kümmern uns darum und prüfen anschließend die Funktion.
+        </p>
+      </div>
+
+      <div class="card dark">
+        <h3>Einbruchschutz in Berlin</h3>
+        <p class="muted">
+          Sinnvolle Nachrüstungen an Türen und Schlössern erhöhen den Schutz.
+          Wir beraten so, dass es zur Tür passt – praktisch und nachvollziehbar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2 class="section-title">FAQ – Schlüsseldienst Berlin 24/7</h2>
+    <p class="section-lead">
+      Antworten zu Ablauf, Preisen und Türöffnung – kurz und klar.
+    </p>
+
+    <div class="faq">
+      <details>
+        <summary>Wie schnell sind Sie in Berlin vor Ort?<span class="chev" aria-hidden="true"></span></summary>
+        <div class="faq-body">
+          In Berlin sind wir je nach Verkehr und Entfernung in der Regel in <strong>10–30 Minuten</strong> bei Ihnen.
+        </div>
+      </details>
+
+      <details>
+        <summary>Türöffnung Berlin: Geht das ohne Schäden?<span class="chev" aria-hidden="true"></span></summary>
+        <div class="faq-body">
+          Bei einer <strong>zugefallenen Tür</strong> ist eine Öffnung in <strong>95% ohne Schäden möglich</strong> (je nach Situation).
+        </div>
+      </details>
+
+      <details>
+        <summary>Was kostet ein Schlüsseldienst in Berlin?<span class="chev" aria-hidden="true"></span></summary>
+        <div class="faq-body">
+          Wir arbeiten mit <strong>Festpreisen inkl. MwSt.</strong>. Die Preistabelle finden Sie oben auf dieser Seite.
+          <strong>Anfahrtskosten bitte telefonisch erfragen.</strong>
+        </div>
+      </details>
+
+      <details>
+        <summary>Ist ein Profilzylinder inklusive?<span class="chev" aria-hidden="true"></span></summary>
+        <div class="faq-body">
+          Bei <strong>abgeschlossener Türöffnung</strong> ist ein neuer <strong>Profilzylinder</strong> in der Regel <strong>nicht</strong> im Preis enthalten.
+          Falls ein Austausch nötig ist, sprechen wir das vorher mit Ihnen ab.
+        </div>
+      </details>
+
+      <details>
+        <summary>Schlüsseldienst Berlin 24/7 – auch nachts?<span class="chev" aria-hidden="true"></span></summary>
+        <div class="faq-body">
+          Ja – der Schlüsselnotdienst ist <strong>rund um die Uhr</strong> erreichbar, auch nachts und am Wochenende.
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <h2 class="section-title">Kontakt</h2>
+    <p class="section-lead">
+      Schnell Hilfe nötig? Am besten direkt anrufen oder WhatsApp schreiben.
+    </p>
+
+    <div class="contact-box">
+      <p style="margin:0 0 10px;">
+        <strong>Telefon:</strong>
+        <a href="tel:+491638516782" style="color:var(--brand3); font-weight:900; text-decoration:none;">+49 163 8516782</a>
+      </p>
+
+      <p style="margin:0 0 10px;">
+        <strong>E-Mail:</strong>
+        <a href="mailto:trust.schluesseldienstberlin@gmail.com" style="color:var(--brand3); font-weight:900; text-decoration:none;">trust.schluesseldienstberlin@gmail.com</a>
+      </p>
+
+      <p style="margin:0 0 10px;">
+        <strong>Instagram:</strong>
+        <a href="https://www.instagram.com/trust_schluesseldienst_berlin?utm_source=qr" target="_blank" rel="noopener" style="color:var(--brand3); font-weight:900; text-decoration:none;">trust_schluesseldienst_berlin</a>
+      </p>
+
+      <div class="contact-row">
+        <a class="btn primary" href="tel:+491638516782">Jetzt anrufen</a>
+        <a class="btn light" href="https://wa.me/491638516782?text=Hallo%20Trust%20Schl%C3%BCsseldienst%20Berlin%20-%20ich%20brauche%20Hilfe%20bei%20einer%20T%C3%BCr%C3%B6ffnung." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <strong style="font-size:16px;">Trust Schlüsseldienst Berlin</strong>
+        <div class="footer-small">24/7 Notdienst · Schnell · Fair</div>
+        <div class="footer-small" style="margin-top:6px;">Ramlerstr 2, 13355 Berlin</div>
+      </div>
+
+      <div class="footer-links" style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/impressum.html">Impressum</a>
+        <a class="btn primary" href="tel:+491638516782" style="justify-content:center;">Jetzt anrufen</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Call Button -->
+<a class="float-call" href="tel:+491638516782" aria-label="Jetzt anrufen (Floating)">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 20 20 0 0 1-8.7-3.1A19.5 19.5 0 0 1 5.2 12 20 20 0 0 1 2.1 3.2 2 2 0 0 1 4.1 1h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 8.5a16 16 0 0 0 7.4 7.4l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/>
+  </svg>
+</a>
+
 </body>
 </html>
