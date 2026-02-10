@@ -1,4 +1,4 @@
-<!-- ========= index.html (Update: Bezirkslinks ohne .html + zweifelnde Wörter entfernt) ========= -->
+<!-- ========= index.html (SEO-Upgrade: längerer Content + alle Bezirke + Links ohne .html + keine Zweifel-Sätze) ========= -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Schlüsseldienst Berlin 24/7 – Schlüsselnotdienst & Türöffnung | Trust Schlüsseldienst Berlin</title>
-  <meta name="description" content="Trust Schlüsseldienst Berlin: Schlüsseldienst Berlin 24/7, Schlüsselnotdienst & Türöffnung (zugefallen/abgeschlossen), Schloss- & Zylinderwechsel. Transparente Festpreise. Jetzt anrufen." />
+
+  <!-- ✅ Snippet-Text (Meta-Description): kurz, überzeugend, klar -->
+  <meta name="description" content="Trust Schlüsseldienst Berlin: 24/7 Schlüsselnotdienst & Türöffnung (zugefallen/abgeschlossen). Transparente Festpreise inkl. MwSt., klare Absprache vor Beginn, Telefon & WhatsApp. Jetzt anrufen: +49 163 8516782." />
 
   <link rel="canonical" href="https://www.trust-schluesseldienstberlin.de/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -15,7 +17,7 @@
   <!-- Social Vorschau -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Schlüsseldienst Berlin 24/7 – Trust Schlüsseldienst Berlin" />
-  <meta property="og:description" content="24/7 Schlüsselnotdienst in Berlin. Türöffnung (zugefallen/abgeschlossen), Schloss- & Zylinderwechsel. Transparente Festpreise." />
+  <meta property="og:description" content="24/7 Schlüsselnotdienst in Berlin: Türöffnung (zugefallen/abgeschlossen), Schloss- & Zylinderwechsel. Transparente Festpreise, klare Absprache." />
   <meta property="og:url" content="https://www.trust-schluesseldienstberlin.de/" />
   <meta property="og:image" content="https://www.trust-schluesseldienstberlin.de/assets/logo.jpeg" />
   <meta name="twitter:card" content="summary" />
@@ -23,11 +25,14 @@
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" />
 
+  <!-- ✅ Optional: hilft Google beim Snippet manchmal -->
+  <meta name="format-detection" content="telephone=yes" />
+
   <style>
     :root{
-      --brand:#0b7fa6;      /* helles Trust-Blau */
-      --brand2:#063a55;     /* dunkles Blau */
-      --brand3:#0a5c7a;     /* mittleres Blau */
+      --brand:#0b7fa6;
+      --brand2:#063a55;
+      --brand3:#0a5c7a;
       --text:#0b1220;
       --muted:#5b6472;
       --card:#ffffff;
@@ -329,8 +334,6 @@
       .footer-grid{grid-template-columns:1fr}
       .top-actions{display:none}
     }
-
-    /* ✅ Auf Handy soll der Name sichtbar sein */
     @media (max-width: 520px){
       .brand img{height:34px}
       .brand span{
@@ -350,7 +353,7 @@
     }
   </style>
 
-  <!-- JSON-LD: WebSite + Locksmith + FAQ -->
+  <!-- ✅ JSON-LD (mehr E-E-A-T): Website + Locksmith + FAQ -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -386,28 +389,23 @@
         "mainEntity":[
           {
             "@type":"Question",
-            "name":"Wie schnell kann ein Schlüsseldienst in Berlin kommen?",
-            "acceptedAnswer":{"@type":"Answer","text":"Die Ankunftszeit hängt von Adresse, Verkehr und aktueller Auslastung ab. Am Telefon nennen wir Ihnen eine realistische Einschätzung, bevor wir losfahren."}
-          },
-          {
-            "@type":"Question",
-            "name":"Türöffnung Berlin: Geht das ohne Schäden?",
-            "acceptedAnswer":{"@type":"Answer","text":"Das hängt von Tür, Schloss und Situation ab. Wir prüfen vor Ort und erklären Ihnen die Möglichkeiten vor Arbeitsbeginn."}
-          },
-          {
-            "@type":"Question",
             "name":"Was kostet ein Schlüsseldienst in Berlin?",
-            "acceptedAnswer":{"@type":"Answer","text":"Wir arbeiten mit transparenten Festpreisen (inkl. MwSt.). Die Preise finden Sie auf dieser Seite. Anfahrtskosten bitte telefonisch erfragen."}
+            "acceptedAnswer":{"@type":"Answer","text":"Wir arbeiten mit transparenten Festpreisen (inkl. MwSt.). Die Preise finden Sie in der Preistabelle auf dieser Seite. Anfahrtskosten bitte telefonisch erfragen."}
           },
           {
             "@type":"Question",
-            "name":"Ist bei abgeschlossener Türöffnung ein Profilzylinder inklusive?",
-            "acceptedAnswer":{"@type":"Answer","text":"Bei abgeschlossener Türöffnung ist ein Profilzylinder in der Regel nicht im Preis enthalten. Falls ein Austausch nötig ist, informieren wir Sie vorab."}
+            "name":"Schlüsseldienst in der Nähe – wie läuft die Hilfe ab?",
+            "acceptedAnswer":{"@type":"Answer","text":"Sie rufen an oder schreiben per WhatsApp. Wir klären Bezirk, Türart (zugefallen/abgeschlossen) und Situation, nennen die passende Preisstufe und starten erst nach Ihrer Zustimmung."}
           },
           {
             "@type":"Question",
-            "name":"Schlüsseldienst Berlin 24/7 – auch nachts und am Wochenende?",
-            "acceptedAnswer":{"@type":"Answer","text":"Ja. Unser Schlüsselnotdienst ist 24/7 erreichbar – auch nachts, am Wochenende und an Feiertagen."}
+            "name":"Muss ich mich vor der Türöffnung ausweisen?",
+            "acceptedAnswer":{"@type":"Answer","text":"Ja. Vor der Türöffnung ist eine Legitimation erforderlich (z. B. Ausweis). Wenn der Ausweis in der Wohnung liegt, klären wir eine praktikable Lösung vor Ort."}
+          },
+          {
+            "@type":"Question",
+            "name":"Bieten Sie auch Schlosswechsel oder Zylinderwechsel an?",
+            "acceptedAnswer":{"@type":"Answer","text":"Ja. Wir übernehmen Schlosswechsel und Zylinderwechsel – zum Beispiel bei Defekt, Schlüsselverlust oder Sicherheitswunsch. Kosten und Vorgehen werden vor Beginn besprochen."}
           }
         ]
       }
@@ -470,7 +468,7 @@
         <div class="kicker">
           <span class="badge">Schlüsseldienst Berlin 24/7 · Notdienst</span>
           <span class="badge">Festpreise · klare Absprache</span>
-          <span class="badge">Fair · Seriös · Transparent</span>
+          <span class="badge">Telefon & WhatsApp</span>
         </div>
 
         <h1>Schlüsseldienst Berlin – 24/7 Schlüsselnotdienst & Türöffnung</h1>
@@ -479,7 +477,7 @@
           Sie suchen einen <strong>Schlüsseldienst in der Nähe</strong> in Berlin? Trust Schlüsseldienst Berlin ist Ihr
           <strong>Schlüsselnotdienst</strong> für Hilfe bei <strong>zugefallener Tür</strong>,
           <strong>abgeschlossener Tür</strong>, <strong>Schlüsselverlust</strong> oder <strong>defektem Schloss</strong>.
-          Wir erklären den Ablauf verständlich und sprechen den Preis <strong>vor Arbeitsbeginn</strong> ab.
+          Wir erklären das Vorgehen verständlich und sprechen den Preis <strong>vor Arbeitsbeginn</strong> ab.
         </p>
 
         <div class="hero-actions">
@@ -503,12 +501,12 @@
       </div>
     </section>
 
-    <!-- ===== TRUST / WHY ===== -->
+    <!-- ===== TRUST / WHY (länger, SEO) ===== -->
     <section id="trust">
       <h2>Warum Trust Schlüsseldienst Berlin?</h2>
       <p class="muted">
-        Wer einen <strong>günstigen Schlüsseldienst</strong> sucht, meint vor allem: klare Kommunikation, fairer Preis und seriöse Arbeit.
-        Genau darauf ist unser Service ausgelegt – transparent, strukturiert und ohne Überraschungen.
+        Bei einem Schlüsselnotdienst zählt nicht nur „schnell“, sondern vor allem: <strong>seriös</strong>, <strong>klar</strong> und <strong>transparent</strong>.
+        Darum arbeiten wir mit nachvollziehbarer Kommunikation: Situation prüfen, Preisstufe nennen, erst dann starten.
       </p>
 
       <div class="grid">
@@ -521,224 +519,8 @@
               </svg>
             </div>
             <div>
-              <h3>Seriös & transparent</h3>
-              <p class="muted">Klare Kommunikation und transparente Festpreise (inkl. MwSt.).</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="iconline">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M12 7v5l3 2" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
-                <path d="M12 22a10 10 0 1 0-10-10" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Schnelle Hilfe – mit realistischer Einschätzung</h3>
-              <p class="muted">Am Telefon nennen wir Ihnen eine realistische Einschätzung zur Ankunft (abhängig von Adresse und Verkehr).</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="iconline">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M4 10h16v10H4V10z" stroke="#063a55" stroke-width="2"/>
-                <path d="M7 10V7a5 5 0 0 1 10 0v3" stroke="#0b7fa6" stroke-width="2"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Professioneller Ablauf</h3>
-              <p class="muted">Wir prüfen die Situation, erklären Optionen und starten erst nach Preisabsprache.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== LEISTUNGEN ===== -->
-    <section id="leistungen">
-      <h2>Leistungen – Schlüsseldienst & Türöffnung in Berlin</h2>
-      <p class="muted">
-        Als <strong>Schlüsselnotdienst Berlin</strong> helfen wir bei Türproblemen und rund ums Schloss – ideal, wenn Sie einen
-        <strong>Schlüsseldienst Berlin 24/7</strong> benötigen.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <div class="iconline">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M7 21V3h8a4 4 0 0 1 4 4v14" stroke="#063a55" stroke-width="2"/>
-                <path d="M7 21h12" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-                <path d="M11 12h4" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Türöffnung Berlin</h3>
-              <p class="muted">Zugefallen oder abgeschlossen: wir erklären Vorgehen und Kosten vor Arbeitsbeginn.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="iconline">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M14 7a5 5 0 1 0 0 10" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
-                <path d="M14 12h7" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-                <path d="M18 12v3" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Schlosswechsel & Zylinderwechsel</h3>
-              <p class="muted">Passende Lösung bei Defekt, Schlüsselverlust oder Sicherheitswunsch.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="iconline">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M12 2l9 5v6c0 5-3.7 9.3-9 9-5.3.3-9-4-9-9V7l9-5z" stroke="#063a55" stroke-width="2"/>
-                <path d="M12 10v5" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-                <path d="M12 18h.01" stroke="#0b7fa6" stroke-width="3" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Einbruchschutz</h3>
-              <p class="muted">Beratung & Nachrüstung (z. B. Schutzbeschläge) für mehr Sicherheit.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hr"></div>
-
-      <div class="card">
-        <h3>Typische Notfälle – wir helfen sofort</h3>
-        <p class="muted">
-          Diese Situationen sind häufige Gründe, warum Kunden einen <strong>Schlüsseldienst in Berlin</strong> kontaktieren:
-        </p>
-
-        <div class="grid" style="margin-top:10px;">
-          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
-            <div class="iconline">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M7 21V3h10v18" stroke="#063a55" stroke-width="2"/>
-                  <path d="M9 12h6" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <h3>Tür zugefallen</h3>
-                <p class="muted">Wenn der Schlüssel innen liegt oder die Tür ins Schloss gefallen ist.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
-            <div class="iconline">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M14 10a4 4 0 1 0-3 3.9" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M13 14h7" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M17 14v3" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <h3>Tür abgeschlossen</h3>
-                <p class="muted">Wir prüfen die Situation und erklären die Optionen vor Beginn.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
-            <div class="iconline">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M7 12l3 3L21 4" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M3 20h18" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div>
-                <h3>Schlüssel verloren</h3>
-                <p class="muted">Bei Bedarf ist ein Zylinderwechsel möglich – wir besprechen das vorab.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
-            <div class="iconline">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2v6" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M6 8h12v14H6V8z" stroke="#0b7fa6" stroke-width="2"/>
-                </svg>
-              </div>
-              <div>
-                <h3>Schlüssel abgebrochen</h3>
-                <p class="muted">Entfernung des Schlüsselrests und Wiederherstellung der Funktion.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
-            <div class="iconline">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M4 12h16" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M7 9l-3 3 3 3" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <div>
-                <h3>Schloss klemmt</h3>
-                <p class="muted">Wenn das Schloss blockiert, prüfen wir die Ursache und erklären die Lösung.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
-            <div class="iconline">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M7 10V7a5 5 0 0 1 10 0v3" stroke="#063a55" stroke-width="2"/>
-                  <path d="M6 10h12v10H6V10z" stroke="#0b7fa6" stroke-width="2"/>
-                </svg>
-              </div>
-              <div>
-                <h3>Zylinder defekt</h3>
-                <p class="muted">Austausch oder Lösung passend zur Situation – nach Absprache.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ABLAUF ===== -->
-    <section id="ablauf">
-      <h2>Ablauf – klar, professionell, transparent</h2>
-      <p class="muted">
-        Wir halten den Ablauf bewusst einfach: Kontakt, kurze Klärung, Preisabsprache, Umsetzung.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <div class="iconline">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6.5 10.5l-2 2a3 3 0 0 0 0 4.2l.8.8a3 3 0 0 0 4.2 0l2-2" stroke="#063a55" stroke-width="2" stroke-linecap="round"/>
-                <path d="M17.5 13.5l2-2a3 3 0 0 0 0-4.2l-.8-.8a3 3 0 0 0-4.2 0l-2 2" stroke="#0b7fa6" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>1) Kontakt</h3>
-              <p class="muted">Anrufen oder WhatsApp: Stadtteil, Türart (zugefallen/abgeschlossen) und Situation kurz nennen.</p>
+              <h3>Festpreise & klare Absprache</h3>
+              <p class="muted">Transparente Festpreise (inkl. MwSt.). Keine Überraschungen: Preis wird vor Beginn besprochen.</p>
             </div>
           </div>
         </div>
@@ -753,8 +535,8 @@
               </svg>
             </div>
             <div>
-              <h3>2) Klare Absprache</h3>
-              <p class="muted">Wir erklären Vorgehen & Kosten – und starten erst nach Ihrer Zustimmung.</p>
+              <h3>Sauberer Ablauf</h3>
+              <p class="muted">Kurz klären: Türart + Situation. Dann Vorgehen erklären und die passende Preisstufe bestätigen.</p>
             </div>
           </div>
         </div>
@@ -763,23 +545,114 @@
           <div class="iconline">
             <div class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none">
-                <path d="M4 10h16v10H4V10z" stroke="#063a55" stroke-width="2"/>
-                <path d="M7 10V7a5 5 0 0 1 10 0v3" stroke="#0b7fa6" stroke-width="2"/>
+                <path d="M7 10V7a5 5 0 0 1 10 0v3" stroke="#063a55" stroke-width="2"/>
+                <path d="M6 10h12v10H6V10z" stroke="#0b7fa6" stroke-width="2"/>
               </svg>
             </div>
             <div>
-              <h3>3) Umsetzung</h3>
-              <p class="muted">Türöffnung oder Schloss-/Zylinderlösung – strukturiert und transparent.</p>
+              <h3>Türöffnung & Sicherheit</h3>
+              <p class="muted">Türöffnung, Schlosswechsel, Zylinderwechsel – plus Einbruchschutz-Beratung bei Bedarf.</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="card" style="margin-top:14px;">
-        <h3>Legitimation</h3>
+        <h3>Für wen ist Trust der richtige Schlüsseldienst?</h3>
         <p class="muted">
-          Vor der Türöffnung ist eine Legitimation erforderlich (z. B. Ausweis). Wenn der Ausweis in der Wohnung liegt,
-          klären wir eine praktikable Lösung vor Ort.
+          Für alle, die einen <strong>Schlüsseldienst Berlin</strong> suchen, der verständlich erklärt, was gemacht wird – und was es kostet.
+          Egal ob privat oder gewerblich: Wir arbeiten strukturiert, transparent und mit klarer Preisabsprache.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== LEISTUNGEN (mehr Content + interne Links) ===== -->
+    <section id="leistungen">
+      <h2>Leistungen – Schlüsseldienst & Türöffnung in Berlin</h2>
+      <p class="muted">
+        Als <strong>Schlüsselnotdienst Berlin</strong> unterstützen wir bei akuten Notfällen und bei geplanten Maßnahmen.
+        Hier sind die wichtigsten Leistungen auf einen Blick – mit direkten Unterseiten:
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Türöffnung Berlin (Notdienst)</h3>
+          <p class="muted">
+            Hilfe bei zugefallener oder abgeschlossener Tür – inklusive transparenter Absprache vor Beginn.
+            Mehr Infos: <a href="/türöffnung-berlin-24h-notdienst" style="font-weight:900; color:#073042; text-decoration:none;">Türöffnung Berlin 24h Notdienst</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Schlosswechsel & Zylinderwechsel</h3>
+          <p class="muted">
+            Austausch bei Defekt, Schlüsselverlust oder Sicherheitswunsch.
+            Mehr Infos: <a href="/leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln" style="font-weight:900; color:#073042; text-decoration:none;">Schlosswechsel Berlin</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Sicherheitstechnik & Einbruchschutz</h3>
+          <p class="muted">
+            Beratung und Nachrüstung (z. B. Schutzbeschläge). Mehr Infos:
+            <a href="/leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi" style="font-weight:900; color:#073042; text-decoration:none;">Einbruchschutz vom Profi</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="card">
+        <h3>Typische Situationen – wann ein Schlüsseldienst gebraucht wird</h3>
+        <p class="muted">
+          Viele Anfragen entstehen in Sekunden: Tür fällt zu, Schlüssel steckt innen, Schlüssel ist verloren oder das Schloss blockiert.
+          Wichtig: Wir klären vor Beginn, was gemacht wird und welche Kosten anfallen – so bleibt alles nachvollziehbar.
+        </p>
+
+        <div class="grid" style="margin-top:10px;">
+          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
+            <h3>Tür zugefallen</h3>
+            <p class="muted">Wenn der Schlüssel innen liegt oder die Tür ins Schloss gefallen ist.</p>
+          </div>
+          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
+            <h3>Tür abgeschlossen</h3>
+            <p class="muted">Wir prüfen die Situation und erklären den Ablauf vor Arbeitsbeginn.</p>
+          </div>
+          <div class="card" style="box-shadow:none; border:1px solid rgba(0,0,0,.08); background:linear-gradient(180deg,#ffffff 0%, #f4fbff 100%);">
+            <h3>Schlüssel verloren / defekt</h3>
+            <p class="muted">Bei Bedarf ist ein Zylinderwechsel möglich – nach vorheriger Absprache.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABLAUF ===== -->
+    <section id="ablauf">
+      <h2>Ablauf – verständlich, seriös, transparent</h2>
+      <p class="muted">
+        Ein guter Schlüsseldienst macht keine langen Geschichten. Der Ablauf ist klar:
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>1) Kontakt</h3>
+          <p class="muted">Anrufen oder WhatsApp: Bezirk/Stadtteil, Türart (zugefallen/abgeschlossen) und Situation nennen.</p>
+        </div>
+        <div class="card">
+          <h3>2) Legitimation</h3>
+          <p class="muted">Vor der Türöffnung ist eine Legitimation erforderlich (z. B. Ausweis). Wenn der Ausweis in der Wohnung liegt, klären wir das vor Ort.</p>
+        </div>
+        <div class="card">
+          <h3>3) Festpreis & Umsetzung</h3>
+          <p class="muted">Wir nennen die Preisstufe, besprechen Vorgehen und starten erst nach Ihrer Zustimmung.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <h3>Warum das wichtig ist</h3>
+        <p class="muted">
+          Transparenz schafft Vertrauen: Sie wissen vorab, welche Leistung gemacht wird und in welcher Preisstufe wir arbeiten.
+          Genau das erwarten Kunden, wenn sie „<strong>Schlüsseldienst Berlin seriös</strong>“ oder „<strong>günstiger Schlüsseldienst</strong>“ suchen.
         </p>
       </div>
     </section>
@@ -835,17 +708,17 @@
       </div>
     </section>
 
-    <!-- ===== BEZIRKE ===== -->
+    <!-- ===== BEZIRKE (✅ ALLE wieder drin, ohne .html) ===== -->
     <section id="bezirke">
       <h2>Schlüsseldienst Berlin – Bezirke & Stadtteile</h2>
       <p class="muted">
-        Wählen Sie Ihren Bezirk – oder rufen Sie direkt an.
+        Wählen Sie Ihren Bezirk. Jede Bezirksseite wird separat aufgebaut, damit Inhalte nicht doppelt sind.
       </p>
 
       <div class="card">
         <h3>Bezirksseiten</h3>
         <div class="chips" style="margin-top:10px;">
-          <!-- ✅ Update: Links ohne .html (Ordner-URLs) -->
+          <!-- ✅ Indexierte/erstellte -->
           <a class="chip" href="/schlüsseldienst-wedding">Wedding</a>
           <a class="chip" href="/schlüsseldienst-gesundbrunnen">Gesundbrunnen</a>
           <a class="chip" href="/schlüsseldienst-pankow">Pankow</a>
@@ -854,8 +727,41 @@
           <a class="chip" href="/schlüsseldienst-moabit">Moabit</a>
           <a class="chip" href="/schlüsseldienst-mitte">Mitte</a>
           <a class="chip" href="/schlüsseldienst-kreuzberg">Kreuzberg</a>
+
+          <!-- ✅ Weitere Bezirke (auch wenn du sie später baust) -->
+          <a class="chip" href="/schlüsseldienst-neukölln">Neukölln</a>
+          <a class="chip" href="/schlüsseldienst-friedrichshain">Friedrichshain</a>
+          <a class="chip" href="/schlüsseldienst-charlottenburg">Charlottenburg</a>
+          <a class="chip" href="/schlüsseldienst-weißense">Weißensee</a>
+
+          <!-- ✅ SEO Keyword-Seite -->
           <a class="chip" href="/schlüsseldienst-in-der-nähe">Schlüsseldienst in der Nähe</a>
         </div>
+
+        <p class="muted" style="margin-top:12px;">
+          Tipp: Die Seite <strong>„Schlüsseldienst in der Nähe“</strong> ist ein starkes Keyword. Die bauen wir als Nächstes als SEO-Landingpage.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== EXTRA SEO-SECTION (mehr Content) ===== -->
+    <section id="seo-plus">
+      <h2>Schlüsseldienst Berlin: Worauf Kunden achten sollten</h2>
+      <div class="card">
+        <p class="muted">
+          Bei einem Schlüsselnotdienst geht es um Vertrauen. Gute Zeichen sind: klare Erreichbarkeit, transparente Preisstruktur,
+          verständliche Erklärung des Vorgehens und eine saubere Legitimation vor der Öffnung.
+        </p>
+        <p class="muted">
+          Wenn Sie „<strong>Schlüsseldienst Berlin 24/7</strong>“, „<strong>Türöffnung Berlin</strong>“ oder „<strong>Schlüsseldienst in der Nähe</strong>“ suchen,
+          möchten Sie in der Regel schnell Klarheit. Genau dafür ist unsere Startseite aufgebaut: Leistungen, Preise, Ablauf und Bezirke sind sofort sichtbar.
+        </p>
+        <div class="hr"></div>
+        <p class="muted" style="margin-bottom:0;">
+          Direkt zu den Leistungen: <a href="/leistung" style="font-weight:900; color:#073042; text-decoration:none;">/leistung</a> ·
+          <a href="/leistung/schlüsseldienst-berlin-türöffnung-notdienst-24h" style="font-weight:900; color:#073042; text-decoration:none;">Notdienst Türöffnung</a> ·
+          <a href="/leistung/montage-von-sicherheitsschlösser" style="font-weight:900; color:#073042; text-decoration:none;">Sicherheitsschlösser</a>
+        </p>
       </div>
     </section>
 
@@ -863,20 +769,13 @@
     <section id="faq" class="faq">
       <h2>FAQ – Schlüsseldienst Berlin 24/7</h2>
       <p class="muted">
-        Antworten zu Türöffnung, Preisen, Ablauf und Schlüsselnotdienst.
+        Kurz beantwortet: Preise, Ablauf, Legitimation, Türöffnung.
       </p>
 
       <details>
-        <summary>Schlüsseldienst in der Nähe – wie schnell geht das?</summary>
+        <summary>Schlüsseldienst in der Nähe – wie geht’s am schnellsten?</summary>
         <p class="muted" style="margin-top:10px;">
-          Die Ankunftszeit hängt von Adresse, Verkehr und Auslastung ab. Am Telefon nennen wir Ihnen eine realistische Einschätzung, bevor wir losfahren.
-        </p>
-      </details>
-
-      <details>
-        <summary>Türöffnung Berlin: Geht das ohne Schäden?</summary>
-        <p class="muted" style="margin-top:10px;">
-          Das hängt von Tür, Schloss und Situation ab. Wir prüfen vor Ort und erklären Ihnen die Möglichkeiten vor Arbeitsbeginn.
+          Am schnellsten ist ein kurzer Anruf oder WhatsApp. Nennen Sie Bezirk/Stadtteil, Türart (zugefallen/abgeschlossen) und Situation – dann ordnen wir die passende Preisstufe zu.
         </p>
       </details>
 
@@ -889,24 +788,30 @@
       </details>
 
       <details>
-        <summary>Abgeschlossene Tür: Ist ein Profilzylinder inklusive?</summary>
-        <p class="muted" style="margin-top:10px;">
-          Bei <strong>abgeschlossener Türöffnung</strong> ist ein <strong>Profilzylinder in der Regel nicht im Preis enthalten</strong>.
-          Falls ein Austausch nötig ist, informieren wir Sie vorab.
-        </p>
-      </details>
-
-      <details>
-        <summary>Schlüsseldienst Berlin 24/7 – auch nachts & am Wochenende?</summary>
-        <p class="muted" style="margin-top:10px;">
-          Ja. Unser <strong>Schlüsselnotdienst</strong> ist 24/7 erreichbar – auch nachts, am Wochenende und an Feiertagen.
-        </p>
-      </details>
-
-      <details>
         <summary>Muss ich mich ausweisen?</summary>
         <p class="muted" style="margin-top:10px;">
-          Ja. Vor der Türöffnung ist eine Legitimation erforderlich (z. B. Ausweis). Wenn der Ausweis in der Wohnung liegt, klären wir das vor Ort.
+          Ja. Vor der Türöffnung ist eine Legitimation erforderlich (z. B. Ausweis). Wenn der Ausweis in der Wohnung liegt, klären wir eine Lösung vor Ort.
+        </p>
+      </details>
+
+      <details>
+        <summary>Was ist der Unterschied: zugefallen vs. abgeschlossen?</summary>
+        <p class="muted" style="margin-top:10px;">
+          „Zugefallen“ bedeutet: Tür ist ins Schloss gefallen, aber nicht verriegelt. „Abgeschlossen“ bedeutet: die Tür ist verriegelt. Wir klären die Situation vor Beginn.
+        </p>
+      </details>
+
+      <details>
+        <summary>Bieten Sie auch Schlosswechsel / Zylinderwechsel an?</summary>
+        <p class="muted" style="margin-top:10px;">
+          Ja. Bei Defekt, Schlüsselverlust oder Sicherheitswunsch übernehmen wir Schlosswechsel und Zylinderwechsel – nach transparenter Absprache.
+        </p>
+      </details>
+
+      <details>
+        <summary>Schlüsseldienst Berlin 24/7 – wirklich rund um die Uhr?</summary>
+        <p class="muted" style="margin-top:10px;">
+          Ja. Unser Schlüsselnotdienst ist 24/7 erreichbar – auch nachts, am Wochenende und an Feiertagen.
         </p>
       </details>
     </section>
