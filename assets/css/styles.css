@@ -2502,3 +2502,73 @@ section {
     border-bottom: 1px solid var(--trust-line) !important;
   }
 }
+
+/* Must remain last: clean content sections. Header hero image and logos stay visible. */
+main section:not(.page-hero-image) img,
+.service-image,
+.hero-work-image {
+  display: none !important;
+}
+
+.eyebrow,
+.eyebrow::before,
+.card-kicker,
+.card-kicker::before,
+.grid-3 > a.card::before,
+.grid-3 > a.card::after,
+#leistungen .grid-3 > .card::before,
+#leistungen .grid-3 > .card::after {
+  display: none !important;
+  content: none !important;
+}
+
+.section-intro.clean-intro,
+.section-intro {
+  margin-bottom: 22px !important;
+}
+
+.service-cards-clean .service-card-clean {
+  display: flex !important;
+  min-height: auto !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  padding: 24px !important;
+  text-decoration: none !important;
+}
+
+.service-cards-clean .service-card-clean h3 {
+  margin: 0 !important;
+}
+
+.service-cards-clean .service-card-clean p {
+  margin: 0 !important;
+  color: var(--text-muted) !important;
+  line-height: 1.6 !important;
+}
+
+.card-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  margin-top: auto !important;
+  padding: 11px 18px !important;
+  background: var(--trust-navy) !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  font-weight: 850 !important;
+}
+
+@media (max-width: 768px) {
+  .service-cards-clean {
+    gap: 12px !important;
+  }
+
+  .service-cards-clean .service-card-clean {
+    padding: 22px !important;
+  }
+
+  .card-button {
+    width: 100% !important;
+  }
+}
