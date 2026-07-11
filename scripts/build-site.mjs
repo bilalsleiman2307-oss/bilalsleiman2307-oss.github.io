@@ -6,7 +6,7 @@ const site = "https://www.trust-schluesseldienstberlin.de";
 const phone = "+491638516782";
 const phoneDisplay = "+49 163 8516782";
 const email = "trust.schluesseldienstberlin@gmail.com";
-const version = "trust-redesign-1";
+const version = "trust-redesign-2";
 
 const allIndexes = [];
 function walk(dir) {
@@ -72,7 +72,7 @@ function schema(slug, keyword, faqs) {
   return `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@graph":graph})}</script>`;
 }
 
-const header = `<header class="site-header"><div class="container-wide header-inner"><a class="brand" href="/"><img src="/assets/logo.jpeg?v=${version}" alt="Trust Schlüsseldienst Berlin Logo"><span><strong>Trust Schlüsseldienst</strong><small>Berlin · 24/7 erreichbar</small></span></a><button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav" onclick="const n=document.getElementById('main-nav');n.classList.toggle('is-open');this.setAttribute('aria-expanded',n.classList.contains('is-open'));">&#9776;</button><nav id="main-nav" class="main-nav"><a href="/">Startseite</a><a href="/leistung/">Leistungen</a><a href="/#preise">Preise</a><a href="/#einsatzgebiete">Einsatzgebiete</a><a href="/ratgeber/">Ratgeber</a></nav><div class="header-actions"><a class="button button-whatsapp" href="https://wa.me/491638516782">WhatsApp</a><a class="button button-primary" href="tel:${phone}">Jetzt anrufen</a></div></div></header>`;
+const header = `<header class="site-header"><div class="container-wide header-inner"><a class="brand" href="/"><img src="/assets/logo.jpeg?v=${version}" alt="Trust Schlüsseldienst Berlin Logo"><span><strong>Trust Schlüsseldienst</strong><small>Berlin · 24/7 erreichbar</small></span></a><button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">&#9776;</button><nav id="main-nav" class="main-nav"><a href="/">Startseite</a><a href="/leistung/">Leistungen</a><a href="/#preise">Preise</a><a href="/#einsatzgebiete">Einsatzgebiete</a><a href="/ratgeber/">Ratgeber</a></nav><div class="header-actions"><a class="button button-whatsapp" href="https://wa.me/491638516782">WhatsApp</a><a class="button button-primary" href="tel:${phone}">Jetzt anrufen</a></div></div></header>`;
 
 const footer = `<footer class="site-footer"><div class="container-wide"><div class="footer-grid footer-grid-compact"><div><img class="footer-logo" src="/assets/logo.jpeg?v=${version}" alt="Trust Schlüsseldienst Berlin"><div class="footer-title">Trust Schlüsseldienst Berlin</div><p>Türöffnung, Schloss- und Zylinderwechsel in Berlin – mit Preisabsprache vor Beginn.</p></div><div><div class="footer-title">Schnellzugriff</div><a href="/#preise">Preise</a><a href="/leistung/">Leistungen</a><a href="/schlüsseldienst-in-der-nähe/">Einsatzgebiete</a><a href="/impressum/">Impressum</a></div><div><div class="footer-title">Kontakt</div><a href="tel:${phone}">${phoneDisplay}</a><a href="https://wa.me/491638516782">WhatsApp</a><a href="mailto:${email}">${email}</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Trust Schlüsseldienst Berlin</span></div></div></footer><div class="mobile-callbar"><a class="button button-whatsapp" href="https://wa.me/491638516782">WhatsApp</a><a class="button button-primary" href="tel:${phone}">Anrufen</a></div>`;
 
