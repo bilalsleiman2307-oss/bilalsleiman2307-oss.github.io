@@ -6,7 +6,7 @@ const site = "https://www.trust-schluesseldienstberlin.de";
 const phone = "03040563878";
 const phoneDisplay = "03040563878";
 const email = "trust.schluesseldienstberlin@gmail.com";
-const version = "trust-redesign-4";
+const version = "trust-redesign-5";
 
 const allIndexes = [];
 function walk(dir) {
@@ -46,16 +46,66 @@ const labels = {
   "schluessel-verloren-mitte":"Schlüssel verloren in Mitte"
 };
 
+const titleOverrides = {
+  "": "Schlüsseldienst Berlin 24/7 Notdienst zum Festpreis am Telefon",
+  "startseite": "Schlüsseldienst Berlin | 24/7 Notdienst & Türöffnung",
+  "leistung": "Schlüsseldienst Leistungen Berlin | Türöffnung, Schlosswechsel & Einbruchschutz",
+  "leistung/schlüsselnotdienst": "Schlüsselnotdienst Berlin 24/7 | Schnelle Hilfe bei Schlüsselnotfall",
+  "leistung/öffnung-bei-zugefallenen-türen": "Tür zugefallen Berlin | Türöffnung ohne unnötige Schäden",
+  "leistung/öffnung-bei-abgeschlossenen-türen": "Abgeschlossene Tür öffnen Berlin | Seriöse Türöffnung",
+  "leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln": "Schloss wechseln Berlin | Schließzylinder wechseln nach Absprache",
+  "leistung/montage-von-sicherheitsschlösser": "Sicherheitsschloss montieren Berlin | Schloss & Einbruchschutz",
+  "leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi": "Einbruchschutz Berlin | Sicherheitstechnik für Tür und Schloss",
+  "leistung/schlüsseldienst-berlin-türöffnung-notdienst-24h": "Türöffnung Berlin 24h Notdienst | Schlüsseldienst Berlin",
+  "schlüsseldienst-berlin-preise": "Schlüsseldienst Berlin Preise | Kosten transparent am Telefon klären",
+  "schlüsseldienst-in-der-nähe": "Schlüsseldienst in der Nähe Berlin | Einsatzgebiete & Bezirke",
+  "schlüsseldienst-franzoesisch-buchholz": "Schlüsseldienst Französisch Buchholz Berlin | Türöffnung 24/7",
+  "schlüsseldienst-französisch-buchholz": "Schlüsseldienst Französisch-Buchholz | Türöffnung 24/7",
+  "schlüsseldienst-koepenick": "Schlüsseldienst Koepenick Berlin | Türöffnung 24/7",
+  "schlüsseldienst-köpenick": "Schlüsseldienst Köpenick | Türöffnung 24/7",
+  "schlüsseldienst-schoeneberg": "Schlüsseldienst Schoeneberg Berlin | Türöffnung 24/7",
+  "schlüsseldienst-schöneberg": "Schlüsseldienst Schöneberg | Türöffnung 24/7",
+  "türöffnung-berlin-24h-notdienst": "Türöffnung Berlin 24h Notdienst | Zugefallen oder abgeschlossen",
+  "türöffnung-berlin-kosten": "Türöffnung Berlin Kosten | Preis vor Beginn klären",
+  "tür-zugefallen-was-tun": "Tür zugefallen was tun? Berlin Ratgeber vom Schlüsseldienst",
+  "schlüssel-steckt-innen-tür-zu": "Schlüssel steckt innen Tür zu | Hilfe vom Schlüsseldienst Berlin",
+  "ratgeber/schluesseldienst-kosten-berlin": "Schlüsseldienst Kosten Berlin | Preise, Zuschläge & Festpreis",
+  "ratgeber/schluessel-verloren-berlin": "Schlüssel verloren Berlin | Was tun und wann Schloss wechseln?",
+  "ratgeber/tuer-zugefallen-berlin": "Tür zugefallen Berlin | Hilfe, Kosten und seriöser Ablauf"
+};
+
+const descriptionOverrides = {
+  "": `Schlüsseldienst Berlin 24/7: Türöffnung, Schlüsselnotdienst, Schlosswechsel und Einbruchschutz. Preis und Vorgehen klären wir vor Beginn am Telefon.`,
+  "schlüsseldienst-berlin-preise": `Schlüsseldienst Berlin Preise verständlich erklärt: Tür zugefallen, abgeschlossene Tür, Zylinderwechsel, Zuschläge und Festpreis am Telefon.`,
+  "ratgeber/schluesseldienst-kosten-berlin": `Was kostet ein Schlüsseldienst in Berlin? Orientierung zu Türöffnung, Nachtzuschlag, Anfahrt, Material und fairer Preisabsprache.`,
+  "ratgeber/schluessel-verloren-berlin": `Schlüssel verloren in Berlin? Erfahren Sie, wann Türöffnung, Zylinderwechsel oder neue Schlüssel sinnvoll sind und worauf Sie achten sollten.`,
+  "ratgeber/tuer-zugefallen-berlin": `Tür zugefallen in Berlin? Was Sie sofort tun können, wann der Schlüsseldienst hilft und wie Preis, Legitimation und Ablauf geklärt werden.`,
+  "leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln": `Schloss oder Schließzylinder wechseln in Berlin nach Schlüsselverlust, Defekt oder Sicherheitsbedenken. Material nur nach Absprache.`,
+  "leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi": `Einbruchschutz in Berlin: Beratung zu Sicherheitsschloss, Schließzylinder und Türsicherung. Transparent, ohne unnötige Zusatzarbeiten.`
+};
+
+const priorityLinks = [
+  ["/leistung/schlüsselnotdienst/", "Schlüsselnotdienst"],
+  ["/leistung/öffnung-bei-zugefallenen-türen/", "Tür zugefallen"],
+  ["/türöffnung-berlin-24h-notdienst/", "Türöffnung Berlin"],
+  ["/schlüsseldienst-berlin-preise/", "Schlüsseldienst Preise"],
+  ["/ratgeber/schluesseldienst-kosten-berlin/", "Kosten-Ratgeber"],
+  ["/ratgeber/schluessel-verloren-berlin/", "Schlüssel verloren"],
+  ["/leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln/", "Schloss wechseln"],
+  ["/leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi/", "Einbruchschutz"],
+  ["/schlüsseldienst-in-der-nähe/", "Einsatzgebiete"]
+];
+
 const esc = (s) => String(s).replace(/[&<>\"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const routeUrl = (slug) => `${site}/${slug ? `${slug}/` : ""}`;
 const leaf = (slug) => slug.split("/").at(-1);
 const titleFor = (slug) => {
-  if (!slug) return "Schlüsseldienst Berlin 24/7 | Türöffnung & Notdienst";
+  if (titleOverrides[slug]) return titleOverrides[slug];
   if (slug.startsWith("schlüsseldienst-")) return `Schlüsseldienst ${districtNames[slug.slice(16)] || labels[slug] || slug} | Türöffnung 24/7`;
   return `${labels[leaf(slug)] || leaf(slug).replaceAll("-", " ")} | Trust Schlüsseldienst Berlin`;
 };
 const keywordFor = (slug) => !slug ? "Schlüsseldienst Berlin" : slug.startsWith("schlüsseldienst-") && districtNames[slug.slice(16)] ? `Schlüsseldienst ${districtNames[slug.slice(16)]}` : labels[leaf(slug)] || leaf(slug).replaceAll("-", " ");
-const descriptionFor = (slug) => `${keywordFor(slug)}: Türöffnung, Schloss- und Zylinderwechsel mit klarer Preisabsprache vor Beginn. 24/7 erreichbar unter ${phoneDisplay}.`;
+const descriptionFor = (slug) => descriptionOverrides[slug] || `${keywordFor(slug)}: Türöffnung, Schlüsselnotdienst, Schloss- und Zylinderwechsel mit klarer Preisabsprache vor Beginn. 24/7 erreichbar unter ${phoneDisplay}.`;
 
 function schema(slug, keyword, faqs) {
   const url = routeUrl(slug);
@@ -72,9 +122,9 @@ function schema(slug, keyword, faqs) {
   return `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@graph":graph})}</script>`;
 }
 
-const header = `<header class="site-header"><div class="container-wide header-inner"><a class="brand" href="/"><img src="/assets/logo.jpeg?v=${version}" alt="Trust Schlüsseldienst Berlin Logo"><span><strong>Trust Schlüsseldienst</strong><small>Berlin · 24/7 erreichbar</small></span></a><button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">&#9776;</button><nav id="main-nav" class="main-nav"><a href="/">Startseite</a><a href="/leistung/">Leistungen</a><a href="/#preise">Preise</a><a href="/#einsatzgebiete">Einsatzgebiete</a><a href="/ratgeber/">Ratgeber</a></nav><div class="header-actions"><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a><a class="button button-primary" href="tel:${phone}">Jetzt anrufen</a></div></div></header>`;
+const header = `<header class="site-header"><div class="container-wide header-inner"><a class="brand" href="/"><img src="/assets/logo.jpeg?v=${version}" alt="Trust Schlüsseldienst Berlin Logo"><span><strong>Trust Schlüsseldienst</strong><small>Berlin · 24/7 erreichbar</small></span></a><button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">&#9776;</button><nav id="main-nav" class="main-nav"><a href="/">Startseite</a><a href="/leistung/">Leistungen</a><a href="/türöffnung-berlin-24h-notdienst/">Türöffnung</a><a href="/schlüsseldienst-berlin-preise/">Preise</a><a href="/schlüsseldienst-in-der-nähe/">Einsatzgebiete</a><a href="/ratgeber/">Ratgeber</a></nav><div class="header-actions"><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a><a class="button button-primary" href="tel:${phone}">Jetzt anrufen</a></div></div></header>`;
 
-const footer = `<footer class="site-footer"><div class="container-wide"><div class="footer-grid footer-grid-compact"><div><img class="footer-logo" src="/assets/logo.jpeg?v=${version}" alt="Trust Schlüsseldienst Berlin"><div class="footer-title">Trust Schlüsseldienst Berlin</div><p>Türöffnung, Schloss- und Zylinderwechsel in Berlin – mit Preisabsprache vor Beginn.</p></div><div><div class="footer-title">Schnellzugriff</div><a href="/#preise">Preise</a><a href="/leistung/">Leistungen</a><a href="/schlüsseldienst-in-der-nähe/">Einsatzgebiete</a><a href="/impressum/">Impressum</a></div><div><div class="footer-title">Kontakt</div><a href="tel:${phone}">${phoneDisplay}</a><a href="https://wa.me/493040563878">WhatsApp</a><a href="mailto:${email}">${email}</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Trust Schlüsseldienst Berlin</span></div></div></footer><div class="mobile-callbar"><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a><a class="button button-primary" href="tel:${phone}">Anrufen</a></div>`;
+const footer = `<footer class="site-footer"><div class="container-wide"><div class="footer-grid footer-grid-compact"><div><img class="footer-logo" src="/assets/logo.jpeg?v=${version}" alt="Trust Schlüsseldienst Berlin"><div class="footer-title">Trust Schlüsseldienst Berlin</div><p>Türöffnung, Schloss- und Zylinderwechsel in Berlin – mit Preisabsprache vor Beginn.</p></div><div><div class="footer-title">Schnellzugriff</div><a href="/schlüsseldienst-berlin-preise/">Preise</a><a href="/leistung/schlüsselnotdienst/">Schlüsselnotdienst</a><a href="/türöffnung-berlin-24h-notdienst/">Türöffnung Berlin</a><a href="/schlüsseldienst-in-der-nähe/">Einsatzgebiete</a><a href="/impressum/">Impressum</a></div><div><div class="footer-title">Kontakt</div><a href="tel:${phone}">${phoneDisplay}</a><a href="https://wa.me/493040563878">WhatsApp</a><a href="mailto:${email}">${email}</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Trust Schlüsseldienst Berlin</span></div></div></footer><div class="mobile-callbar"><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a><a class="button button-primary" href="tel:${phone}">Anrufen</a></div>`;
 
 function faq(keyword) { return [
   [`Was kostet ${keyword}?`,"Der Preis hängt davon ab, ob die Tür zugefallen oder abgeschlossen ist, zu welcher Uhrzeit der Einsatz erfolgt und ob Material benötigt wird. Anfahrt, Leistung und mögliche Zuschläge werden vor Beginn besprochen."],
@@ -91,6 +141,26 @@ function prices() { return `<section id="preise" class="section-soft"><div class
 
 function districts() { return `<section id="einsatzgebiete"><div class="container"><div class="section-intro"><span class="eyebrow">Lokaler Schlüsseldienst</span><h2>Einsatzgebiete in ganz Berlin</h2><p>Wählen Sie Ihren Bezirk. Die bestehenden lokalen Seiten bleiben unter ihren bisherigen URLs erreichbar.</p></div><div class="area-links">${districtRoutes.map(r=>`<a href="/${r}/">${districtNames[r.slice(16)]}</a>`).join("")}</div></div></section>`; }
 
+function internalLinkList(slug) {
+  return priorityLinks
+    .filter(([href]) => href !== `/${slug}/`)
+    .slice(0, 6)
+    .map(([href, label]) => `<a href="${href}">${label}</a>`)
+    .join("");
+}
+
+function intentBlock(slug, keyword, district) {
+  if (slug === "impressum" || slug === "impressum.html") return "";
+  const localName = district || "Berlin";
+  const priceText = slug.includes("preise") || slug.includes("kosten")
+    ? "Auf Preis-Seiten steht die Orientierung im Mittelpunkt: Welche Situation liegt vor, welche Uhrzeit gilt, ob Material nötig ist und welche Kosten vor Beginn am Telefon geklärt werden sollten."
+    : "Bei Notfall-Suchen zählt eine klare Entscheidung: Ist die Tür nur zugefallen, abgeschlossen, steckt der Schlüssel innen oder muss nach Schlüsselverlust ein Zylinder gewechselt werden?";
+  const districtText = district
+    ? `Diese Seite bündelt die lokale Suchintention für ${keyword}. Wichtig sind dabei kurze Wege innerhalb Berlins, eine klare Preisabsprache und ein nachvollziehbarer Ablauf vor der Türöffnung.`
+    : `Diese Seite ist auf die Suchintention rund um ${keyword} ausgerichtet. Trust Schlüsseldienst Berlin deckt Türöffnung, Schlüsselnotdienst, Schlosswechsel, Schließzylinderwechsel und Einbruchschutz im Berliner Einsatzgebiet ab.`;
+  return `<section class="seo-focus"><div class="container split"><div><h2>${esc(keyword)}: lokale Hilfe mit klarer Absprache</h2><p>${esc(districtText)}</p><p>${esc(priceText)} Wir vermeiden unnötige Zusatzarbeiten und sprechen Anfahrt, Leistung und mögliche Zuschläge vor Arbeitsbeginn ab.</p></div><div class="card seo-link-card"><h3>Wichtige Themen</h3><div class="area-links compact-links">${internalLinkList(slug)}</div></div></div></section>`;
+}
+
 function headingHtml(keyword) {
   if (keyword.startsWith("Schlüsseldienst ")) {
     return `<span class="title-primary">Schlüsseldienst</span><span class="title-location">${esc(keyword.slice("Schlüsseldienst ".length))}</span>`;
@@ -105,7 +175,7 @@ function render(slug) {
   const district = slug.startsWith("schlüsseldienst-") ? districtNames[slug.slice(16)] : null;
   const intro = district ? `${keyword} hilft bei zugefallenen und abgeschlossenen Türen, Schlüsselverlust sowie Schloss- und Zylinderwechsel. Wir klären Situation, Legitimation, Anfahrt und Preis, bevor die Arbeit beginnt.` : `Trust ${keyword} hilft bei Türöffnungen, Schlosswechsel, Zylinderwechsel und akuten Schlüsselfällen. Vor Beginn klären wir die Situation, Ihre Berechtigung, den Preis und das passende Vorgehen.`;
   const seoIntro = `<section class="seo-welcome"><div class="container"><h2>Willkommen bei Trust Schlüsseldienst Berlin</h2><p>Sie brauchen schnell Hilfe, weil Ihre Tür zugefallen ist, der Schlüssel innen steckt oder das Schloss klemmt? Trust Schlüsseldienst Berlin ist 24/7 erreichbar. Wir klären vor Beginn der Arbeit die Türsituation, Ihre Berechtigung und den Preis – transparent und ohne versteckte Kosten.</p></div></section>`;
-  const main = isLegal ? `<section class="page-hero compact"><div class="container"><span class="eyebrow">Rechtliche Angaben</span><h1>Impressum</h1></div></section><section><div class="container"><div class="card legal-card"><h2>Anbieterkennzeichnung</h2><p><strong>Trust B&M Service UG (haftungsbeschränkt)</strong><br>Inhaber: Bilal Sleiman<br>Ramlerstr. 2a<br>13355 Berlin</p><p>Handelsregister: HRB 288982 B</p><p>Telefon: <a href="tel:${phone}">${phoneDisplay}</a><br>E-Mail: <a href="mailto:${email}">${email}</a></p></div></div></section>` : `<section class="page-hero page-hero-image"><div class="container"><div class="hero-copy"><h1>${headingHtml(keyword)}</h1><p>${esc(intro)}</p><div class="hero-actions"><a class="button button-primary" href="tel:${phone}">Jetzt anrufen</a><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a><a class="button button-secondary" href="/#preise">Preise ansehen</a></div><ul class="hero-points"><li>Festpreis am Telefon</li><li>24/7 Türöffnung</li><li>Einbruchschutz</li></ul></div></div></section>${seoIntro}<section><div class="container"><div class="section-intro clean-intro"><h2>Professionelle Hilfe rund um Tür, Schloss und Sicherheit</h2><p>Jeder Einsatz beginnt mit einer klaren Einschätzung. Zusatzarbeiten oder Material erfolgen nur nach Absprache.</p></div><div class="grid-3 service-cards-clean"><a class="card service-card-clean" href="/leistung/öffnung-bei-zugefallenen-türen/"><h3>Zugefallene Tür</h3><p>Wenn die Wohnungstür nur zugefallen ist, prüfen wir die Türsituation und öffnen möglichst schonend. Trust Schlüsseldienst Berlin erklärt Preis, Anfahrt und Vorgehen vor Beginn transparent.</p><span class="card-button">Mehr erfahren</span></a><a class="card service-card-clean" href="/leistung/öffnung-bei-abgeschlossenen-türen/"><h3>Abgeschlossene Tür</h3><p>Bei abgeschlossener Tür analysieren wir Schloss, Zylinder und Beschlag sorgfältig. Sie erhalten vor der Arbeit eine klare Einschätzung, damit die Öffnung fair und nachvollziehbar bleibt.</p><span class="card-button">Mehr erfahren</span></a><a class="card service-card-clean" href="/leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln/"><h3>Schloss- & Zylinderwechsel</h3><p>Nach Schlüsselverlust, Defekt oder Sicherheitsbedenken wechseln wir Zylinder und Schlösser nur nach Absprache. Material, Aufwand und Kosten werden vorher verständlich erklärt.</p><span class="card-button">Mehr erfahren</span></a></div></div></section><section class="section-blue"><div class="container"><div class="section-intro"><span class="eyebrow">So läuft es ab</span><h2>In vier klaren Schritten wieder Zugang erhalten</h2></div><div class="process-grid"><div class="process-step"><span>1</span><h3>Situation schildern</h3><p>Bezirk, Türart und ob die Tür zugefallen oder abgeschlossen ist.</p></div><div class="process-step"><span>2</span><h3>Preis klären</h3><p>Anfahrt, Leistung, Uhrzeit und mögliche Besonderheiten werden besprochen.</p></div><div class="process-step"><span>3</span><h3>Legitimation prüfen</h3><p>Die Berechtigung zur Öffnung wird vor Ort nachvollziehbar geprüft.</p></div><div class="process-step"><span>4</span><h3>Tür öffnen</h3><p>Wir wählen die zur Situation passende, möglichst schonende Methode.</p></div></div></div></section>${prices()}<section><div class="container split"><div><span class="eyebrow">Seriöser Ablauf</span><h2>Woran Sie einen fairen Schlüsseldienst erkennen</h2><p>Ein seriöser Ablauf beginnt nicht erst an der Tür. Fragen Sie nach Anfahrt, Grundpreis, Zuschlägen und möglichen Materialkosten. Bei Trust werden diese Punkte vor Beginn geklärt. Ein Zylinder oder Beschlag wird nicht ohne Ihre Zustimmung gewechselt.</p></div><div class="card"><h3>Vor dem Einsatz hilfreich</h3><ul class="mini-list"><li>Genaue Adresse und Berliner Bezirk</li><li>Tür nur zugefallen oder abgeschlossen?</li><li>Steckt ein Schlüssel von innen?</li><li>Besonderer Sicherheitsbeschlag vorhanden?</li><li>Ausweis oder andere Legitimation verfügbar?</li></ul></div></div></section>${districts()}<section class="section-soft"><div class="container"><div class="section-intro"><span class="eyebrow">Häufige Fragen</span><h2>Antworten zu ${esc(keyword)}</h2></div><div class="faq-list">${faqs.map(([q,a])=>`<details class="faq-item"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div></div></section><section><div class="container"><div class="cta-panel"><div><h2>Jetzt Schlüsseldienst in Berlin anrufen</h2><p>Nennen Sie Bezirk und Türsituation. Wir besprechen Preis und Vorgehen vor Beginn.</p></div><div class="cta-actions"><a class="button button-primary" href="tel:${phone}">${phoneDisplay}</a><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a></div></div></div></section>`;
+  const main = isLegal ? `<section class="page-hero compact"><div class="container"><span class="eyebrow">Rechtliche Angaben</span><h1>Impressum</h1></div></section><section><div class="container"><div class="card legal-card"><h2>Anbieterkennzeichnung</h2><p><strong>Trust B&M Service UG (haftungsbeschränkt)</strong><br>Inhaber: Bilal Sleiman<br>Ramlerstr. 2a<br>13355 Berlin</p><p>Handelsregister: HRB 288982 B</p><p>Telefon: <a href="tel:${phone}">${phoneDisplay}</a><br>E-Mail: <a href="mailto:${email}">${email}</a></p></div></div></section>` : `<section class="page-hero page-hero-image"><div class="container"><div class="hero-copy"><h1>${headingHtml(keyword)}</h1><p>${esc(intro)}</p><div class="hero-actions"><a class="button button-primary" href="tel:${phone}">Jetzt anrufen</a><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a><a class="button button-secondary" href="/#preise">Preise ansehen</a></div><ul class="hero-points"><li>Festpreis am Telefon</li><li>24/7 Türöffnung</li><li>Einbruchschutz</li></ul></div></div></section>${seoIntro}${intentBlock(slug, keyword, district)}<section><div class="container"><div class="section-intro clean-intro"><h2>Professionelle Hilfe rund um Tür, Schloss und Sicherheit</h2><p>Jeder Einsatz beginnt mit einer klaren Einschätzung. Zusatzarbeiten oder Material erfolgen nur nach Absprache.</p></div><div class="grid-3 service-cards-clean"><a class="card service-card-clean" href="/leistung/öffnung-bei-zugefallenen-türen/"><h3>Zugefallene Tür</h3><p>Wenn die Wohnungstür nur zugefallen ist, prüfen wir die Türsituation und öffnen möglichst schonend. Trust Schlüsseldienst Berlin erklärt Preis, Anfahrt und Vorgehen vor Beginn transparent.</p><span class="card-button">Mehr erfahren</span></a><a class="card service-card-clean" href="/leistung/öffnung-bei-abgeschlossenen-türen/"><h3>Abgeschlossene Tür</h3><p>Bei abgeschlossener Tür analysieren wir Schloss, Zylinder und Beschlag sorgfältig. Sie erhalten vor der Arbeit eine klare Einschätzung, damit die Öffnung fair und nachvollziehbar bleibt.</p><span class="card-button">Mehr erfahren</span></a><a class="card service-card-clean" href="/leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln/"><h3>Schloss- & Zylinderwechsel</h3><p>Nach Schlüsselverlust, Defekt oder Sicherheitsbedenken wechseln wir Zylinder und Schlösser nur nach Absprache. Material, Aufwand und Kosten werden vorher verständlich erklärt.</p><span class="card-button">Mehr erfahren</span></a></div></div></section><section class="section-blue"><div class="container"><div class="section-intro"><span class="eyebrow">So läuft es ab</span><h2>In vier klaren Schritten wieder Zugang erhalten</h2></div><div class="process-grid"><div class="process-step"><span>1</span><h3>Situation schildern</h3><p>Bezirk, Türart und ob die Tür zugefallen oder abgeschlossen ist.</p></div><div class="process-step"><span>2</span><h3>Preis klären</h3><p>Anfahrt, Leistung, Uhrzeit und mögliche Besonderheiten werden besprochen.</p></div><div class="process-step"><span>3</span><h3>Legitimation prüfen</h3><p>Die Berechtigung zur Öffnung wird vor Ort nachvollziehbar geprüft.</p></div><div class="process-step"><span>4</span><h3>Tür öffnen</h3><p>Wir wählen die zur Situation passende, möglichst schonende Methode.</p></div></div></div></section>${prices()}<section><div class="container split"><div><span class="eyebrow">Seriöser Ablauf</span><h2>Woran Sie einen fairen Schlüsseldienst erkennen</h2><p>Ein seriöser Ablauf beginnt nicht erst an der Tür. Fragen Sie nach Anfahrt, Grundpreis, Zuschlägen und möglichen Materialkosten. Bei Trust werden diese Punkte vor Beginn geklärt. Ein Zylinder oder Beschlag wird nicht ohne Ihre Zustimmung gewechselt.</p></div><div class="card"><h3>Vor dem Einsatz hilfreich</h3><ul class="mini-list"><li>Genaue Adresse und Berliner Bezirk</li><li>Tür nur zugefallen oder abgeschlossen?</li><li>Steckt ein Schlüssel von innen?</li><li>Besonderer Sicherheitsbeschlag vorhanden?</li><li>Ausweis oder andere Legitimation verfügbar?</li></ul></div></div></section>${districts()}<section class="section-soft"><div class="container"><div class="section-intro"><span class="eyebrow">Häufige Fragen</span><h2>Antworten zu ${esc(keyword)}</h2></div><div class="faq-list">${faqs.map(([q,a])=>`<details class="faq-item"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div></div></section><section><div class="container"><div class="cta-panel"><div><h2>Jetzt Schlüsseldienst in Berlin anrufen</h2><p>Nennen Sie Bezirk und Türsituation. Wir besprechen Preis und Vorgehen vor Beginn.</p></div><div class="cta-actions"><a class="button button-primary" href="tel:${phone}">${phoneDisplay}</a><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a></div></div></div></section>`;
   return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(titleFor(slug))}</title><meta name="description" content="${esc(descriptionFor(slug))}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${routeUrl(slug)}"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/assets/css/styles.css?v=${version}">${schema(slug,keyword,faqs)}</head><body>${header}<main>${slug?`<div class="breadcrumb"><div class="container"><a href="/">Startseite</a><span>›</span><span>${esc(keyword)}</span></div></div>`:""}${main}</main>${footer}<script src="/assets/js/main.js?v=${version}" defer></script></body></html>`;
 }
 

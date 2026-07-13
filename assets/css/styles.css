@@ -2572,3 +2572,50 @@ main section:not(.page-hero-image) img,
     width: 100% !important;
   }
 }
+
+.seo-focus {
+  padding: 34px 0 !important;
+  background: #f7fafc !important;
+}
+
+.seo-focus .split {
+  align-items: start !important;
+}
+
+.seo-focus h2 {
+  margin-top: 0 !important;
+}
+
+.seo-focus p {
+  color: var(--text-muted) !important;
+  line-height: 1.65 !important;
+}
+
+.seo-link-card {
+  padding: 22px !important;
+}
+
+.compact-links {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 8px !important;
+}
+
+.compact-links a {
+  padding: 10px 12px !important;
+  background: #fff !important;
+  border: 1px solid var(--trust-line) !important;
+  border-radius: 4px !important;
+  color: var(--trust-navy) !important;
+  font-weight: 750 !important;
+}
+
+@media (max-width: 768px) {
+  .seo-focus {
+    padding: 26px 0 !important;
+  }
+
+  .seo-link-card {
+    padding: 18px !important;
+  }
+}
