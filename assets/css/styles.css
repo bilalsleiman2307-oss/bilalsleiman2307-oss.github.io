@@ -2619,3 +2619,99 @@ main section:not(.page-hero-image) img,
     padding: 18px !important;
   }
 }
+
+.google-review-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin: 18px 0 14px !important;
+  padding: 10px 14px !important;
+  background: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  border-radius: 6px !important;
+  color: #202124 !important;
+  text-decoration: none !important;
+  box-shadow: 0 12px 28px rgba(8, 25, 42, 0.18) !important;
+}
+
+.google-review-badge:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 16px 34px rgba(8, 25, 42, 0.22) !important;
+}
+
+.google-word {
+  display: inline-flex !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.google-word span:nth-child(1),
+.google-word span:nth-child(4) {
+  color: #4285f4 !important;
+}
+
+.google-word span:nth-child(2),
+.google-word span:nth-child(6) {
+  color: #ea4335 !important;
+}
+
+.google-word span:nth-child(3) {
+  color: #fbbc05 !important;
+}
+
+.google-word span:nth-child(5) {
+  color: #34a853 !important;
+}
+
+.review-stars {
+  color: #fbbc04 !important;
+  font-size: 16px !important;
+  letter-spacing: 1px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.review-text {
+  color: #2b3138 !important;
+  font-size: 14px !important;
+  font-weight: 650 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+.review-text strong {
+  color: #111827 !important;
+}
+
+.site-footer .google-review-badge {
+  margin: 14px 0 0 !important;
+  box-shadow: none !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+@media (max-width: 768px) {
+  .page-hero-image .google-review-badge {
+    width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    margin: 16px 0 12px !important;
+    padding: 10px 12px !important;
+  }
+
+  .page-hero-image .review-text {
+    width: 100% !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .site-footer .google-review-badge {
+    width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+}
