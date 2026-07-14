@@ -6,8 +6,9 @@ const site = "https://www.trust-schluesseldienstberlin.de";
 const phone = "03040563878";
 const phoneDisplay = "03040563878";
 const email = "trust.schluesseldienstberlin@gmail.com";
-const version = "trust-redesign-7";
+const version = "trust-redesign-8";
 const googleReviewUrl = "https://share.google/eskADN8c4gLAJoF4b";
+const googleWriteReviewUrl = "https://g.page/r/Cb7_XP5XHV96ECE/review";
 const googleReviewBadge = `<a class="google-review-badge" href="${googleReviewUrl}" target="_blank" rel="noopener noreferrer" aria-label="Google Bewertungen ansehen"><span class="google-word" aria-hidden="true"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span><span class="review-stars" aria-hidden="true">★★★★★</span><span class="review-text"><strong>5,0</strong> Sterne · 105 Bewertungen</span></a>`;
 
 const allIndexes = [];
@@ -142,17 +143,17 @@ const trustBar = `<section class="trust-strip"><div class="container trust-grid"
 function prices() { return `<section id="preise" class="section-soft"><div class="container"><div class="section-intro"><span class="eyebrow">Transparente Orientierung</span><h2>Preise für Türöffnung und Zylinderwechsel</h2><p>Alle Beträge inkl. MwSt. Anfahrt und mögliche Zusatzarbeiten werden telefonisch genannt und vor Arbeitsbeginn vereinbart.</p></div><div class="price-table-wrap"><table><thead><tr><th>Leistung</th><th>07–20 Uhr</th><th>20–00 Uhr</th><th>00–07 Uhr</th></tr></thead><tbody><tr><td>Zugefallene Tür öffnen</td><td>59 €</td><td>79 €</td><td>99 €</td></tr><tr><td>Abgeschlossene Tür öffnen</td><td>89 €</td><td>109 €</td><td>129 €</td></tr><tr><td>Zylinderwechsel</td><td>89 €</td><td>109 €</td><td>129 €</td></tr></tbody></table></div><div class="mobile-price-list"><article><h3>Zugefallene Tür</h3><p><span>07–20 Uhr</span><strong>59 €</strong></p><p><span>20–00 Uhr</span><strong>79 €</strong></p><p><span>00–07 Uhr</span><strong>99 €</strong></p></article><article><h3>Abgeschlossene Tür</h3><p><span>07–20 Uhr</span><strong>89 €</strong></p><p><span>20–00 Uhr</span><strong>109 €</strong></p><p><span>00–07 Uhr</span><strong>129 €</strong></p></article><article><h3>Zylinderwechsel</h3><p><span>07–20 Uhr</span><strong>89 €</strong></p><p><span>20–00 Uhr</span><strong>109 €</strong></p><p><span>00–07 Uhr</span><strong>129 €</strong></p></article></div><p class="fine-print">Profilzylinder, Sicherheitsbeschläge und sonstiges Material sind nur nach ausdrücklicher Absprache Bestandteil des Auftrags.</p></div></section>`; }
 
 const homepageReviews = [
-  ["Koray D. Erdogan", "Lebensretter! Ging alles super fix und easy, danke!"],
   ["Bike Pro", "Extrem schnell, professionell, zuvorkommend und vor allem freundlich und nett. Klärt auf und spricht nicht von oben herab. 100%ige Empfehlung!"],
-  ["Marwan El-Bay", "Schnell vor Ort gewesen, alles super gelaufen und Preis-Leistung auch super. Danke für die schnelle Hilfe."],
   ["Christoph Eder", "Super nett, schnell da und macht auch am Wochenende einen total fairen Preis!"],
   ["Himanshu Dubey", "Bilal is very prompt and kind. He came within 20 mins late in the evening to help open the door. Thanks again."],
-  ["Simon Mayer", "Ich hatte mich Samstag Abend in Berlin Wedding ausgesperrt. Der Schlüsseldienst war schnell da, die Tür war offen und der Preis fair."]
+  ["Simon Mayer", "Ich hatte mich Samstag Abend in Berlin Wedding ausgesperrt. Der Schlüsseldienst war schnell da, die Tür war offen und der Preis fair."],
+  ["Viktoria Wagner", "Selbst am Feiertag keinen 100% Zuschlag wie die anderen. Die Tür war schnell offen und dazu war er super nett!"],
+  ["Bianca E", "Super unkompliziert, freundlich und fairer Preis!"]
 ];
 
 function reviewsSection(slug) {
   if (slug && slug !== "startseite") return "";
-  return `<section class="customer-feedback"><div class="container"><div class="section-intro review-intro"><span class="eyebrow">Google Bewertungen</span><h2>Feedback von unseren Kunden</h2><p>Lesen Sie, wie Kunden Trust Schlüsseldienst Berlin bei Türöffnung, Notdienst und Schlossproblemen erlebt haben.</p></div><div class="review-grid">${homepageReviews.map(([name, text]) => `<article class="review-card"><div class="review-card-stars" aria-label="5 von 5 Sternen">★★★★★</div><p>${esc(text)}</p><footer>~ ${esc(name)}</footer></article>`).join("")}</div></div></section>`;
+  return `<section class="customer-feedback"><div class="container"><div class="section-intro review-intro"><span class="eyebrow">Kundenerfahrungen</span><h2>Das sagen Kunden über Trust Schlüsseldienst Berlin</h2><p>Echte Rückmeldungen aus Google zeigen, worauf es im Notfall ankommt: schnelle Hilfe, freundlicher Kontakt, klare Preise und saubere Türöffnung.</p></div><div class="review-grid">${homepageReviews.map(([name, text]) => `<article class="review-card"><div class="review-card-stars" aria-label="5 von 5 Sternen">★★★★★</div><p>${esc(text)}</p><footer>~ ${esc(name)}</footer></article>`).join("")}</div><div class="review-actions"><a class="review-action-primary" href="${googleReviewUrl}" target="_blank" rel="noopener noreferrer"><span class="review-google-mark">G</span> Alle Bewertungen ansehen</a><a class="review-action-secondary" href="${googleWriteReviewUrl}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">☆</span> Bewerten Sie uns auf Google</a></div></div></section>`;
 }
 
 function districts() { return `<section id="einsatzgebiete"><div class="container"><div class="section-intro"><span class="eyebrow">Lokaler Schlüsseldienst</span><h2>Einsatzgebiete in ganz Berlin</h2><p>Wählen Sie Ihren Bezirk. Die bestehenden lokalen Seiten bleiben unter ihren bisherigen URLs erreichbar.</p></div><div class="area-links">${districtRoutes.map(r=>`<a href="/${r}/">${districtNames[r.slice(16)]}</a>`).join("")}</div></div></section>`; }
