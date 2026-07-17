@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-07-18",
+  "searchConsolePeriod": "letzte 3 Monate laut Projektbriefing",
+  "mappings": [
+    {
+      "primaryKeyword": "Schlüsseldienst Berlin",
+      "intent": "lokal-kommerziell, allgemeine Anbieter- und Leistungswahl",
+      "preferredUrl": "/",
+      "supportingKeywords": ["seriöser Schlüsseldienst Berlin", "Schlüsseldienst in der Nähe", "Schlüsseldienst Berlin 24/7"],
+      "internalLinkingPages": ["/leistung/", "/schlüsseldienst-in-der-nähe/", "Navigation", "Footer", "Berliner Bezirksseiten"],
+      "mergedOldUrls": ["/startseite/"],
+      "searchConsoleStart": { "scope": "page", "clicks": 101, "impressions": 34084, "averagePosition": 23.69 }
+    },
+    {
+      "primaryKeyword": "Schlüsselnotdienst Berlin",
+      "intent": "lokal-transaktional, akuter Notfall",
+      "preferredUrl": "/leistung/schlüsselnotdienst/",
+      "supportingKeywords": ["Schlüsselnotdienst 24/7", "ausgesperrt Berlin", "Schlüssel verloren Berlin", "Schlüssel abgebrochen"],
+      "internalLinkingPages": ["/", "/leistung/", "/türöffnung-berlin-24h-notdienst/", "/schlüsseldienst-in-der-nähe/"],
+      "mergedOldUrls": [],
+      "searchConsoleStart": { "scope": "query", "clicks": 0, "impressions": 1261, "averagePosition": 52.8 }
+    },
+    {
+      "primaryKeyword": "Türöffnung Berlin",
+      "intent": "lokal-transaktional, Tür öffnen lassen",
+      "preferredUrl": "/türöffnung-berlin-24h-notdienst/",
+      "supportingKeywords": ["Türöffnung Berlin 24/7", "Wohnungstür öffnen Berlin", "Tür zu Schlüssel steckt innen", "Tür abgeschlossen"],
+      "internalLinkingPages": ["/", "/leistung/", "/leistung/schlüsselnotdienst/", "/schlüsseldienst-berlin-preise/"],
+      "mergedOldUrls": ["/leistung/schlüsseldienst-berlin-türöffnung-notdienst-24h/"],
+      "searchConsoleStart": {
+        "query": { "clicks": 1, "impressions": 390, "averagePosition": 44.76 },
+        "page": { "impressions": 68, "averagePosition": 20.28 }
+      }
+    },
+    {
+      "primaryKeyword": "Tür zugefallen Berlin",
+      "intent": "lokal-transaktional, konkrete Türöffnung",
+      "preferredUrl": "/leistung/öffnung-bei-zugefallenen-türen/",
+      "supportingKeywords": ["zugefallene Tür öffnen", "Tür nur zugefallen", "Türöffnung zugefallene Tür"],
+      "internalLinkingPages": ["/türöffnung-berlin-24h-notdienst/", "/leistung/schlüsselnotdienst/", "/ratgeber/tuer-zugefallen-berlin/"],
+      "mergedOldUrls": [],
+      "searchConsoleStart": { "scope": "page", "impressions": 31, "averagePosition": 15.03 }
+    },
+    {
+      "primaryKeyword": "Tür zugefallen was tun",
+      "intent": "informational, erste Hilfe und Entscheidung",
+      "preferredUrl": "/ratgeber/tuer-zugefallen-berlin/",
+      "supportingKeywords": ["Tür zugefallen Tipps", "ausgesperrt was tun", "Tür zugefallen ohne Schlüssel"],
+      "internalLinkingPages": ["/ratgeber/", "/leistung/öffnung-bei-zugefallenen-türen/"],
+      "mergedOldUrls": ["/tür-zugefallen-was-tun/"],
+      "searchConsoleStart": null
+    },
+    {
+      "primaryKeyword": "Schlüsseldienst Berlin Preise",
+      "intent": "kommerziell, Preisvergleich vor Beauftragung",
+      "preferredUrl": "/schlüsseldienst-berlin-preise/",
+      "supportingKeywords": ["Türöffnung Berlin Kosten", "Schlüsseldienst Festpreis", "Türöffnung Preise", "Schlüsseldienst Zuschläge"],
+      "internalLinkingPages": ["/", "/türöffnung-berlin-24h-notdienst/", "/leistung/schlüsselnotdienst/", "/ratgeber/schluesseldienst-kosten-berlin/"],
+      "mergedOldUrls": ["/türöffnung-berlin-kosten/"],
+      "searchConsoleStart": {
+        "cluster": { "clicks": 0, "impressionsApprox": 65 },
+        "mergedPage": { "clicks": 0, "impressions": 18, "averagePosition": 25.33 }
+      }
+    },
+    {
+      "primaryKeyword": "Schlüsseldienst Kosten Berlin",
+      "intent": "informational, Kostenfaktoren verstehen",
+      "preferredUrl": "/ratgeber/schluesseldienst-kosten-berlin/",
+      "supportingKeywords": ["was kostet ein Schlüsseldienst", "Schlüsseldienst Kostenfaktoren", "Türöffnung Zuschläge"],
+      "internalLinkingPages": ["/ratgeber/", "/schlüsseldienst-berlin-preise/"],
+      "mergedOldUrls": [],
+      "searchConsoleStart": { "scope": "price-and-cost-query-cluster", "clicks": 0, "impressionsApprox": 65 }
+    },
+    {
+      "primaryKeyword": "Sicherheitsschloss montieren Berlin",
+      "intent": "lokal-kommerziell, geplante Sicherheitsmontage",
+      "preferredUrl": "/leistung/montage-von-sicherheitsschlösser/",
+      "supportingKeywords": ["Sicherheitsschloss nachrüsten", "Sicherheitsschloss Montage", "Türsicherheit Berlin"],
+      "internalLinkingPages": ["/leistung/", "/leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi/"],
+      "mergedOldUrls": [],
+      "searchConsoleStart": { "scope": "page", "clicks": 2, "impressions": 208 }
+    }
+  ]
+}
