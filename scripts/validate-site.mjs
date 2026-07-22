@@ -144,6 +144,24 @@ const alternateSet = [
   ["pt-BR", `${site}/pt/chaveiro-berlim/`],
   ["x-default", `${site}/`]
 ];
+const languageOptions = [
+  ["de", "/", "DE", "Deutsch"],
+  ["en", "/en/locksmith-berlin/", "EN", "English"],
+  ["es", "/es/cerrajero-berlin/", "ES", "Español"],
+  ["pt-BR", "/pt/chaveiro-berlim/", "PT", "Português"]
+];
+
+function validateLanguageDropdown(html, currentCode, context) {
+  const current = languageOptions.find(([code]) => code === currentCode);
+  const menu = html.match(/<div class="language-menu"[^>]*>([\s\S]*?)<\/div>/i)?.[1] || "";
+  const nav = html.match(/<nav id="main-nav"[^>]*>([\s\S]*?)<\/nav>/i)?.[1] || "";
+  if (!current || !html.includes(`<button class="language-toggle"`) || !html.includes(`<span>${current?.[2]}</span>`)) errors.push(`${context}: aktuelles Sprachkürzel fehlt`);
+  if (!html.includes('aria-haspopup="true"') || !html.includes('aria-expanded="false"') || !html.includes('aria-controls="language-menu"')) errors.push(`${context}: ARIA-Angaben des Sprachmenüs fehlen`);
+  if ((menu.match(/role="menuitem"/g) || []).length !== 3) errors.push(`${context}: Sprachmenü muss genau drei Optionen enthalten`);
+  for (const [, href, , label] of languageOptions.filter(([code]) => code !== currentCode)) if (!menu.includes(`href="${href}"`) || !menu.includes(`>${label}</a>`)) errors.push(`${context}: Sprachoption fehlt: ${label}`);
+  if (current && menu.includes(`href="${current[1]}"`)) errors.push(`${context}: aktuelle Sprache darf nicht im Dropdown stehen`);
+  if (nav.includes("language-switcher")) errors.push(`${context}: Sprachumschalter steht noch in der Hauptnavigation`);
+}
 const internationalExpectations = [
   {
     route: "/en/locksmith-berlin/",
@@ -219,6 +237,7 @@ for (const expectation of internationalExpectations) {
   const visibleMain = html.match(/<main>([\s\S]*?)<\/main>/i)?.[1] || "";
   if (expectation.hreflang === "es" && /\b(?:você|chaveiro|fechadura|serviço|preço|ligue)\b/iu.test(visibleMain)) errors.push(`${expectation.route}: portugiesische Begriffe im spanischen Hauptinhalt`);
   if (expectation.hreflang === "pt-BR" && /\b(?:cerrajero|cerradura|llaves|llamar|puerta)\b/iu.test(visibleMain)) errors.push(`${expectation.route}: spanische Begriffe im portugiesischen Hauptinhalt`);
+  validateLanguageDropdown(html, expectation.hreflang, expectation.route);
 }
 
 for (const [code, href] of alternateSet) {
@@ -227,6 +246,7 @@ for (const [code, href] of alternateSet) {
 }
 if (!home.includes('property="og:locale" content="de_DE"')) errors.push("Startseite: og:locale de_DE fehlt");
 for (const href of ["/en/locksmith-berlin/", "/es/cerrajero-berlin/", "/pt/chaveiro-berlim/"]) if (!home.includes(`href="${href}"`)) errors.push(`Startseite: Sprachumschalter-Link fehlt ${href}`);
+validateLanguageDropdown(home, "de", "Startseite");
 
 const generator = fs.readFileSync(path.join(root, "scripts/build-site.mjs"), "utf8");
 if (generator.toLowerCase().includes(obsoleteEmail) || /Ramlerstr\. 2(?!a)/i.test(generator)) errors.push("Alte Kontaktdaten in zentraler Build-Quelle vorhanden");
