@@ -206,7 +206,11 @@ for (const expectation of internationalExpectations) {
   }
   for (const href of ["/", "/en/locksmith-berlin/", "/es/cerrajero-berlin/", "/pt/chaveiro-berlim/"]) if (!html.includes(`href="${href}"`)) errors.push(`${expectation.route}: Sprachlink fehlt ${href}`);
   if (/href="\/(?:leistung|ratgeber|schlüsseldienst-berlin-preise|türöffnung)/i.test(html)) errors.push(`${expectation.route}: unnötiger Link auf deutsche Unterseite vorhanden`);
-  if (/(?:79|89|99|109|129)\s*€/u.test(html)) errors.push(`${expectation.route}: zusätzlicher Preis außer 59 € vorhanden`);
+  const fullPriceList = expectation.hreflang === "en"
+    ? ["€59", "€79", "€89", "€99", "€109", "€129"]
+    : ["59 €", "79 €", "89 €", "99 €", "109 €", "129 €"];
+  for (const price of fullPriceList) if (!html.includes(price)) errors.push(`${expectation.route}: Preis aus deutscher Preisliste fehlt: ${price}`);
+  if (!html.includes('class="price-table-wrap"') || !html.includes('class="mobile-price-list"')) errors.push(`${expectation.route}: Desktop- oder Mobil-Preisliste fehlt`);
   const ldScripts = [...html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)].map((match) => JSON.parse(match[1]));
   const graph = ldScripts.flatMap((json) => json["@graph"] || []);
   for (const type of ["Locksmith", "WebPage", "Service", "FAQPage"]) if (!graph.some((item) => item["@type"] === type)) errors.push(`${expectation.route}: Schema-Typ ${type} fehlt`);
