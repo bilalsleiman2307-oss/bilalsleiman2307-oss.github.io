@@ -19,6 +19,81 @@ if (locksmithMenuButton && locksmithMenu) {
   });
 }
 
+document.querySelectorAll("[data-language-switcher]").forEach((switcher) => {
+  const toggle = switcher.querySelector(".language-toggle");
+  const menu = switcher.querySelector(".language-menu");
+  const links = [...switcher.querySelectorAll(".language-menu a")];
+  if (!(toggle instanceof HTMLButtonElement) || !(menu instanceof HTMLElement) || links.length === 0) return;
+
+  const open = (focusIndex = null) => {
+    switcher.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    if (focusIndex !== null) window.requestAnimationFrame(() => links.at(focusIndex)?.focus());
+  };
+
+  const close = (returnFocus = false) => {
+    switcher.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    if (returnFocus) toggle.focus();
+  };
+
+  toggle.addEventListener("click", () => {
+    if (toggle.getAttribute("aria-expanded") === "true") close();
+    else open();
+  });
+
+  switcher.addEventListener("pointerenter", (event) => {
+    if (event.pointerType === "mouse") open();
+  });
+
+  switcher.addEventListener("pointerleave", (event) => {
+    if (event.pointerType === "mouse" && !switcher.contains(document.activeElement)) close();
+  });
+
+  toggle.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      open(0);
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      open(-1);
+    } else if (event.key === "Escape") {
+      event.preventDefault();
+      close(true);
+    }
+  });
+
+  menu.addEventListener("keydown", (event) => {
+    const currentIndex = links.indexOf(document.activeElement);
+    if (event.key === "Escape") {
+      event.preventDefault();
+      close(true);
+    } else if (event.key === "ArrowDown") {
+      event.preventDefault();
+      links[(currentIndex + 1) % links.length].focus();
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      links[(currentIndex - 1 + links.length) % links.length].focus();
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      links[0].focus();
+    } else if (event.key === "End") {
+      event.preventDefault();
+      links.at(-1)?.focus();
+    }
+  });
+
+  switcher.addEventListener("focusout", () => {
+    window.setTimeout(() => {
+      if (!switcher.contains(document.activeElement)) close();
+    }, 0);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!switcher.contains(event.target)) close();
+  });
+});
+
 if (menuButton && mobileMenu) {
   menuButton.addEventListener("click", () => {
     const isOpen = menuButton.getAttribute("aria-expanded") === "true";
