@@ -2873,3 +2873,152 @@ main section:not(.page-hero-image) img,
     min-height: 48px !important;
   }
 }
+
+/* Compact language navigation and localized service pages */
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 2px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.main-nav .language-switcher a {
+  padding: 5px 2px;
+  border: 0;
+  color: var(--text-muted);
+  font-weight: 800;
+}
+
+.main-nav .language-switcher a[aria-current="page"] {
+  color: var(--trust-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.language-switcher span {
+  color: var(--trust-line);
+}
+
+.international-page [id] {
+  scroll-margin-top: 110px;
+}
+
+.international-hero .international-hero-lead {
+  max-width: 760px;
+  margin-top: 22px;
+  font-size: clamp(18px, 2vw, 21px);
+  line-height: 1.55;
+}
+
+.hero-phone {
+  display: inline-flex;
+  margin-top: 18px;
+  color: #fff;
+  font-size: clamp(22px, 2.4vw, 30px);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.hero-phone:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.international-process {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.international-area-card strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--trust-navy);
+  font-size: clamp(30px, 4vw, 44px);
+}
+
+.international-price-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+  gap: 42px;
+  align-items: center;
+  padding: clamp(28px, 5vw, 54px);
+  background: #fff;
+  border: 1px solid var(--trust-line);
+  box-shadow: var(--shadow-soft);
+}
+
+.international-price-value {
+  display: inline-flex;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  background: var(--trust-navy);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.international-price-panel p {
+  max-width: 760px;
+}
+
+.international-page h1,
+.international-page h2,
+.international-page h3,
+.international-page p,
+.international-page a,
+.international-page summary {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1180px) and (min-width: 861px) {
+  .main-nav {
+    gap: 11px;
+  }
+
+  .main-nav > a {
+    font-size: 13px;
+  }
+
+  .header-actions .button-whatsapp {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .site-header .main-nav.is-open .language-switcher {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    justify-content: start;
+    gap: 8px;
+    padding: 12px 4px 4px;
+  }
+
+  .site-header .main-nav.is-open .language-switcher a {
+    padding: 8px 2px !important;
+    border: 0 !important;
+  }
+
+  .international-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .international-price-panel {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .international-hero h1 {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+
+  .international-process {
+    grid-template-columns: 1fr;
+  }
+
+  .international-price-panel {
+    padding: 24px 20px;
+  }
+}

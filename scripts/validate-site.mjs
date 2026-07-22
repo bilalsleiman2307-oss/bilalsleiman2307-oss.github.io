@@ -137,6 +137,93 @@ for (const price of ["59 €", "79 €", "99 €", "89 €", "109 €", "129 €
 if (!home.includes("105 Bewertungen")) errors.push("Startseite: bestehende Anzahl von 105 Bewertungen fehlt");
 if (canonicalPages.some((page) => page.html.includes("Suchintention"))) errors.push("Sichtbare SEO-Templateformulierung Suchintention vorhanden");
 
+const alternateSet = [
+  ["de", `${site}/`],
+  ["en", `${site}/en/locksmith-berlin/`],
+  ["es", `${site}/es/cerrajero-berlin/`],
+  ["pt-BR", `${site}/pt/chaveiro-berlim/`],
+  ["x-default", `${site}/`]
+];
+const internationalExpectations = [
+  {
+    route: "/en/locksmith-berlin/",
+    lang: "en",
+    hreflang: "en",
+    locale: "en_GB",
+    title: "24/7 Locksmith Berlin | Door Opening & Emergency Service",
+    description: "Locked out in Berlin? Door opening from €59, 24/7 emergency locksmith service and arrival in 10–30 minutes throughout Berlin. Call now.",
+    h1: "24/7 Locksmith in Berlin – Fast Help in 10–30 Minutes",
+    metaPrice: "Door opening from €59",
+    heroFacts: ["Door opening from €59", "24/7 availability", "arrival in 10–30 minutes", "throughout Berlin"]
+  },
+  {
+    route: "/es/cerrajero-berlin/",
+    lang: "es",
+    hreflang: "es",
+    locale: "es_ES",
+    title: "Cerrajero 24 horas en Berlín | Apertura de puertas",
+    description: "¿Te has quedado fuera en Berlín? Apertura de puertas desde 59 €, cerrajero 24 horas y llegada en 10–30 minutos en todo Berlín. Llámanos.",
+    h1: "Cerrajero 24 horas en Berlín – Ayuda rápida en 10–30 minutos",
+    metaPrice: "Apertura de puertas desde 59 €",
+    heroFacts: ["apertura de puertas en todo Berlín desde 59 €", "servicio 24 horas", "llegada en 10–30 minutos"]
+  },
+  {
+    route: "/pt/chaveiro-berlim/",
+    lang: "pt-BR",
+    hreflang: "pt-BR",
+    locale: "pt_BR",
+    title: "Chaveiro 24 horas em Berlim | Abertura de portas",
+    description: "Ficou trancado para fora em Berlim? Abertura de portas a partir de 59 €, chaveiro 24 horas e chegada em 10–30 minutos. Ligue agora.",
+    h1: "Chaveiro 24 horas em Berlim – Ajuda rápida em 10–30 minutos",
+    metaPrice: "Abertura de portas a partir de 59 €",
+    heroFacts: ["abertura de portas em toda Berlim a partir de 59 €", "atendimento 24 horas", "chegada em 10–30 minutos"]
+  }
+];
+
+for (const expectation of internationalExpectations) {
+  const page = pageByRoute.get(expectation.route);
+  if (!page) { errors.push(`Internationale Seite fehlt: ${expectation.route}`); continue; }
+  const html = page.html;
+  const lang = html.match(/<html\s+lang="([^"]+)"/i)?.[1];
+  const title = decode(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || "");
+  const description = html.match(/<meta\s+name="description"\s+content="([^"]+)"/i)?.[1] || "";
+  const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i)?.[1];
+  if (lang !== expectation.lang) errors.push(`${expectation.route}: lang muss ${expectation.lang} sein`);
+  if (title !== expectation.title) errors.push(`${expectation.route}: SEO-Titel stimmt nicht`);
+  if (description !== expectation.description) errors.push(`${expectation.route}: Meta Description stimmt nicht`);
+  if (!description.includes(expectation.metaPrice)) errors.push(`${expectation.route}: Preisformulierung fehlt in Meta Description`);
+  if (canonical !== `${site}${expectation.route}`) errors.push(`${expectation.route}: Canonical ist nicht selbstreferenzierend`);
+  if (/noindex/i.test(html)) errors.push(`${expectation.route}: darf nicht noindex sein`);
+  if (!html.includes(`<h1>${expectation.h1}</h1>`)) errors.push(`${expectation.route}: vorgegebene H1 fehlt`);
+  for (const fact of expectation.heroFacts) if (!html.includes(fact)) errors.push(`${expectation.route}: Hero-Fakt fehlt: ${fact}`);
+  const priceToken = expectation.hreflang === "en" ? "€59" : "59 €";
+  if ((html.split(priceToken).length - 1) < 4) errors.push(`${expectation.route}: Preis muss in Hero, Meta, Preisbereich und FAQ vorkommen`);
+  if ((html.match(/<details class="faq-item">/g) || []).length < 8) errors.push(`${expectation.route}: mindestens acht sichtbare FAQ erwartet`);
+  if (!html.includes(`property="og:locale" content="${expectation.locale}"`)) errors.push(`${expectation.route}: falsches og:locale`);
+  for (const [code, href] of alternateSet) {
+    const pattern = `<link rel="alternate" hreflang="${code}" href="${href}">`;
+    if ((html.split(pattern).length - 1) !== 1) errors.push(`${expectation.route}: hreflang ${code} fehlt oder ist doppelt`);
+  }
+  for (const href of ["/", "/en/locksmith-berlin/", "/es/cerrajero-berlin/", "/pt/chaveiro-berlim/"]) if (!html.includes(`href="${href}"`)) errors.push(`${expectation.route}: Sprachlink fehlt ${href}`);
+  if (/href="\/(?:leistung|ratgeber|schlüsseldienst-berlin-preise|türöffnung)/i.test(html)) errors.push(`${expectation.route}: unnötiger Link auf deutsche Unterseite vorhanden`);
+  if (/(?:79|89|99|109|129)\s*€/u.test(html)) errors.push(`${expectation.route}: zusätzlicher Preis außer 59 € vorhanden`);
+  const ldScripts = [...html.matchAll(/<script\s+type="application\/ld\+json">([\s\S]*?)<\/script>/gi)].map((match) => JSON.parse(match[1]));
+  const graph = ldScripts.flatMap((json) => json["@graph"] || []);
+  for (const type of ["Locksmith", "WebPage", "Service", "FAQPage"]) if (!graph.some((item) => item["@type"] === type)) errors.push(`${expectation.route}: Schema-Typ ${type} fehlt`);
+  const webpage = graph.find((item) => item["@type"] === "WebPage");
+  if (webpage?.inLanguage !== expectation.lang) errors.push(`${expectation.route}: WebPage inLanguage stimmt nicht`);
+  const visibleMain = html.match(/<main>([\s\S]*?)<\/main>/i)?.[1] || "";
+  if (expectation.hreflang === "es" && /\b(?:você|chaveiro|fechadura|serviço|preço|ligue)\b/iu.test(visibleMain)) errors.push(`${expectation.route}: portugiesische Begriffe im spanischen Hauptinhalt`);
+  if (expectation.hreflang === "pt-BR" && /\b(?:cerrajero|cerradura|llaves|llamar|puerta)\b/iu.test(visibleMain)) errors.push(`${expectation.route}: spanische Begriffe im portugiesischen Hauptinhalt`);
+}
+
+for (const [code, href] of alternateSet) {
+  const pattern = `<link rel="alternate" hreflang="${code}" href="${href}">`;
+  if ((home.split(pattern).length - 1) !== 1) errors.push(`Startseite: hreflang ${code} fehlt oder ist doppelt`);
+}
+if (!home.includes('property="og:locale" content="de_DE"')) errors.push("Startseite: og:locale de_DE fehlt");
+for (const href of ["/en/locksmith-berlin/", "/es/cerrajero-berlin/", "/pt/chaveiro-berlim/"]) if (!home.includes(`href="${href}"`)) errors.push(`Startseite: Sprachumschalter-Link fehlt ${href}`);
+
 const generator = fs.readFileSync(path.join(root, "scripts/build-site.mjs"), "utf8");
 if (generator.toLowerCase().includes(obsoleteEmail) || /Ramlerstr\. 2(?!a)/i.test(generator)) errors.push("Alte Kontaktdaten in zentraler Build-Quelle vorhanden");
 
