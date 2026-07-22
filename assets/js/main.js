@@ -94,6 +94,78 @@ document.querySelectorAll("[data-language-switcher]").forEach((switcher) => {
   });
 });
 
+window.addEventListener("load", () => {
+  if (!document.documentElement.lang.toLowerCase().startsWith("de")) return;
+  if (/bot|crawler|spider/i.test(navigator.userAgent)) return;
+
+  const storageKey = "trust-language-suggestion-dismissed";
+  try {
+    if (window.localStorage.getItem(storageKey) === "true") return;
+  } catch {
+    // The notice can still be used when storage is unavailable.
+  }
+
+  const browserLanguages = navigator.languages?.length
+    ? navigator.languages
+    : [navigator.language];
+  const preferredLanguage = browserLanguages
+    .map((language) => String(language).toLowerCase().split("-")[0])
+    .find((language) => ["de", "en", "es", "pt"].includes(language));
+
+  if (!preferredLanguage || preferredLanguage === "de") return;
+
+  const suggestions = {
+    en: {
+      text: "This page is also available in English.",
+      linkText: "View English version",
+      stayText: "Stay in German",
+      href: "/en/locksmith-berlin/",
+      label: "English language suggestion"
+    },
+    es: {
+      text: "Esta página también está disponible en español.",
+      linkText: "Ver la versión en español",
+      stayText: "Continuar en alemán",
+      href: "/es/cerrajero-berlin/",
+      label: "Sugerencia de idioma español"
+    },
+    pt: {
+      text: "Esta página também está disponível em português.",
+      linkText: "Ver versão em português",
+      stayText: "Continuar em alemão",
+      href: "/pt/chaveiro-berlim/",
+      label: "Sugestão de idioma português"
+    }
+  };
+  const suggestion = suggestions[preferredLanguage];
+  if (!suggestion) return;
+
+  const notice = document.createElement("aside");
+  notice.className = "language-suggestion";
+  notice.setAttribute("role", "region");
+  notice.setAttribute("aria-label", suggestion.label);
+  notice.innerHTML = `<p>${suggestion.text}</p><div class="language-suggestion-actions"><a href="${suggestion.href}">${suggestion.linkText}</a><button type="button">${suggestion.stayText}</button></div>`;
+
+  const rememberAndClose = () => {
+    try {
+      window.localStorage.setItem(storageKey, "true");
+    } catch {
+      // Closing the current notice must still work without storage.
+    }
+    notice.remove();
+  };
+
+  notice.querySelector("a")?.addEventListener("click", () => {
+    try {
+      window.localStorage.setItem(storageKey, "true");
+    } catch {
+      // Navigation remains explicitly user initiated.
+    }
+  });
+  notice.querySelector("button")?.addEventListener("click", rememberAndClose);
+  document.body.append(notice);
+});
+
 if (menuButton && mobileMenu) {
   menuButton.addEventListener("click", () => {
     const isOpen = menuButton.getAttribute("aria-expanded") === "true";
