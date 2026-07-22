@@ -3022,3 +3022,60 @@ main section:not(.page-hero-image) img,
     padding: 24px 20px;
   }
 }
+
+/* Header brand: the logo already contains the full business name. */
+.site-header .container-wide {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.site-header .brand {
+  min-width: 215px;
+  flex: 0 0 215px;
+  overflow: hidden;
+}
+
+.site-header .brand img {
+  display: block;
+  width: 215px;
+  height: 68px;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1180px) and (min-width: 861px) {
+  .site-header .brand {
+    min-width: 178px;
+    flex-basis: 178px;
+  }
+
+  .site-header .brand img {
+    width: 178px;
+    height: 62px;
+  }
+}
+
+@media (max-width: 860px) {
+  .site-header .container-wide {
+    padding-left: 8px !important;
+    padding-right: 10px !important;
+  }
+
+  .site-header .brand {
+    min-width: 0 !important;
+    flex: 0 1 230px !important;
+    overflow: hidden !important;
+  }
+
+  .site-header .brand img {
+    width: 230px !important;
+    height: 72px !important;
+    max-width: calc(100vw - 82px) !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+}

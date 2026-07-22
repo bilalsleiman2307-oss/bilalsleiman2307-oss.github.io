@@ -62,6 +62,16 @@ export const internationalPages = {
       "A new profile cylinder is not automatically included in the door-opening price.",
       "A key inserted on the inside does not change the price of the door opening."
     ],
+    priceTable: {
+      eyebrow: "Transparent price guide",
+      columns: ["Service", "7 am–8 pm", "8 pm–12 am", "12 am–7 am"],
+      rows: [
+        ["Open a slammed door", "€59", "€79", "€99"],
+        ["Open a locked door", "€89", "€109", "€129"],
+        ["Cylinder replacement", "€89", "€109", "€129"]
+      ],
+      finePrint: "All prices include VAT. Travel and any additional work are explained by phone and agreed before work begins. Profile cylinders, security fittings and other materials are included only after explicit agreement."
+    },
     faqTitle: "Frequently asked questions about locksmith service in Berlin",
     faqs: [
       ["How quickly can the locksmith arrive?", "Our usual arrival time throughout Berlin is 10–30 minutes. We give you a realistic estimate when you contact us."],
@@ -145,6 +155,16 @@ export const internationalPages = {
       "Un bombín o cilindro nuevo no está incluido automáticamente en el precio de apertura.",
       "Una llave colocada en el interior no cambia el precio de la apertura."
     ],
+    priceTable: {
+      eyebrow: "Orientación de precios transparente",
+      columns: ["Servicio", "07–20 h", "20–00 h", "00–07 h"],
+      rows: [
+        ["Abrir una puerta cerrada de golpe", "59 €", "79 €", "99 €"],
+        ["Abrir una puerta bloqueada con llave", "89 €", "109 €", "129 €"],
+        ["Cambio de bombín", "89 €", "109 €", "129 €"]
+      ],
+      finePrint: "Todos los precios incluyen IVA. El desplazamiento y los posibles trabajos adicionales se indican por teléfono y se acuerdan antes de empezar. Los bombines, herrajes de seguridad y otros materiales solo se incluyen tras un acuerdo expreso."
+    },
     faqTitle: "Preguntas frecuentes sobre el servicio de cerrajería en Berlín",
     faqs: [
       ["¿Cuánto tarda en llegar el cerrajero?", "Nuestro tiempo habitual de llegada en Berlín es de 10–30 minutos. Al contactar te damos una estimación realista."],
@@ -228,6 +248,16 @@ export const internationalPages = {
       "Um cilindro de perfil novo não está incluído automaticamente no preço da abertura.",
       "Uma chave inserida pelo lado de dentro não altera o preço da abertura."
     ],
+    priceTable: {
+      eyebrow: "Orientação de preços transparente",
+      columns: ["Serviço", "07h–20h", "20h–00h", "00h–07h"],
+      rows: [
+        ["Abrir uma porta que apenas bateu", "59 €", "79 €", "99 €"],
+        ["Abrir uma porta trancada com chave", "89 €", "109 €", "129 €"],
+        ["Troca do cilindro", "89 €", "109 €", "129 €"]
+      ],
+      finePrint: "Todos os preços incluem IVA. O deslocamento e possíveis serviços adicionais são informados por telefone e combinados antes do início. Cilindros, ferragens de segurança e outros materiais só são incluídos após acordo expresso."
+    },
     faqTitle: "Dúvidas frequentes sobre o serviço de chaveiro em Berlim",
     faqs: [
       ["Em quanto tempo o chaveiro pode chegar?", "Nosso tempo normal de chegada em Berlim é de 10–30 minutos. Ao entrar em contato, informamos uma previsão realista."],
