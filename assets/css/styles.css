@@ -3173,6 +3173,78 @@ main section:not(.page-hero-image) img,
   }
 }
 
+/* District pages: compact introduction, visible work examples and balanced logos. */
+.district-intro-grid {
+  display: block;
+}
+
+.district-intro-copy {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.district-intro {
+  padding-bottom: 32px !important;
+}
+
+.district-case-section {
+  padding-top: 32px !important;
+}
+
+.district-case {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  gap: clamp(26px, 4vw, 54px);
+  align-items: center;
+}
+
+.district-case-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--trust-line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(13, 41, 61, .12);
+}
+
+main section.district-case-section .district-case-photo img {
+  display: block !important;
+  width: 100%;
+  height: clamp(320px, 34vw, 470px);
+  object-fit: cover;
+}
+
+.district-case-copy h2 {
+  margin-bottom: 18px;
+}
+
+.district-case-copy p {
+  color: var(--trust-muted);
+}
+
+.district-case-copy .card-button {
+  margin-top: 10px;
+}
+
+@media (max-width: 860px) {
+  .district-intro {
+    padding-bottom: 24px !important;
+  }
+
+  .district-case-section {
+    padding-top: 24px !important;
+  }
+
+  .district-case {
+    grid-template-columns: 1fr;
+  }
+
+  main section.district-case-section .district-case-photo img {
+    height: min(74vw, 390px);
+  }
+
+}
+
 /* Priority district landing pages */
 .district-trust-line { margin: 0 0 14px; color: #fff; font-size: 18px; font-weight: 800; line-height: 1.35; }
 .district-intro-grid { align-items: center; }
@@ -3422,5 +3494,46 @@ main section:not(.page-hero-image) img,
     right: 12px;
     left: 12px;
     width: auto;
+  }
+}
+
+/* Definitive logo sizing after all legacy overrides. */
+.site-header .brand {
+  min-width: 188px;
+  flex-basis: 188px;
+}
+
+.site-header .brand img {
+  width: 188px;
+  max-height: 62px;
+}
+
+.site-footer .footer-logo {
+  display: block;
+  width: 230px !important;
+  max-width: 100%;
+  max-height: none !important;
+  height: auto !important;
+  padding: 8px 10px;
+  object-fit: contain;
+}
+
+@media (max-width: 860px) {
+  .site-header .brand {
+    min-width: 0 !important;
+    flex: 0 1 auto !important;
+  }
+
+  .site-header .brand img {
+    width: clamp(158px, 45vw, 184px) !important;
+    height: auto !important;
+    max-height: 62px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer .footer-logo {
+    width: 210px !important;
+    max-height: none !important;
   }
 }
