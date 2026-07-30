@@ -130,9 +130,13 @@ const homeVisibleWords = decode(homeMain).split(/\s+/u).filter(Boolean).length;
 if (homeTitle !== "Trust Schlüsseldienst Berlin ab 59 € | Festpreis am Telefon") errors.push("Startseite: vorgesehener HTML-Title stimmt nicht");
 if (homeDescription.length < 145 || homeDescription.length > 160) errors.push(`Startseite: Meta Description hat ${homeDescription.length} statt 145–160 Zeichen`);
 if (!home.includes('<h1><span class="home-h1-brand">Trust Schlüsseldienst Berlin</span><span class="home-h1-offer"> – Türöffnung ab 59 €</span></h1>')) errors.push("Startseite: vorgegebene H1 fehlt");
-if (!home.includes("Ausgesperrt, Tür zugefallen, Schlüssel verloren oder im Schloss abgebrochen?")) errors.push("Startseite: neuer Hero-Einleitungstext fehlt");
-if (!home.includes('class="home-hero-rating"') || !home.includes("5,0</strong> bei 105 Bewertungen")) errors.push("Startseite: kompakter Google-Hinweis fehlt");
-if ((home.match(/<li>[^<]+<\/li>/g) || []).filter((item) => /24\/7|59 €|Festpreis|10–30 Minuten/.test(item)).length < 4) errors.push("Startseite: vier Vertrauenspunkte fehlen");
+if (!home.includes("Tür zugefallen, ausgesperrt, Schlüssel verloren oder Schloss defekt?")) errors.push("Startseite: neuer Hero-Einleitungstext fehlt");
+if (!home.includes('class="home-hero-rating"') || !home.includes("5,0</strong> · 105 Bewertungen")) errors.push("Startseite: kompakter Google-Hinweis fehlt");
+if ((home.match(/<li>[^<]+<\/li>/g) || []).filter((item) => /24\/7 Schlüsselnotdienst|10–30 Minuten|ohne Beschädigung|Festpreis vor der Anfahrt/.test(item)).length < 4) errors.push("Startseite: vier Vertrauenspunkte fehlen");
+if (!home.includes('<h2>Preise für die Türöffnung bei zugefallener Tür</h2>')) errors.push("Startseite: Preisüberschrift fehlt");
+if (!home.includes('</section><section id="preise" class="section-soft home-price-section">')) errors.push("Startseite: Preisbereich folgt nicht direkt auf den Hero");
+if ((home.match(/class="home-door-price-item(?: home-door-price-item-wide)?"/g) || []).length !== 3) errors.push("Startseite: drei Trust-Preisblöcke erwartet");
+if (!home.includes('href="tel:03040563878"') || !home.includes('href="/schlüsseldienst-berlin-preise/">Alle Preise ansehen</a>')) errors.push("Startseite: Preisaktionen fehlen");
 if (homeVisibleWords < 1400 || homeVisibleWords > 1900) errors.push(`Startseite: sichtbarer Hauptinhalt hat ${homeVisibleWords} statt 1400–1900 Wörter`);
 if (!home.includes('name="twitter:title"') || !home.includes('name="twitter:description"')) errors.push("Startseite: Twitter-Titel oder -Beschreibung fehlt");
 for (const href of ["/türöffnung-berlin-24h-notdienst/", "/leistung/schlüsselnotdienst/", "/schlüsseldienst-berlin-preise/", "/leistung/öffnung-bei-zugefallenen-türen/", "/leistung/öffnung-bei-abgeschlossenen-türen/", "/leistung/schlüsselnotdienst/#schluessel-abgebrochen", "/schlüssel-steckt-innen-tür-zu/", "/leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln/", "/leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi/", "/#kontakt", "/schlüsseldienst-gesundbrunnen/", "/schlüsseldienst-wedding/", "/schlüsseldienst-prenzlauerberg/", "/schlüsseldienst-pankow/", "/schlüsseldienst-mitte/", "/schlüsseldienst-reinickendorf/"]) {
@@ -150,7 +154,8 @@ for (const href of ["/leistung/öffnung-bei-zugefallenen-türen/", "/leistung/ö
 if (!priceTransition.includes(`<link rel="canonical" href="${site}/schlüsseldienst-berlin-preise/">`) || !priceTransition.includes(`http-equiv="refresh" content="0; url=${site}/schlüsseldienst-berlin-preise/"`)) errors.push("Kosten-Übergangsseite verweist nicht korrekt auf die Preisseite");
 if (!fallenService.includes('href="/ratgeber/tuer-zugefallen-berlin/"')) errors.push("Zugefallen-Leistung: Link zum Ratgeber fehlt");
 if (!fallenGuide.includes('href="/leistung/öffnung-bei-zugefallenen-türen/"')) errors.push("Zugefallen-Ratgeber: Link zur Leistung fehlt");
-for (const price of ["59 €", "79 €", "99 €", "89 €", "109 €", "129 €"]) if (!home.includes(price) || !doorOpening.includes(price)) errors.push(`Veröffentlichter Preis fehlt: ${price}`);
+for (const price of ["59 €", "79 €", "99 €"]) if (!home.includes(price)) errors.push(`Startseite: Trust-Preis fehlt: ${price}`);
+for (const price of ["59 €", "79 €", "99 €", "89 €", "109 €", "129 €"]) if (!doorOpening.includes(price)) errors.push(`Türöffnung: veröffentlichter Preis fehlt: ${price}`);
 if (!home.includes("105 Bewertungen")) errors.push("Startseite: bestehende Anzahl von 105 Bewertungen fehlt");
 if (canonicalPages.some((page) => page.html.includes("Suchintention"))) errors.push("Sichtbare SEO-Templateformulierung Suchintention vorhanden");
 
