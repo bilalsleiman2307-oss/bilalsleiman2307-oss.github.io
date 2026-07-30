@@ -68,6 +68,9 @@ for (const page of pages) {
       for (const question of faq?.mainEntity || []) {
         if (!page.html.includes(question.name) || !page.html.includes(question.acceptedAnswer?.text || "")) errors.push(`${rel}: FAQ-Schema stimmt nicht mit sichtbarem Inhalt überein`);
       }
+      for (const service of graph.filter((item) => item["@type"] === "Service")) {
+        if ("inLanguage" in service) errors.push(`${rel}: inLanguage ist im Service-Schema nicht zulässig`);
+      }
       if (graph.some((item) => item.aggregateRating || item.review)) errors.push(`${rel}: unerwartete Bewertungsdaten im Schema`);
     } catch (error) {
       errors.push(`${rel}: ungültiges JSON-LD (${error.message})`);
@@ -89,6 +92,7 @@ for (const page of pages) {
   }
 
   if (page.html.toLowerCase().includes(obsoleteEmail)) errors.push(`${rel}: alte Gmail-Adresse vorhanden`);
+  if (/\+49\s*163\s*8516782/.test(page.html)) errors.push(`${rel}: alte Mobilnummer vorhanden`);
   if (/Ramlerstr\. 2(?!a)/i.test(page.html)) errors.push(`${rel}: alte Hausnummer vorhanden`);
   if (templatePhrases.some((phrase) => page.html.includes(phrase))) errors.push(`${rel}: sichtbare Templateformulierung vorhanden`);
   if (!page.html.includes('class="menu-toggle"') || !page.html.includes('id="main-nav"')) errors.push(`${rel}: mobile Navigation unvollständig`);
@@ -119,9 +123,20 @@ const priceTransition = pageByRoute.get("/türöffnung-berlin-kosten/")?.html ||
 const fallenService = pageByRoute.get("/leistung/öffnung-bei-zugefallenen-türen/")?.html || "";
 const fallenGuide = pageByRoute.get("/ratgeber/tuer-zugefallen-berlin/")?.html || "";
 
-if (!home.includes('<h1>Schlüsseldienst Berlin</h1>')) errors.push("Startseite: exakte H1 Schlüsseldienst Berlin fehlt");
-if (!home.includes('href="/türöffnung-berlin-24h-notdienst/"><h2>Türöffnung Berlin</h2>')) errors.push("Startseite: starker exakter Link Türöffnung Berlin fehlt");
-if (!home.includes('href="/leistung/schlüsselnotdienst/"><h2>Schlüsselnotdienst Berlin</h2>')) errors.push("Startseite: starker exakter Link Schlüsselnotdienst Berlin fehlt");
+const homeTitle = decode(home.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || "");
+const homeDescription = home.match(/<meta\s+name="description"\s+content="([^"]+)"/i)?.[1] || "";
+const homeMain = home.match(/<main>([\s\S]*?)<\/main>/i)?.[1] || "";
+const homeVisibleWords = decode(homeMain).split(/\s+/u).filter(Boolean).length;
+if (homeTitle !== "Trust Schlüsseldienst Berlin ab 59 € | Festpreis am Telefon") errors.push("Startseite: vorgesehener HTML-Title stimmt nicht");
+if (homeDescription.length < 145 || homeDescription.length > 160) errors.push(`Startseite: Meta Description hat ${homeDescription.length} statt 145–160 Zeichen`);
+if (!home.includes('<h1>Trust Schlüsseldienst Berlin ab 59 € – Festpreis am Telefon</h1>')) errors.push("Startseite: vorgegebene H1 fehlt");
+if (!home.includes("24/7 erreichbar · in 10–30 Minuten vor Ort · Festpreis vor der Anfahrt am Telefon")) errors.push("Startseite: sichtbare Unterzeile fehlt");
+if (homeVisibleWords < 1400 || homeVisibleWords > 1900) errors.push(`Startseite: sichtbarer Hauptinhalt hat ${homeVisibleWords} statt 1400–1900 Wörter`);
+if (!home.includes('name="twitter:title"') || !home.includes('name="twitter:description"')) errors.push("Startseite: Twitter-Titel oder -Beschreibung fehlt");
+for (const href of ["/türöffnung-berlin-24h-notdienst/", "/leistung/schlüsselnotdienst/", "/schlüsseldienst-berlin-preise/", "/leistung/öffnung-bei-zugefallenen-türen/", "/leistung/öffnung-bei-abgeschlossenen-türen/", "/leistung/schlüsselnotdienst/#schluessel-abgebrochen", "/schlüssel-steckt-innen-tür-zu/", "/leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln/", "/leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi/", "/#kontakt", "/schlüsseldienst-gesundbrunnen/", "/schlüsseldienst-wedding/", "/schlüsseldienst-prenzlauerberg/", "/schlüsseldienst-pankow/", "/schlüsseldienst-mitte/", "/schlüsseldienst-reinickendorf/"]) {
+  if (!home.includes(`href="${href}"`)) errors.push(`Startseite: Pflichtlink fehlt ${href}`);
+}
+if ((home.match(/<details class="faq-item">/g) || []).length !== 8) errors.push("Startseite: genau acht sichtbare FAQ erwartet");
 if (!emergency.includes('<h1>Schlüsselnotdienst Berlin</h1>')) errors.push("Schlüsselnotdienst: exakte H1 fehlt");
 for (const href of ["/türöffnung-berlin-24h-notdienst/", "/schlüsseldienst-berlin-preise/", "/leistung/öffnung-bei-zugefallenen-türen/", "/leistung/öffnung-bei-abgeschlossenen-türen/"]) {
   if (!emergency.includes(`href="${href}"`)) errors.push(`Schlüsselnotdienst: Pflichtlink fehlt ${href}`);

@@ -3537,3 +3537,211 @@ main section.district-case-section .district-case-photo img {
     max-height: none !important;
   }
 }
+
+/* Startseite: lokale SEO-Inhalte und klare Notfall-Informationen */
+.home-page .home-hero .hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 900px;
+}
+
+.home-page .home-hero h1 {
+  order: 1;
+}
+
+.home-page .home-hero .home-hero-trust-line {
+  order: 2;
+}
+
+.home-page .home-hero .hero-copy > p:not(.home-hero-trust-line) {
+  order: 3;
+}
+
+.home-page .home-hero .google-review-badge {
+  order: 4;
+}
+
+.home-page .home-hero .home-hero-facts {
+  order: 5;
+}
+
+.home-page .home-hero .home-hero-phone {
+  order: 6;
+}
+
+.home-page .home-hero .hero-actions {
+  order: 7;
+}
+
+.home-page .home-hero h1 {
+  max-width: 900px;
+  font-size: clamp(40px, 4.2vw, 60px);
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+}
+
+.home-hero-trust-line {
+  margin: 18px 0 14px !important;
+  font-size: clamp(18px, 2vw, 22px) !important;
+  line-height: 1.35 !important;
+  font-weight: 800;
+  color: #fff !important;
+}
+
+.home-hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 10px;
+}
+
+.home-hero-facts > * {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, .55);
+  border-radius: 4px;
+  background: rgba(17, 42, 59, .62);
+  color: #fff;
+  font-size: 15px;
+}
+
+.home-hero-phone {
+  display: inline-flex;
+  margin: 6px 0 12px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.home-page .home-situation-grid,
+.home-page .home-service-grid {
+  align-items: stretch;
+}
+
+.home-page .home-situation-grid .card,
+.home-page .home-service-grid .card {
+  height: 100%;
+}
+
+.home-page .home-service-grid .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page .home-service-grid .card-button {
+  margin-top: auto;
+}
+
+.home-price-notes {
+  max-width: 960px;
+  margin-top: 24px;
+}
+
+.home-price-notes p {
+  margin: 0 0 14px;
+}
+
+.home-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.home-page .home-explanation,
+.home-page .home-security {
+  align-items: start;
+}
+
+.home-page .home-explanation > div,
+.home-page .home-security > div {
+  min-width: 0;
+}
+
+.home-page .home-security .hero-actions {
+  justify-content: flex-start;
+}
+
+@media (max-width: 900px) {
+  .home-benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page .home-hero .home-hero-phone {
+    order: 3;
+    margin-top: 0;
+  }
+
+  .home-page .home-hero .google-review-badge {
+    order: 4;
+    margin: 4px 0 16px;
+  }
+
+  .home-page .home-hero .hero-copy > p:not(.home-hero-trust-line) {
+    order: 5;
+  }
+
+  .home-page .home-hero .home-hero-facts {
+    order: 6;
+  }
+
+  .home-page .home-hero .hero-actions {
+    order: 7;
+  }
+
+  .home-page .home-hero h1 {
+    font-size: clamp(32px, 9.2vw, 39px);
+    line-height: 1.1;
+  }
+
+  .home-hero-trust-line {
+    font-size: 17px !important;
+  }
+
+  .home-hero-facts {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero-facts > * {
+    width: 100%;
+  }
+
+  .home-hero-phone {
+    font-size: 22px;
+  }
+
+  .home-page .home-hero .hero-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 10px;
+  }
+
+  .home-page .home-hero .hero-actions .button {
+    width: 100%;
+    min-width: 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+  }
+
+  .home-page .home-hero .hero-actions .button:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  .home-page .home-mobile-callbar {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-page .home-mobile-callbar .button {
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+    font-size: 12px !important;
+    white-space: nowrap;
+  }
+}
