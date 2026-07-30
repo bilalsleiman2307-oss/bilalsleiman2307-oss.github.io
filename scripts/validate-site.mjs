@@ -129,8 +129,10 @@ const homeMain = home.match(/<main>([\s\S]*?)<\/main>/i)?.[1] || "";
 const homeVisibleWords = decode(homeMain).split(/\s+/u).filter(Boolean).length;
 if (homeTitle !== "Trust Schlüsseldienst Berlin ab 59 € | Festpreis am Telefon") errors.push("Startseite: vorgesehener HTML-Title stimmt nicht");
 if (homeDescription.length < 145 || homeDescription.length > 160) errors.push(`Startseite: Meta Description hat ${homeDescription.length} statt 145–160 Zeichen`);
-if (!home.includes('<h1>Trust Schlüsseldienst Berlin ab 59 € – Festpreis am Telefon</h1>')) errors.push("Startseite: vorgegebene H1 fehlt");
-if (!home.includes("24/7 erreichbar · in 10–30 Minuten vor Ort · Festpreis vor der Anfahrt am Telefon")) errors.push("Startseite: sichtbare Unterzeile fehlt");
+if (!home.includes('<h1><span class="home-h1-brand">Trust Schlüsseldienst Berlin</span><span class="home-h1-offer"> – Türöffnung ab 59 €</span></h1>')) errors.push("Startseite: vorgegebene H1 fehlt");
+if (!home.includes("Ausgesperrt, Tür zugefallen, Schlüssel verloren oder im Schloss abgebrochen?")) errors.push("Startseite: neuer Hero-Einleitungstext fehlt");
+if (!home.includes('class="home-hero-rating"') || !home.includes("5,0</strong> bei 105 Bewertungen")) errors.push("Startseite: kompakter Google-Hinweis fehlt");
+if ((home.match(/<li>[^<]+<\/li>/g) || []).filter((item) => /24\/7|59 €|Festpreis|10–30 Minuten/.test(item)).length < 4) errors.push("Startseite: vier Vertrauenspunkte fehlen");
 if (homeVisibleWords < 1400 || homeVisibleWords > 1900) errors.push(`Startseite: sichtbarer Hauptinhalt hat ${homeVisibleWords} statt 1400–1900 Wörter`);
 if (!home.includes('name="twitter:title"') || !home.includes('name="twitter:description"')) errors.push("Startseite: Twitter-Titel oder -Beschreibung fehlt");
 for (const href of ["/türöffnung-berlin-24h-notdienst/", "/leistung/schlüsselnotdienst/", "/schlüsseldienst-berlin-preise/", "/leistung/öffnung-bei-zugefallenen-türen/", "/leistung/öffnung-bei-abgeschlossenen-türen/", "/leistung/schlüsselnotdienst/#schluessel-abgebrochen", "/schlüssel-steckt-innen-tür-zu/", "/leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln/", "/leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi/", "/#kontakt", "/schlüsseldienst-gesundbrunnen/", "/schlüsseldienst-wedding/", "/schlüsseldienst-prenzlauerberg/", "/schlüsseldienst-pankow/", "/schlüsseldienst-mitte/", "/schlüsseldienst-reinickendorf/"]) {
