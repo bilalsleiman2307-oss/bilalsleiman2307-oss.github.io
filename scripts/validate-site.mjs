@@ -194,33 +194,33 @@ const internationalExpectations = [
     lang: "en",
     hreflang: "en",
     locale: "en_GB",
-    title: "24/7 Locksmith Berlin | Door Opening & Emergency Service",
-    description: "Locked out in Berlin? Door opening from €59, 24/7 emergency locksmith service and arrival in 10–30 minutes throughout Berlin. Call now.",
-    h1: "24/7 Locksmith in Berlin – Fast Help in 10–30 Minutes",
-    metaPrice: "Door opening from €59",
-    heroFacts: ["Door opening from €59", "24/7 availability", "arrival in 10–30 minutes", "throughout Berlin"]
+    title: "Locksmith Berlin – 24/7 Door Opening from €59 | Trust",
+    description: "Locksmith Berlin available 24/7. Damage-free opening of shut, unlocked doors from €59, arrival in around 10–30 minutes and fixed price by phone.",
+    h1: "Locksmith Berlin – 24/7 Door Opening from €59",
+    metaPrice: "from €59",
+    heroFacts: ["24/7 emergency service", "Arrival in around 10–30 minutes", "Fixed price agreed by phone", "Shut, unlocked doors opened without damage"]
   },
   {
     route: "/es/cerrajero-berlin/",
     lang: "es",
     hreflang: "es",
     locale: "es_ES",
-    title: "Cerrajero 24 horas en Berlín | Apertura de puertas",
-    description: "¿Te has quedado fuera en Berlín? Apertura de puertas desde 59 €, cerrajero 24 horas y llegada en 10–30 minutos en todo Berlín. Llámanos.",
-    h1: "Cerrajero 24 horas en Berlín – Ayuda rápida en 10–30 minutos",
-    metaPrice: "Apertura de puertas desde 59 €",
-    heroFacts: ["apertura de puertas en todo Berlín desde 59 €", "servicio 24 horas", "llegada en 10–30 minutos"]
+    title: "Cerrajero en Berlín 24 horas desde 59 € | Trust",
+    description: "Cerrajero en Berlín disponible 24 horas. Apertura sin daños de puertas cerradas sin llave desde 59 €, llegada en 10–30 minutos y precio fijo por teléfono.",
+    h1: "Cerrajero en Berlín 24 horas – Apertura desde 59 €",
+    metaPrice: "desde 59 €",
+    heroFacts: ["Servicio urgente 24 horas", "Llegada aproximada en 10–30 minutos", "Precio fijo acordado por teléfono", "Puertas cerradas sin llave, apertura sin daños"]
   },
   {
     route: "/pt/chaveiro-berlim/",
     lang: "pt-BR",
     hreflang: "pt-BR",
     locale: "pt_BR",
-    title: "Chaveiro 24 horas em Berlim | Abertura de portas",
-    description: "Ficou trancado para fora em Berlim? Abertura de portas a partir de 59 €, chaveiro 24 horas e chegada em 10–30 minutos. Ligue agora.",
-    h1: "Chaveiro 24 horas em Berlim – Ajuda rápida em 10–30 minutos",
-    metaPrice: "Abertura de portas a partir de 59 €",
-    heroFacts: ["abertura de portas em toda Berlim a partir de 59 €", "atendimento 24 horas", "chegada em 10–30 minutos"]
+    title: "Chaveiro em Berlim 24 horas a partir de 59 € | Trust",
+    description: "Chaveiro em Berlim disponível 24 horas. Abertura sem danos de portas apenas fechadas a partir de 59 €, chegada em 10–30 minutos e preço fixo por telefone.",
+    h1: "Chaveiro em Berlim 24 horas – Abertura a partir de 59 €",
+    metaPrice: "a partir de 59 €",
+    heroFacts: ["Atendimento de emergência 24 horas", "Chegada aproximada em 10–30 minutos", "Preço fixo combinado por telefone", "Porta apenas fechada, abertura sem danos"]
   }
 ];
 
@@ -261,10 +261,33 @@ for (const expectation of internationalExpectations) {
   const webpage = graph.find((item) => item["@type"] === "WebPage");
   if (webpage?.inLanguage !== expectation.lang) errors.push(`${expectation.route}: WebPage inLanguage stimmt nicht`);
   const visibleMain = html.match(/<main>([\s\S]*?)<\/main>/i)?.[1] || "";
+  const wordCount = decode(visibleMain).split(/\s+/u).filter(Boolean).length;
+  if (wordCount < 1200 || wordCount > 1800) errors.push(`${expectation.route}: sichtbarer Inhalt hat ${wordCount} Wörter statt 1200–1800`);
+  if ((html.match(/<h1\b/gi) || []).length !== 1) errors.push(`${expectation.route}: genau eine H1 erwartet`);
+  if (description.length < 140 || description.length > 160) errors.push(`${expectation.route}: Meta Description hat ${description.length} Zeichen statt etwa 140–160`);
+  if (!html.includes('name="twitter:title"') || !html.includes('name="twitter:description"')) errors.push(`${expectation.route}: Twitter-Metadaten fehlen`);
+  const service = graph.find((item) => item["@type"] === "Service");
+  if (service && "inLanguage" in service) errors.push(`${expectation.route}: Service darf kein inLanguage enthalten`);
+  const heroEnd = html.indexOf('</section>');
+  const pricesStart = html.indexOf('<section id="prices"');
+  if (heroEnd < 0 || pricesStart < heroEnd || pricesStart - heroEnd > 20) errors.push(`${expectation.route}: Preisbereich muss direkt nach dem Hero folgen`);
+  if (/English[- ]speaking|Spanish[- ]speaking|Portuguese[- ]speaking|hablamos español|falamos português/iu.test(visibleMain)) errors.push(`${expectation.route}: unbelegte Sprachbehauptung gefunden`);
   if (expectation.hreflang === "es" && /\b(?:você|chaveiro|fechadura|serviço|preço|ligue)\b/iu.test(visibleMain)) errors.push(`${expectation.route}: portugiesische Begriffe im spanischen Hauptinhalt`);
   if (expectation.hreflang === "pt-BR" && /\b(?:cerrajero|cerradura|llaves|llamar|puerta)\b/iu.test(visibleMain)) errors.push(`${expectation.route}: spanische Begriffe im portugiesischen Hauptinhalt`);
   validateLanguageDropdown(html, expectation.hreflang, expectation.route);
 }
+
+const htmlSitemap = pageByRoute.get("/sitemap/");
+if (!htmlSitemap) errors.push("HTML-Sitemap fehlt");
+else {
+  if (!htmlSitemap.html.includes(`<link rel="canonical" href="${site}/sitemap/">`)) errors.push("HTML-Sitemap: selbstreferenzierender Canonical fehlt");
+  if (/noindex/i.test(htmlSitemap.html)) errors.push("HTML-Sitemap darf nicht noindex sein");
+  for (const page of canonicalPages.filter((item) => item.route !== "/sitemap/")) if (!htmlSitemap.html.includes(`href="${page.route}"`)) errors.push(`HTML-Sitemap: kanonische Seite fehlt ${page.route}`);
+  for (const alias of aliasRoutes) if (htmlSitemap.html.includes(`href="${alias}"`)) errors.push(`HTML-Sitemap: Alias darf nicht verlinkt sein ${alias}`);
+}
+if (!sitemapUrls.includes(`${site}/sitemap/`)) errors.push("XML-Sitemap: HTML-Sitemap fehlt");
+for (const route of ["/locksmith-berlin/", "/cerrajero-berlin/", "/chaveiro-berlim/"]) if (routeSet.has(route) || sitemapUrls.includes(`${site}${route}`)) errors.push(`Doppelte Sprachroute gefunden: ${route}`);
+for (const page of canonicalPages) if (!page.html.includes('href="/sitemap/"')) errors.push(`${page.route}: Footer-Link zur Sitemap fehlt`);
 
 for (const [code, href] of alternateSet) {
   const pattern = `<link rel="alternate" hreflang="${code}" href="${href}">`;
