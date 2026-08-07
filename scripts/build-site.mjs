@@ -7,8 +7,12 @@ const root = process.cwd();
 const site = "https://www.trust-schluesseldienstberlin.de";
 const phone = "03040563878";
 const phoneDisplay = "03040563878";
+const schemaPhone = "+49 30 40563878";
 const email = "schluesseldienst@trust-bm-service.de";
 const streetAddress = "Ramlerstr. 2a";
+const businessId = `${site}/#business`;
+const websiteId = `${site}/#website`;
+const businessDescription = "Trust Schlüsseldienst Berlin ist ein 24/7 erreichbarer Schlüsseldienst und Schlüsselnotdienst in Berlin. Das Unternehmen bietet Türöffnungen bei zugefallenen und abgeschlossenen Türen, Schlosswechsel, Schließzylinderwechsel, Hilfe bei Schlüsselverlust oder abgebrochenen Schlüsseln sowie Einbruchschutz und Sicherheitstechnik. Preise und Anfahrt werden vor Arbeitsbeginn transparent abgestimmt.";
 const version = "trust-redesign-15";
 const homepageStyleVersion = "trust-redesign-17";
 const googleReviewUrl = "https://share.google/eskADN8c4gLAJoF4b";
@@ -182,25 +186,147 @@ const pageTypeFor = (slug) => {
   return "service";
 };
 
-const isCommercialPage = (slug) => ["service", "service-index", "district", "price"].includes(pageTypeFor(slug));
+const serviceTypes = {
+  "leistung/schlüsselnotdienst": "Schlüsselnotdienst",
+  "leistung/öffnung-bei-zugefallenen-türen": "Öffnung einer zugefallenen Tür",
+  "leistung/öffnung-bei-abgeschlossenen-türen": "Öffnung einer abgeschlossenen Tür",
+  "leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln": "Schlosswechsel und Schließzylinderwechsel",
+  "leistung/montage-von-sicherheitsschlösser": "Montage von Sicherheitsschlössern",
+  "leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi": "Einbruchschutz und Sicherheitstechnik",
+  "türöffnung-berlin-24h-notdienst": "Türöffnung und Schlüsselnotdienst",
+  "schlüssel-steckt-innen-tür-zu": "Türöffnung bei innen steckendem Schlüssel",
+  "schlüsseldienst-in-der-nähe": "Schlüsseldienst und Türöffnung in Berlin"
+};
+
+const offerCatalogServices = [
+  ["Türöffnung bei zugefallener Tür", "Öffnung einer zugefallenen, nicht abgeschlossenen Tür", "leistung/öffnung-bei-zugefallenen-türen"],
+  ["Türöffnung bei abgeschlossener Tür", "Öffnung einer abgeschlossenen Tür nach Prüfung von Schloss und Zylinder", "leistung/öffnung-bei-abgeschlossenen-türen"],
+  ["Schlüsselnotdienst Berlin", "Hilfe bei Aussperrung, Schlüsselverlust und abgebrochenem Schlüssel", "leistung/schlüsselnotdienst"],
+  ["Schloss- und Schließzylinderwechsel", "Austausch von Schloss oder Schließzylinder nach vorheriger Absprache", "leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln"],
+  ["Einbruchschutz und Sicherheitstechnik", "Prüfung und Montage geeigneter Sicherungstechnik für Türen", "leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi"]
+];
+
+const businessEntity = (includeCatalog = false) => ({
+  "@type": "Locksmith",
+  "@id": businessId,
+  name: "Trust Schlüsseldienst Berlin",
+  legalName: "Trust B&M Service UG (haftungsbeschränkt)",
+  description: businessDescription,
+  url: `${site}/`,
+  telephone: schemaPhone,
+  email,
+  logo: `${site}/assets/logo-trust-transparent.png`,
+  image: [
+    `${site}/assets/images/hero-schloss.jpg`,
+    `${site}/assets/logo-trust-transparent.png`
+  ],
+  address: {
+    "@type": "PostalAddress",
+    streetAddress,
+    postalCode: "13355",
+    addressLocality: "Berlin",
+    addressCountry: "DE"
+  },
+  areaServed: { "@type": "AdministrativeArea", name: "Berlin" },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "00:00",
+    closes: "23:59"
+  },
+  currenciesAccepted: "EUR",
+  priceRange: "€€",
+  sameAs: [googleReviewUrl],
+  ...(includeCatalog ? {
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Leistungen von Trust Schlüsseldienst Berlin",
+      itemListElement: offerCatalogServices.map(([name, description, route]) => ({
+        "@type": "Service",
+        name,
+        description,
+        url: routeUrl(route),
+        provider: { "@id": businessId },
+        areaServed: { "@type": "AdministrativeArea", name: "Berlin" }
+      }))
+    }
+  } : {})
+});
+
+const websiteEntity = () => ({
+  "@type": "WebSite",
+  "@id": websiteId,
+  name: "Trust Schlüsseldienst Berlin",
+  url: `${site}/`,
+  inLanguage: ["de-DE", "en", "es", "pt-BR"],
+  publisher: { "@id": businessId }
+});
+
+const serviceEntity = (slug, keyword, url, area) => ({
+  "@type": "Service",
+  "@id": `${url}#service`,
+  name: keyword,
+  description: descriptionFor(slug),
+  url,
+  serviceType: slug.startsWith("schlüsseldienst-") && districtNames[slug.slice(16)]
+    ? `Schlüsseldienst und Türöffnung in ${area}`
+    : serviceTypes[slug] || keyword,
+  provider: { "@id": businessId },
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: area === "Berlin" ? "Berlin" : `${area}, Berlin`
+  }
+});
 
 function schema(slug, keyword, faqs) {
   const canonicalSlug = canonicalSlugFor(slug);
   const url = routeUrl(canonicalSlug);
   const area = slug.startsWith("schlüsseldienst-") ? districtNames[slug.slice(16)] : "Berlin";
-  const graph = [
-    {"@type":"Organization","@id":`${site}/#organization`,name:"Trust Schlüsseldienst Berlin",url:`${site}/`,email,telephone:phoneDisplay,logo:`${site}/assets/logo-trust-transparent.png`},
-    {"@type":"Locksmith","@id":`${site}/#localbusiness`,name:"Trust Schlüsseldienst Berlin",url:`${site}/`,telephone:phoneDisplay,email,address:{"@type":"PostalAddress",streetAddress,postalCode:"13355",addressLocality:"Berlin",addressCountry:"DE"},areaServed:{"@type":"AdministrativeArea",name:area || "Berlin"},openingHoursSpecification:{"@type":"OpeningHoursSpecification",dayOfWeek:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],opens:"00:00",closes:"23:59"},priceRange:"€€"},
-    {"@type":"WebPage","@id":`${url}#webpage`,url,name:titleFor(slug),description:descriptionFor(slug),isPartOf:{"@id":`${site}/#website`}},
-    {"@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"Startseite",item:`${site}/`},...(slug?[{"@type":"ListItem",position:2,name:keyword,item:url}]:[])]},
-  ];
-  if (!slug) {
-    graph.push({"@type":"WebSite","@id":`${site}/#website`,name:"Trust Schlüsseldienst Berlin",url:`${site}/`});
-    graph.push({"@type":"Service","@id":`${site}/#tueröffnung-service`,name:"Türöffnung Berlin",serviceType:"Türöffnung und Schlüsselnotdienst",provider:{"@id":`${site}/#localbusiness`},areaServed:{"@type":"AdministrativeArea",name:"Berlin"},offers:{"@type":"Offer",price:"59.00",priceCurrency:"EUR",description:"Öffnung einer nur zugefallenen, nicht abgeschlossenen Tür von 07 bis 20 Uhr ab 59 € inklusive Mehrwertsteuer. Festpreis und Anfahrt werden vorab am Telefon vereinbart."}});
-  }
-  if (faqs.length) graph.push({"@type":"FAQPage",mainEntity:faqs.map(([q,a])=>({"@type":"Question",name:q,acceptedAnswer:{"@type":"Answer",text:a}}))});
-  if (isCommercialPage(slug)) graph.push({"@type":"Service",name:keyword,serviceType:keyword,provider:{"@id":`${site}/#localbusiness`},areaServed:{"@type":"AdministrativeArea",name:area || "Berlin"}});
-  if (pageTypeFor(slug) === "guide") graph.push({"@type":"Article",headline:titleFor(slug),mainEntityOfPage:{"@id":`${url}#webpage`},author:{"@id":`${site}/#organization`},publisher:{"@id":`${site}/#organization`}});
+  const pageType = pageTypeFor(slug);
+  const breadcrumbId = `${url}#breadcrumb`;
+  const hasService = pageType === "district" || Boolean(serviceTypes[slug]);
+  const graph = [websiteEntity()];
+  if (pageType !== "legal" && slug !== "sitemap") graph.unshift(businessEntity(!slug));
+  graph.push({
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name: titleFor(slug),
+    description: descriptionFor(slug),
+    inLanguage: "de-DE",
+    isPartOf: { "@id": websiteId },
+    about: { "@id": businessId },
+    breadcrumb: { "@id": breadcrumbId },
+    ...(hasService ? { mainEntity: { "@id": `${url}#service` } } : {})
+  });
+  graph.push({
+    "@type": "BreadcrumbList",
+    "@id": breadcrumbId,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Startseite", item: `${site}/` },
+      ...(slug ? [{ "@type": "ListItem", position: 2, name: keyword, item: url }] : [])
+    ]
+  });
+  if (hasService) graph.push(serviceEntity(slug, keyword, url, area || "Berlin"));
+  if (faqs.length) graph.push({
+    "@type": "FAQPage",
+    "@id": `${url}#faq`,
+    mainEntity: faqs.map(([q, a]) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a }
+    }))
+  });
+  if (pageType === "guide") graph.push({
+    "@type": "Article",
+    "@id": `${url}#article`,
+    headline: titleFor(slug),
+    description: descriptionFor(slug),
+    inLanguage: "de-DE",
+    mainEntityOfPage: { "@id": `${url}#webpage` },
+    author: { "@id": businessId },
+    publisher: { "@id": businessId }
+  });
   return `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@graph":graph})}</script>`;
 }
 
@@ -232,7 +358,7 @@ const header = headerFor();
 const footer = footerFor();
 
 function faq(slug) {
-  if (slug === "ratgeber" || slug === "impressum" || canonicalRoutes.has(slug)) return [];
+  if (slug === "ratgeber" || slug === "leistung" || slug === "impressum" || canonicalRoutes.has(slug)) return [];
   if (priorityDistrictPages[slug]) return priorityDistrictPages[slug].faqs;
   if (!slug) return [
     ["Was kostet eine Türöffnung in Berlin?", "Die Öffnung einer nur zugefallenen, nicht abgeschlossenen Tür kostet von 07 bis 20 Uhr ab 59 €, von 20 bis 00 Uhr 79 € und von 00 bis 07 Uhr 99 €. Alle genannten Preise enthalten die Mehrwertsteuer. Der konkrete Festpreis und die Anfahrt werden vor der Anfahrt am Telefon vereinbart."],
@@ -474,14 +600,50 @@ const openGraphTags = ({ title, description, ogLocale }, url, includeTwitterDeta
 
 function internationalSchema(slug, config) {
   const url = routeUrl(slug);
+  const breadcrumbId = `${url}#breadcrumb`;
   const graph = [
-    {"@type":"Organization","@id":`${site}/#organization`,name:"Trust Schlüsseldienst Berlin",url:`${site}/`,email,telephone:phoneDisplay,logo:`${site}/assets/logo-trust-transparent.png`},
-    {"@type":"Locksmith","@id":`${site}/#localbusiness`,name:"Trust Schlüsseldienst Berlin",url:`${site}/`,telephone:phoneDisplay,email,address:{"@type":"PostalAddress",streetAddress,postalCode:"13355",addressLocality:"Berlin",addressCountry:"DE"},areaServed:{"@type":"AdministrativeArea",name:"Berlin"},openingHoursSpecification:{"@type":"OpeningHoursSpecification",dayOfWeek:["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],opens:"00:00",closes:"23:59"},priceRange:"€€"},
-    {"@type":"WebSite","@id":`${site}/#website`,name:"Trust Schlüsseldienst Berlin",url:`${site}/`},
-    {"@type":"WebPage","@id":`${url}#webpage`,url,name:config.title,description:config.description,inLanguage:config.lang,isPartOf:{"@id":`${site}/#website`}},
-    {"@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:config.nav.home,item:`${site}/`},{"@type":"ListItem",position:2,name:config.h1,item:url}]},
-    {"@type":"Service",name:config.h1,serviceType:config.h1,provider:{"@id":`${site}/#localbusiness`},areaServed:{"@type":"AdministrativeArea",name:"Berlin"}},
-    {"@type":"FAQPage",inLanguage:config.lang,mainEntity:config.faqs.map(([question, answer]) => ({"@type":"Question",name:question,acceptedAnswer:{"@type":"Answer",text:answer}}))}
+    businessEntity(),
+    websiteEntity(),
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url,
+      name: config.title,
+      description: config.description,
+      inLanguage: config.lang,
+      isPartOf: { "@id": websiteId },
+      about: { "@id": businessId },
+      breadcrumb: { "@id": breadcrumbId },
+      mainEntity: { "@id": `${url}#service` }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": breadcrumbId,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: config.nav.home, item: `${site}/` },
+        { "@type": "ListItem", position: 2, name: config.h1, item: url }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: config.h1,
+      description: config.description,
+      url,
+      serviceType: config.h1,
+      provider: { "@id": businessId },
+      areaServed: { "@type": "AdministrativeArea", name: "Berlin" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      inLanguage: config.lang,
+      mainEntity: config.faqs.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: { "@type": "Answer", text: answer }
+      }))
+    }
   ];
   return `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@graph":graph})}</script>`;
 }
