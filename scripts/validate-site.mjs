@@ -300,6 +300,127 @@ validateLanguageDropdown(home, "de", "Startseite");
 const generator = fs.readFileSync(path.join(root, "scripts/build-site.mjs"), "utf8");
 if (generator.toLowerCase().includes(obsoleteEmail) || /Ramlerstr\. 2(?!a)/i.test(generator)) errors.push("Alte Kontaktdaten in zentraler Build-Quelle vorhanden");
 
+const businessId = `${site}/#business`;
+const websiteId = `${site}/#website`;
+const expectedBusiness = {
+  name: "Trust Schlüsseldienst Berlin",
+  legalName: "Trust B&M Service UG (haftungsbeschränkt)",
+  telephone: "+49 30 40563878",
+  email: "schluesseldienst@trust-bm-service.de",
+  streetAddress: "Ramlerstr. 2a",
+  postalCode: "13355",
+  addressLocality: "Berlin",
+  addressCountry: "DE"
+};
+const explicitServiceRoutes = new Set([
+  "/leistung/schlüsselnotdienst/",
+  "/leistung/öffnung-bei-zugefallenen-türen/",
+  "/leistung/öffnung-bei-abgeschlossenen-türen/",
+  "/leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln/",
+  "/leistung/montage-von-sicherheitsschlösser/",
+  "/leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi/",
+  "/türöffnung-berlin-24h-notdienst/",
+  "/schlüssel-steckt-innen-tür-zu/",
+  "/schlüsseldienst-in-der-nähe/",
+  "/en/locksmith-berlin/",
+  "/es/cerrajero-berlin/",
+  "/pt/chaveiro-berlim/"
+]);
+const nonDistrictRoutes = new Set(["/schlüsseldienst-berlin-preise/", "/schlüsseldienst-in-der-nähe/"]);
+const noBusinessRoutes = new Set(["/impressum/", "/sitemap/"]);
+const guideArticleRoutes = new Set([
+  "/ratgeber/schluessel-verloren-berlin/",
+  "/ratgeber/schluesseldienst-kosten-berlin/",
+  "/ratgeber/tuer-zugefallen-berlin/"
+]);
+
+const graphFor = (html, context) => {
+  const scripts = [...html.matchAll(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/gi)];
+  if (scripts.length !== 1) errors.push(`${context}: genau ein JSON-LD-Block erwartet`);
+  try {
+    return JSON.parse(scripts[0]?.[1] || "{}")["@graph"] || [];
+  } catch (error) {
+    errors.push(`${context}: JSON-LD kann nicht ausgewertet werden (${error.message})`);
+    return [];
+  }
+};
+
+for (const page of canonicalPages) {
+  const graph = graphFor(page.html, page.route);
+  const businessNodes = graph.filter((item) => item["@type"] === "Locksmith");
+  const websiteNodes = graph.filter((item) => item["@type"] === "WebSite");
+  const webpageNodes = graph.filter((item) => item["@type"] === "WebPage");
+  const serviceNodes = graph.filter((item) => item["@type"] === "Service");
+  const faqNodes = graph.filter((item) => item["@type"] === "FAQPage");
+  const articleNodes = graph.filter((item) => item["@type"] === "Article");
+  const districtRoute = page.route.startsWith("/schlüsseldienst-") && !nonDistrictRoutes.has(page.route);
+  const expectsService = districtRoute || explicitServiceRoutes.has(page.route);
+  const expectedLanguage = page.route.startsWith("/en/") ? "en" : page.route.startsWith("/es/") ? "es" : page.route.startsWith("/pt/") ? "pt-BR" : "de-DE";
+
+  if (graph.some((item) => item["@type"] === "Organization" || item["@id"] === `${site}/#organization` || item["@id"] === `${site}/#localbusiness`)) errors.push(`${page.route}: alte oder doppelte Unternehmensentität vorhanden`);
+  const ids = graph.map((item) => item["@id"]).filter(Boolean);
+  if (new Set(ids).size !== ids.length) errors.push(`${page.route}: doppelte @id im JSON-LD-Graph`);
+  if (websiteNodes.length !== 1 || websiteNodes[0]?.["@id"] !== websiteId || websiteNodes[0]?.publisher?.["@id"] !== businessId) errors.push(`${page.route}: WebSite oder Publisher-Verknüpfung ist inkonsistent`);
+  if (webpageNodes.length !== 1) errors.push(`${page.route}: genau eine WebPage-Entität erwartet`);
+  const webpage = webpageNodes[0] || {};
+  if (webpage["@id"] !== `${page.canonical}#webpage` || webpage.url !== page.canonical) errors.push(`${page.route}: WebPage-ID oder URL stimmt nicht mit Canonical überein`);
+  if (webpage.isPartOf?.["@id"] !== websiteId || webpage.about?.["@id"] !== businessId) errors.push(`${page.route}: WebPage ist nicht korrekt mit Website und Unternehmen verknüpft`);
+  if (webpage.inLanguage !== expectedLanguage) errors.push(`${page.route}: WebPage inLanguage ist nicht ${expectedLanguage}`);
+
+  if (noBusinessRoutes.has(page.route)) {
+    if (businessNodes.length) errors.push(`${page.route}: unnötige Locksmith-Entität auf Rechts- oder Sitemap-Seite`);
+  } else {
+    if (businessNodes.length !== 1) errors.push(`${page.route}: genau eine zentrale Locksmith-Entität erwartet`);
+    const business = businessNodes[0] || {};
+    if (business["@id"] !== businessId || business.name !== expectedBusiness.name || business.legalName !== expectedBusiness.legalName) errors.push(`${page.route}: Unternehmens-ID, Name oder Rechtsname stimmt nicht`);
+    if (business.telephone !== expectedBusiness.telephone || business.email !== expectedBusiness.email) errors.push(`${page.route}: Telefon oder E-Mail im Unternehmensschema stimmt nicht`);
+    for (const [field, value] of Object.entries(expectedBusiness).slice(4)) if (business.address?.[field] !== value) errors.push(`${page.route}: Adresse im Unternehmensschema weicht ab (${field})`);
+    if (business.areaServed?.name !== "Berlin" || business.currenciesAccepted !== "EUR") errors.push(`${page.route}: Einsatzgebiet oder Währung im Unternehmensschema stimmt nicht`);
+    if (!business.logo || !Array.isArray(business.image) || !business.image.length) errors.push(`${page.route}: Logo oder Unternehmensbilder fehlen`);
+    for (const assetUrl of [business.logo, ...(business.image || [])]) {
+      if (!assetUrl?.startsWith(`${site}/assets/`)) errors.push(`${page.route}: Schema-Bild ist keine stabile lokale Asset-URL (${assetUrl})`);
+      else if (!fs.existsSync(path.join(root, new URL(assetUrl).pathname.slice(1).replaceAll("/", path.sep)))) errors.push(`${page.route}: Schema-Bilddatei fehlt (${assetUrl})`);
+    }
+    if (JSON.stringify(business.sameAs) !== JSON.stringify(["https://share.google/eskADN8c4gLAJoF4b"])) errors.push(`${page.route}: sameAs enthält keine ausschließlich bestätigte Profil-URL`);
+  }
+
+  if (expectsService) {
+    if (serviceNodes.length !== 1) errors.push(`${page.route}: genau eine konkrete Service-Entität erwartet`);
+    const service = serviceNodes[0] || {};
+    if (service["@id"] !== `${page.canonical}#service` || service.url !== page.canonical) errors.push(`${page.route}: Service-ID oder URL stimmt nicht mit Canonical überein`);
+    if (!service.name || !service.description || !service.serviceType) errors.push(`${page.route}: Service benötigt Name, Beschreibung und serviceType`);
+    if (service.provider?.["@id"] !== businessId) errors.push(`${page.route}: Service verweist nicht auf #business`);
+    if (!service.areaServed?.name || (districtRoute && service.areaServed.name === "Berlin")) errors.push(`${page.route}: lokales areaServed ist nicht konkret genug`);
+    if ("offers" in service || "inLanguage" in service) errors.push(`${page.route}: Service enthält ein nicht vorgesehenes Offer oder inLanguage`);
+    if (webpage.mainEntity?.["@id"] !== `${page.canonical}#service`) errors.push(`${page.route}: WebPage verweist nicht auf ihren Service`);
+  } else if (serviceNodes.length) {
+    errors.push(`${page.route}: unnötige Service-Entität auf Übersichts-, Preis-, Ratgeber- oder Rechtsseite`);
+  }
+
+  if (page.route === "/") {
+    const catalog = businessNodes[0]?.hasOfferCatalog;
+    if (catalog?.["@type"] !== "OfferCatalog" || catalog.itemListElement?.length !== 5) errors.push("Startseite: zentraler Leistungskatalog ist unvollständig");
+    for (const item of catalog?.itemListElement || []) {
+      if (item["@type"] !== "Service" || !item.name || !item.description || item.provider?.["@id"] !== businessId) errors.push("Startseite: ungültiger Eintrag im Leistungskatalog");
+      if (!canonicalUrls.has(item.url)) errors.push(`Startseite: Leistungskatalog verweist nicht auf eine kanonische Seite (${item.url})`);
+      if ("offers" in item) errors.push("Startseite: Leistungskatalog enthält ein nicht abgesichertes Offer");
+    }
+  } else if (businessNodes[0]?.hasOfferCatalog) errors.push(`${page.route}: Leistungskatalog darf nur an der zentralen Unternehmensentität der Startseite ausgegeben werden`);
+
+  if (guideArticleRoutes.has(page.route)) {
+    if (articleNodes.length !== 1 || articleNodes[0]?.author?.["@id"] !== businessId || articleNodes[0]?.publisher?.["@id"] !== businessId) errors.push(`${page.route}: Article ist nicht korrekt mit #business verknüpft`);
+  } else if (articleNodes.length) errors.push(`${page.route}: Article-Schema ist auf diesem Seitentyp nicht vorgesehen`);
+
+  const visibleFaqCount = (page.html.match(/<details class="faq-item">/g) || []).length;
+  const schemaFaqCount = faqNodes[0]?.mainEntity?.length || 0;
+  if (faqNodes.length > 1 || visibleFaqCount !== schemaFaqCount) errors.push(`${page.route}: sichtbare FAQ und FAQ-Schema haben unterschiedliche Umfänge`);
+  const serializedGraph = JSON.stringify(graph);
+  if (/"(?:aggregateRating|review|ratingValue)"/.test(serializedGraph)) errors.push(`${page.route}: Bewertungsdaten dürfen nicht im Schema stehen`);
+  if (/"@type":"Product"/.test(serializedGraph)) errors.push(`${page.route}: Product-Schema ist nicht vorgesehen`);
+}
+
+if (routeSet.has("/kontakt/")) errors.push("Unerwartete Kontaktseite gefunden; ContactPage wurde bewusst nicht erzeugt");
+
 console.log(JSON.stringify({ pages: pages.length, canonicalPages: canonicalPages.length, sitemapUrls: sitemapUrls.length, errors: errors.length, warnings: warnings.length }, null, 2));
 for (const error of errors) console.error(`ERROR ${error}`);
 for (const warning of warnings) console.warn(`WARN ${warning}`);
