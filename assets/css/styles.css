@@ -4935,3 +4935,123 @@ main section.district-case-section .district-case-photo img {
   .home-page .home-after-price { padding: 68px 0 !important; }
   .home-page #einsatzgebiete { padding: 68px 20px !important; }
 }
+
+/* Trust identity and contrast refinement */
+.site-header {
+  background: rgba(255,255,255,.98) !important;
+  border-bottom: 1px solid var(--trust-line) !important;
+  box-shadow: 0 10px 35px rgba(29,49,66,.07) !important;
+}
+.site-header .brand img {
+  width: 210px !important;
+  height: 60px !important;
+  filter: none !important;
+}
+.site-header .brand strong,
+.site-header .brand small,
+.site-header .main-nav a { color: var(--editorial-dark) !important; }
+.site-header .brand small { color: #5b6e7d !important; opacity: 1; }
+.site-header .main-nav a:hover { color: #0b7fa6 !important; }
+.site-header .button:not(.button-whatsapp) {
+  background: var(--editorial-dark) !important;
+  border-color: var(--editorial-dark) !important;
+  color: #fff !important;
+}
+.site-header .button-whatsapp {
+  background: #f3f8fa !important;
+  border: 1px solid #b8cbd7 !important;
+  color: var(--editorial-dark) !important;
+}
+
+.home-page .home-security {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(118deg,#fff 0 67%,var(--editorial-pale) 67%) !important;
+  color: var(--editorial-ink) !important;
+}
+.home-page .home-security::after {
+  content: "TRUST";
+  position: absolute;
+  right: -10px;
+  bottom: -30px;
+  color: rgba(38,62,82,.045);
+  font-size: clamp(90px,14vw,190px);
+  font-weight: 900;
+  letter-spacing: -.08em;
+  pointer-events: none;
+}
+.home-page .home-security > div { position: relative; z-index: 1; }
+.home-page .home-security h2,
+.home-page .home-security h3 { color: var(--editorial-ink) !important; }
+.home-page .home-security p,
+.home-page .home-security li { color: #465c6c !important; }
+.home-page .home-security a:not(.button) { color: var(--editorial-dark) !important; }
+.home-page .home-security .card {
+  background: var(--editorial-dark) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #fff !important;
+}
+.home-page .home-security .card h3,
+.home-page .home-security .card p,
+.home-page .home-security .card a { color: #fff !important; }
+.home-page main > .section-soft .home-security h2,
+.home-page main > .section-soft .home-security h3 { color: var(--editorial-ink) !important; }
+.home-page main > .section-soft .home-security p,
+.home-page main > .section-soft .home-security li { color: #465c6c !important; }
+.home-page main > .section-soft .home-security .card h3,
+.home-page main > .section-soft .home-security .card p,
+.home-page main > .section-soft .home-security .card a { color: #fff !important; }
+
+.home-page .review-action-primary {
+  background: var(--editorial-dark) !important;
+  border-color: var(--editorial-dark) !important;
+  color: #fff !important;
+}
+.home-page .review-action-secondary {
+  background: #fff !important;
+  border-color: #a9bdca !important;
+  color: var(--editorial-dark) !important;
+}
+.home-page .review-stars,
+.home-page .review-card-stars { color: #b88127 !important; }
+.home-page .google-review-badge {
+  background: rgba(255,255,255,.08) !important;
+  border-color: rgba(255,255,255,.25) !important;
+}
+.home-page .home-price-card {
+  border-top: 7px solid var(--editorial-mid) !important;
+}
+.home-page .home-price-card .button-whatsapp,
+.home-page .cta-panel .button-whatsapp,
+.home-page .mobile-callbar .button-whatsapp { background: #168d51 !important; border-color: #168d51 !important; color: #fff !important; }
+
+.site-footer .footer-logo {
+  width: 190px !important;
+  max-height: none !important;
+  height: auto !important;
+  padding: 8px 12px;
+  background: #fff;
+  filter: none !important;
+}
+
+@media (max-width: 860px) {
+  .site-header .menu-toggle {
+    background: var(--editorial-dark) !important;
+    border-color: var(--editorial-dark) !important;
+    color: #fff !important;
+  }
+  .site-header .main-nav {
+    background: #fff !important;
+    border-color: var(--trust-line) !important;
+  }
+  .site-header .main-nav a {
+    color: var(--editorial-dark) !important;
+    border-color: var(--trust-line) !important;
+  }
+}
+@media (max-width: 640px) {
+  .site-header .brand img { width: 170px !important; height: 52px !important; }
+  .home-page .home-security { background: linear-gradient(145deg,#fff 0 86%,var(--editorial-pale) 86%) !important; }
+}
