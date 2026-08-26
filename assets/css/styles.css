@@ -384,6 +384,85 @@
   }
 }
 
+/* Screenshot fixes: explicit price contrast and full-bleed security section. */
+.home-page main > section.section-soft.home-price-section .home-price-notes,
+.home-page main > section.section-soft.home-price-section .home-price-notes p,
+.home-page main > section.section-soft.home-price-section .home-price-notes strong,
+.home-page main > section.section-soft.home-price-section .home-price-lead,
+.home-page main > section.section-soft.home-price-section .home-price-card > p {
+  color: #111820 !important;
+}
+
+.home-page main > section.section-soft:has(.home-security) {
+  margin: 0 !important;
+  padding: 0 !important;
+  background:
+    linear-gradient(122deg,var(--editorial-dark) 0 62%,#314f67 62% 78%,var(--editorial-deep) 78% 100%) !important;
+  overflow: hidden;
+}
+.home-page main > section.section-soft .home-security {
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding-top: clamp(70px,8vw,108px) !important;
+  padding-bottom: clamp(70px,8vw,108px) !important;
+  background: transparent !important;
+  color: #fff !important;
+  overflow: visible !important;
+}
+.home-page main > section.section-soft .home-security::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -8%;
+  width: 42%;
+  height: 165%;
+  border: 1px solid rgba(255,255,255,.12);
+  transform: rotate(16deg);
+  pointer-events: none;
+}
+.home-page main > section.section-soft .home-security::after {
+  color: rgba(255,255,255,.045) !important;
+}
+.home-page main > section.section-soft .home-security h2,
+.home-page main > section.section-soft .home-security h3,
+.home-page main > section.section-soft .home-security p,
+.home-page main > section.section-soft .home-security li,
+.home-page main > section.section-soft .home-security a:not(.button) {
+  color: #fff !important;
+}
+.home-page main > section.section-soft .home-security p,
+.home-page main > section.section-soft .home-security li { color: #d9e3ea !important; }
+.home-page main > section.section-soft .home-security .card {
+  background: rgba(255,255,255,.07) !important;
+  border: 1px solid rgba(255,255,255,.2) !important;
+  color: #fff !important;
+}
+.home-page main > section.section-soft .home-security .button,
+.home-page main > section.section-soft .home-security .card-button {
+  background: #e8eff4 !important;
+  border: 1px solid #e8eff4 !important;
+  color: #172633 !important;
+}
+.home-page main > section.section-soft .home-security .button:hover,
+.home-page main > section.section-soft .home-security .card-button:hover {
+  background: #fff !important;
+  border-color: #fff !important;
+}
+
+@media (max-width: 640px) {
+  .home-page main > section.section-soft:has(.home-security) {
+    background: linear-gradient(145deg,var(--editorial-dark) 0 78%,#314f67 78% 91%,var(--editorial-deep) 91%) !important;
+  }
+  .home-page main > section.section-soft .home-security {
+    padding: 68px 20px !important;
+  }
+  .home-page main > section.section-soft .home-security::before {
+    right: -42%;
+    width: 76%;
+  }
+}
+
 /* Schlüsseldienst layout adapter */
 html, body { max-width: 100%; overflow-x: hidden; }
 .site-header { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--trust-line); box-shadow: 0 8px 28px rgba(28,47,63,.08); }
@@ -5255,5 +5334,77 @@ main section.district-case-section .district-case-photo img {
     margin-top: 7px;
     font-size: 29px;
     line-height: 1.03;
+  }
+}
+
+/* Final contrast fixes from visual QA. */
+.home-page main > section.section-soft.home-price-section .home-price-notes,
+.home-page main > section.section-soft.home-price-section .home-price-notes p,
+.home-page main > section.section-soft.home-price-section .home-price-notes strong,
+.home-page main > section.section-soft.home-price-section .home-price-lead,
+.home-page main > section.section-soft.home-price-section .home-price-card > p { color: #111820 !important; }
+
+.home-page main > section.section-soft:has(.home-security) {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(122deg,var(--editorial-dark) 0 62%,#314f67 62% 78%,var(--editorial-deep) 78% 100%) !important;
+  overflow: hidden;
+}
+.home-page main > section.section-soft .home-security {
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding-top: clamp(70px,8vw,108px) !important;
+  padding-bottom: clamp(70px,8vw,108px) !important;
+  background: transparent !important;
+  color: #fff !important;
+  overflow: visible !important;
+}
+.home-page main > section.section-soft .home-security::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -8%;
+  width: 42%;
+  height: 165%;
+  border: 1px solid rgba(255,255,255,.12);
+  transform: rotate(16deg);
+  pointer-events: none;
+}
+.home-page main > section.section-soft .home-security::after { color: rgba(255,255,255,.045) !important; }
+.home-page main > section.section-soft .home-security h2,
+.home-page main > section.section-soft .home-security h3,
+.home-page main > section.section-soft .home-security a:not(.button) { color: #fff !important; }
+.home-page main > section.section-soft .home-security p,
+.home-page main > section.section-soft .home-security li { color: #d9e3ea !important; }
+.home-page main > section.section-soft .home-security .card {
+  background: rgba(255,255,255,.07) !important;
+  border: 1px solid rgba(255,255,255,.2) !important;
+  color: #fff !important;
+}
+.home-page main > section.section-soft .home-security .button,
+.home-page main > section.section-soft .home-security .card-button {
+  background: #e8eff4 !important;
+  border: 1px solid #e8eff4 !important;
+  color: #172633 !important;
+}
+@media (max-width: 640px) {
+  .home-page main > section.section-soft:has(.home-security) {
+    background: linear-gradient(145deg,var(--editorial-dark) 0 78%,#314f67 78% 91%,var(--editorial-deep) 91%) !important;
+  }
+  .home-page main > section.section-soft .home-security { padding: 68px 20px !important; }
+}
+
+.home-page main > section.section-soft .home-security .card {
+  padding-left: 38px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-left: 1px solid rgba(255,255,255,.28) !important;
+}
+@media (max-width: 640px) {
+  .home-page main > section.section-soft .home-security .card {
+    padding: 28px 0 0 !important;
+    border-left: 0 !important;
+    border-top: 1px solid rgba(255,255,255,.28) !important;
   }
 }
