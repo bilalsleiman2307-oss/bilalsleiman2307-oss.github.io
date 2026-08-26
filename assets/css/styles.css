@@ -5516,3 +5516,92 @@ main section.district-case-section .district-case-photo img {
 .home-page .home-hero .hero-copy::before { display: none !important; content: none !important; }
 .home-page .home-hero .home-h1-offer,
 .home-page .home-hero .home-h1-offer::after { display: none !important; content: none !important; }
+
+.home-page .home-outskirts-title {
+  margin: 42px 0 18px;
+  color: #fff !important;
+  font-size: 20px;
+  letter-spacing: -.02em;
+}
+.home-page .home-outskirts-links { gap: 0 !important; }
+.home-page .home-outskirts-links a {
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #fff !important;
+}
+
+/* Randbezirk pages — Trust editorial design */
+.local-page { background:#fbfcfd; color:#172633; }
+.local-page .breadcrumb { background:#e8eff4; border:0; }
+.local-page .breadcrumb .container { padding-top:12px; padding-bottom:12px; }
+.local-page .page-hero {
+  margin:0 !important;
+  padding:clamp(70px,8vw,112px) 0 !important;
+  background:linear-gradient(118deg,#263e52 0 64%,#314f67 64% 82%,#1d3142 82%) !important;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+}
+.local-page .page-hero::after {
+  content:"TRUST";
+  position:absolute;
+  right:-20px;
+  bottom:-40px;
+  color:rgba(255,255,255,.04);
+  font-size:clamp(120px,18vw,260px);
+  font-weight:900;
+  line-height:.8;
+  letter-spacing:-.08em;
+}
+.local-page .page-hero .hero-copy { position:relative; z-index:1; max-width:900px; }
+.local-page .page-hero h1 { margin:0 0 25px; color:#fff; font-size:clamp(48px,6vw,84px); line-height:.94; letter-spacing:-.06em; }
+.local-page .page-hero h1 span { display:block; color:#fff; }
+.local-page .page-hero h1 .title-location { color:#b9cfdd; font-family:Georgia,"Times New Roman",serif; font-style:italic; font-weight:400; }
+.local-page .page-hero p { max-width:760px; color:#d8e2e9; font-size:18px; }
+.local-page .page-hero .hero-points { border-top:1px solid rgba(255,255,255,.18); }
+.local-page .page-hero .hero-points li { color:#fff; background:transparent; border-color:rgba(255,255,255,.2); }
+.local-page .page-hero .button-primary { background:#e8eff4; border-color:#e8eff4; color:#172633; }
+.local-page .page-hero .button-secondary { color:#fff; border-color:rgba(255,255,255,.45); }
+
+.local-page main > section { margin:0; padding:clamp(68px,7vw,100px) 0; }
+.local-page main > section:nth-of-type(odd):not(.page-hero):not(.section-blue) { background:linear-gradient(125deg,#fff 0 78%,#eef3f6 78%); }
+.local-page main > section:nth-of-type(even):not(.page-hero):not(.section-blue) { background:#e8eff4; }
+.local-page .seo-welcome { background:linear-gradient(120deg,#f8fafb 0 65%,#dfe9ef 65%) !important; }
+.local-page .seo-welcome .container { max-width:980px; margin-left:max(18px,calc((100vw - 1180px)/2)); }
+.local-page .seo-welcome h2,
+.local-page section h2 { color:#172633; font-size:clamp(38px,4.7vw,64px); line-height:1; letter-spacing:-.045em; }
+.local-page .seo-welcome p { color:#405766; font-size:18px; max-width:850px; }
+.local-page .card,
+.local-page .service-card-clean,
+.local-page .process-step,
+.local-page .faq-item,
+.local-page .price-table-wrap { border-radius:0 !important; box-shadow:none !important; }
+.local-page .service-cards-clean { gap:0; border-top:1px solid #bdccd5; border-left:1px solid #bdccd5; }
+.local-page .service-card-clean { min-height:300px; border:0 !important; border-right:1px solid #bdccd5 !important; border-bottom:1px solid #bdccd5 !important; background:rgba(255,255,255,.45) !important; }
+.local-page .section-blue { background:linear-gradient(122deg,#263e52 0 72%,#314f67 72%) !important; }
+.local-page .section-blue h2,
+.local-page .section-blue h3,
+.local-page .section-blue p { color:#fff !important; }
+.local-page .section-blue .process-step { background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.18); }
+.local-page #preise { background:linear-gradient(118deg,#dfe9ef,#f8fafb 60%,#d4e1e9) !important; }
+.local-page #preise h2,
+.local-page #preise p { color:#172633 !important; }
+.local-page #einsatzgebiete { background:#5f7b94 !important; }
+.local-page #einsatzgebiete h2,
+.local-page #einsatzgebiete p { color:#fff !important; }
+.local-page #einsatzgebiete .area-links { gap:0; border-top:1px solid rgba(255,255,255,.25); border-left:1px solid rgba(255,255,255,.25); }
+.local-page #einsatzgebiete .area-links a { color:#fff; background:transparent; border:0; border-right:1px solid rgba(255,255,255,.25); border-bottom:1px solid rgba(255,255,255,.25); border-radius:0; }
+.local-page .cta-panel { border-radius:0; background:#5f7b94; box-shadow:none; }
+.local-page .cta-panel h2,
+.local-page .cta-panel p { color:#fff !important; }
+
+@media(max-width:640px){
+  .local-page .page-hero { padding:58px 0 !important; }
+  .local-page .page-hero h1 { font-size:43px; overflow-wrap:anywhere; }
+  .local-page .page-hero p { font-size:16px; }
+  .local-page main > section { padding:60px 0; }
+  .local-page .seo-welcome .container { margin:0 auto; }
+  .local-page .seo-welcome h2,
+  .local-page section h2 { font-size:38px; }
+  .local-page .area-links { grid-template-columns:1fr 1fr; }
+}
