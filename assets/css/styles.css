@@ -5160,3 +5160,100 @@ main section.district-case-section .district-case-photo img {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+/* Readability contract: dark type on light surfaces, white type on dark ones. */
+.home-page .home-price-section h2,
+.home-page .home-price-section h3,
+.home-page .home-price-section p,
+.home-page .home-price-section li,
+.home-page .home-price-section strong,
+.home-page .home-after-price h2,
+.home-page .home-after-price h3,
+.home-page .home-after-price p,
+.home-page .home-after-price li,
+.home-page #leistungen h2,
+.home-page #leistungen h3,
+.home-page #leistungen p,
+.home-page #leistungen li,
+.home-page .customer-feedback h2,
+.home-page .customer-feedback h3,
+.home-page .customer-feedback p,
+.home-page .customer-feedback li,
+.home-page main > .section-soft .home-security h2,
+.home-page main > .section-soft .home-security h3,
+.home-page main > .section-soft .home-security p,
+.home-page main > .section-soft .home-security li {
+  color: #111820 !important;
+}
+.home-page .home-after-price .home-transparency-card h2,
+.home-page .home-after-price .home-transparency-card h3,
+.home-page .home-after-price .home-transparency-card p,
+.home-page .home-after-price .home-transparency-card li { color: #111820 !important; }
+
+.home-page .home-hero h1,
+.home-page .home-hero p,
+.home-page .home-hero li,
+.home-page main > section.section-soft:not(.home-price-section) > .container > h2,
+.home-page main > section.section-soft:not(.home-price-section) > .container > p,
+.home-page main > section.section-soft:not(.home-price-section) .home-explanation h2,
+.home-page main > section.section-soft:not(.home-price-section) .home-explanation h3,
+.home-page main > section.section-soft:not(.home-price-section) .home-explanation p,
+.home-page main > section.section-soft:not(.home-price-section) .home-explanation li,
+.home-page #einsatzgebiete h2,
+.home-page #einsatzgebiete h3,
+.home-page #einsatzgebiete p,
+.home-page #einsatzgebiete li,
+.home-page #faq h2,
+.home-page #faq h3,
+.home-page #faq p,
+.home-page #faq summary,
+.home-page .cta-panel h2,
+.home-page .cta-panel p {
+  color: #fff !important;
+}
+.home-page .home-security .card h3,
+.home-page .home-security .card p,
+.home-page .home-security .card li,
+.home-page .home-security .card a { color: #fff !important; }
+
+/* The offer price belongs to the price section, not to the opening headline. */
+.home-page .home-h1-brand {
+  display: block !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+}
+.home-page .home-h1-offer {
+  display: block !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+  font-size: 0 !important;
+}
+.home-page .home-h1-offer::after {
+  content: "Ihr Notdienst, wenn es schnell gehen muss.";
+  display: block;
+  margin-top: 8px;
+  color: #b9cfdd;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(31px,4.4vw,58px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -.045em;
+}
+
+@media (max-width: 640px) {
+  .home-page .home-hero h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 30px !important;
+    line-height: 1.02 !important;
+    letter-spacing: -.045em !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+  .home-page .home-h1-offer::after {
+    margin-top: 7px;
+    font-size: 29px;
+    line-height: 1.03;
+  }
+}
