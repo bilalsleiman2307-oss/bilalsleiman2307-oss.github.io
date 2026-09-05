@@ -37,7 +37,10 @@ const newDistrictSlugs = [
   "schlüsseldienst-tiergarten", "schlüsseldienst-tegel", "schlüsseldienst-wittenau", "schlüsseldienst-hellersdorf", "schlüsseldienst-hohenschoenhausen",
   "schlüsseldienst-lichterfelde", "schlüsseldienst-mariendorf", "schlüsseldienst-britz", "schlüsseldienst-adlershof", "schlüsseldienst-westend",
   "schlüsseldienst-friedenau", "schlüsseldienst-dahlem", "schlüsseldienst-grunewald", "schlüsseldienst-schmargendorf", "schlüsseldienst-siemensstadt",
-  "schlüsseldienst-haselhorst", "schlüsseldienst-lankwitz", "schlüsseldienst-marienfelde", "schlüsseldienst-buckow", "schlüsseldienst-biesdorf"
+  "schlüsseldienst-haselhorst", "schlüsseldienst-lankwitz", "schlüsseldienst-marienfelde", "schlüsseldienst-buckow", "schlüsseldienst-biesdorf",
+  "schlüsseldienst-friedrichsfelde", "schlüsseldienst-karlshorst", "schlüsseldienst-rummelsburg", "schlüsseldienst-fennpfuhl",
+  "schlüsseldienst-niederschoenhausen", "schlüsseldienst-wilhelmsruh", "schlüsseldienst-rosenthal", "schlüsseldienst-baumschulenweg",
+  "schlüsseldienst-johannisthal", "schlüsseldienst-friedrichshagen"
 ];
 for (const slug of newDistrictSlugs) if (!allIndexes.includes(slug)) allIndexes.push(slug);
 if (!allIndexes.includes("sitemap")) allIndexes.push("sitemap");
@@ -74,34 +77,34 @@ const legacyHtmlRoutes = new Map([
 
 const districtNames = {
   "adlershof":"Adlershof", "biesdorf":"Biesdorf", "britz":"Britz", "buch":"Buch", "buckow":"Buckow", "charlottenburg":"Charlottenburg", "dahlem":"Dahlem", "franzoesisch-buchholz":"Französisch Buchholz", "französisch-buchholz":"Französisch Buchholz", "friedenau":"Friedenau", "frohnau":"Frohnau", "grunewald":"Grunewald",
-  "friedrichshain":"Friedrichshain", "gesundbrunnen":"Gesundbrunnen", "koepenick":"Köpenick", "köpenick":"Köpenick",
-  "haselhorst":"Haselhorst", "heiligensee":"Heiligensee", "hellersdorf":"Hellersdorf", "hermsdorf":"Hermsdorf", "hohenschoenhausen":"Hohenschönhausen", "karow":"Karow", "kaulsdorf":"Kaulsdorf", "kladow":"Kladow", "kreuzberg":"Kreuzberg", "lankwitz":"Lankwitz", "lichtenberg":"Lichtenberg", "lichtenrade":"Lichtenrade", "lichterfelde":"Lichterfelde", "mahlsdorf":"Mahlsdorf", "mariendorf":"Mariendorf", "marienfelde":"Marienfelde", "marzahn":"Marzahn", "mitte":"Mitte", "moabit":"Moabit", "mueggelheim":"Müggelheim",
-  "neukölln":"Neukölln", "pankow":"Pankow", "prenzlauerberg":"Prenzlauer Berg", "reinickendorf":"Reinickendorf",
+  "friedrichshain":"Friedrichshain", "friedrichsfelde":"Friedrichsfelde", "friedrichshagen":"Friedrichshagen", "fennpfuhl":"Fennpfuhl", "gesundbrunnen":"Gesundbrunnen", "koepenick":"Köpenick", "köpenick":"Köpenick",
+  "baumschulenweg":"Baumschulenweg", "haselhorst":"Haselhorst", "heiligensee":"Heiligensee", "hellersdorf":"Hellersdorf", "hermsdorf":"Hermsdorf", "hohenschoenhausen":"Hohenschönhausen", "johannisthal":"Johannisthal", "karlshorst":"Karlshorst", "karow":"Karow", "kaulsdorf":"Kaulsdorf", "kladow":"Kladow", "kreuzberg":"Kreuzberg", "lankwitz":"Lankwitz", "lichtenberg":"Lichtenberg", "lichtenrade":"Lichtenrade", "lichterfelde":"Lichterfelde", "mahlsdorf":"Mahlsdorf", "mariendorf":"Mariendorf", "marienfelde":"Marienfelde", "marzahn":"Marzahn", "mitte":"Mitte", "moabit":"Moabit", "mueggelheim":"Müggelheim",
+  "neukölln":"Neukölln", "niederschoenhausen":"Niederschönhausen", "pankow":"Pankow", "prenzlauerberg":"Prenzlauer Berg", "reinickendorf":"Reinickendorf", "rosenthal":"Rosenthal", "rummelsburg":"Rummelsburg",
   "rahnsdorf":"Rahnsdorf", "rudow":"Rudow", "schmargendorf":"Schmargendorf", "schoeneberg":"Schöneberg", "schöneberg":"Schöneberg", "siemensstadt":"Siemensstadt", "spandau":"Spandau", "staaken":"Staaken", "steglitz":"Steglitz", "tempelhof":"Tempelhof",
-  "tegel":"Tegel", "tiergarten":"Tiergarten", "treptow":"Treptow", "wannsee":"Wannsee", "wedding":"Wedding", "weißensee":"Weißensee", "westend":"Westend", "wilmersdorf":"Wilmersdorf", "wittenau":"Wittenau", "zehlendorf":"Zehlendorf"
+  "tegel":"Tegel", "tiergarten":"Tiergarten", "treptow":"Treptow", "wannsee":"Wannsee", "wedding":"Wedding", "weißensee":"Weißensee", "westend":"Westend", "wilmersdorf":"Wilmersdorf", "wilhelmsruh":"Wilhelmsruh", "wittenau":"Wittenau", "zehlendorf":"Zehlendorf"
 };
 const districtRoutes = allIndexes.filter((r) => r.startsWith("schlüsseldienst-") && districtNames[r.slice(16)] && !canonicalRoutes.has(r));
 
 const districtNeighbors = {
-  adlershof: ["treptow", "koepenick", "rudow"], biesdorf: ["marzahn", "kaulsdorf", "hellersdorf", "lichtenberg"], britz: ["neukölln", "buckow", "rudow", "tempelhof"],
+  adlershof: ["johannisthal", "treptow", "koepenick", "rudow"], baumschulenweg: ["treptow", "johannisthal", "neukölln", "adlershof"], biesdorf: ["friedrichsfelde", "marzahn", "kaulsdorf", "hellersdorf"], britz: ["neukölln", "buckow", "rudow", "tempelhof"],
   buch: ["karow", "pankow", "franzoesisch-buchholz"], buckow: ["britz", "rudow", "lichtenrade", "marienfelde"], charlottenburg: ["westend", "wilmersdorf", "tiergarten", "moabit"],
   dahlem: ["zehlendorf", "schmargendorf", "grunewald", "lichterfelde"], "franzoesisch-buchholz": ["pankow", "karow", "buch", "weißensee"], friedenau: ["schoeneberg", "wilmersdorf", "steglitz", "tempelhof"],
-  friedrichshain: ["kreuzberg", "lichtenberg", "mitte", "treptow"], frohnau: ["hermsdorf", "reinickendorf", "heiligensee"], gesundbrunnen: ["wedding", "mitte", "pankow", "reinickendorf"],
+  fennpfuhl: ["lichtenberg", "hohenschoenhausen", "weißensee", "friedrichshain"], friedrichshain: ["kreuzberg", "rummelsburg", "lichtenberg", "mitte"], friedrichsfelde: ["lichtenberg", "karlshorst", "rummelsburg", "biesdorf"], friedrichshagen: ["koepenick", "rahnsdorf", "mueggelheim", "adlershof"], frohnau: ["hermsdorf", "reinickendorf", "heiligensee"], gesundbrunnen: ["wedding", "mitte", "pankow", "reinickendorf"],
   grunewald: ["schmargendorf", "wilmersdorf", "dahlem", "westend"], haselhorst: ["siemensstadt", "spandau", "westend", "tegel"], heiligensee: ["tegel", "frohnau", "hermsdorf", "reinickendorf"],
   hellersdorf: ["kaulsdorf", "mahlsdorf", "marzahn", "biesdorf"], hermsdorf: ["frohnau", "wittenau", "reinickendorf", "heiligensee"], hohenschoenhausen: ["weißensee", "lichtenberg", "marzahn", "pankow"],
-  karow: ["buch", "franzoesisch-buchholz", "pankow", "weißensee"], kaulsdorf: ["hellersdorf", "mahlsdorf", "biesdorf", "marzahn"], kladow: ["spandau", "staaken", "wannsee"],
+  johannisthal: ["adlershof", "baumschulenweg", "treptow", "rudow"], karlshorst: ["friedrichsfelde", "lichtenberg", "rummelsburg", "adlershof"], karow: ["buch", "franzoesisch-buchholz", "pankow", "weißensee"], kaulsdorf: ["hellersdorf", "mahlsdorf", "biesdorf", "marzahn"], kladow: ["spandau", "staaken", "wannsee"],
   koepenick: ["adlershof", "treptow", "mueggelheim", "rahnsdorf"], kreuzberg: ["friedrichshain", "neukölln", "mitte", "tempelhof"], lankwitz: ["steglitz", "lichterfelde", "mariendorf", "marienfelde"],
-  lichtenberg: ["friedrichshain", "hohenschoenhausen", "marzahn", "biesdorf"], lichtenrade: ["marienfelde", "mariendorf", "buckow", "tempelhof"], lichterfelde: ["steglitz", "lankwitz", "dahlem", "zehlendorf"],
+  lichtenberg: ["fennpfuhl", "friedrichsfelde", "rummelsburg", "hohenschoenhausen"], lichtenrade: ["marienfelde", "mariendorf", "buckow", "tempelhof"], lichterfelde: ["steglitz", "lankwitz", "dahlem", "zehlendorf"],
   mahlsdorf: ["kaulsdorf", "hellersdorf", "biesdorf", "rahnsdorf"], mariendorf: ["tempelhof", "marienfelde", "lichtenrade", "lankwitz"], marienfelde: ["mariendorf", "lichtenrade", "lankwitz", "buckow"],
   marzahn: ["hellersdorf", "biesdorf", "lichtenberg", "hohenschoenhausen"], mitte: ["tiergarten", "wedding", "gesundbrunnen", "friedrichshain"], moabit: ["tiergarten", "charlottenburg", "wedding", "mitte"],
-  mueggelheim: ["koepenick", "rahnsdorf", "adlershof"], "neukölln": ["kreuzberg", "britz", "treptow", "tempelhof"], pankow: ["weißensee", "franzoesisch-buchholz", "gesundbrunnen", "karow"],
-  prenzlauerberg: ["pankow", "weißensee", "mitte", "friedrichshain"], rahnsdorf: ["mueggelheim", "koepenick", "mahlsdorf"], reinickendorf: ["wittenau", "tegel", "wedding", "gesundbrunnen"],
+  mueggelheim: ["koepenick", "rahnsdorf", "friedrichshagen"], "neukölln": ["kreuzberg", "britz", "baumschulenweg", "tempelhof"], niederschoenhausen: ["pankow", "wilhelmsruh", "rosenthal", "franzoesisch-buchholz"], pankow: ["niederschoenhausen", "weißensee", "wilhelmsruh", "gesundbrunnen"],
+  prenzlauerberg: ["pankow", "weißensee", "mitte", "friedrichshain"], rahnsdorf: ["friedrichshagen", "mueggelheim", "koepenick", "mahlsdorf"], reinickendorf: ["wittenau", "wilhelmsruh", "tegel", "wedding"], rosenthal: ["niederschoenhausen", "wilhelmsruh", "franzoesisch-buchholz", "pankow"], rummelsburg: ["friedrichshain", "lichtenberg", "friedrichsfelde", "karlshorst"],
   rudow: ["buckow", "britz", "adlershof", "neukölln"], schmargendorf: ["wilmersdorf", "grunewald", "dahlem", "charlottenburg"], schoeneberg: ["friedenau", "tempelhof", "wilmersdorf", "kreuzberg"],
   siemensstadt: ["haselhorst", "spandau", "westend", "charlottenburg"], spandau: ["haselhorst", "siemensstadt", "staaken", "kladow"], staaken: ["spandau", "kladow", "haselhorst"],
   steglitz: ["lankwitz", "lichterfelde", "friedenau", "dahlem"], tegel: ["reinickendorf", "heiligensee", "wittenau", "haselhorst"], tempelhof: ["schoeneberg", "mariendorf", "kreuzberg", "neukölln"],
-  tiergarten: ["mitte", "moabit", "charlottenburg", "wedding"], treptow: ["adlershof", "friedrichshain", "neukölln", "koepenick"], wannsee: ["zehlendorf", "kladow", "dahlem"],
+  tiergarten: ["mitte", "moabit", "charlottenburg", "wedding"], treptow: ["baumschulenweg", "adlershof", "friedrichshain", "neukölln"], wannsee: ["zehlendorf", "kladow", "dahlem"],
   wedding: ["gesundbrunnen", "reinickendorf", "mitte", "moabit"], "weißensee": ["pankow", "prenzlauerberg", "hohenschoenhausen", "lichtenberg"], westend: ["charlottenburg", "spandau", "siemensstadt", "grunewald"],
-  wilmersdorf: ["charlottenburg", "schmargendorf", "friedenau", "grunewald"], wittenau: ["reinickendorf", "hermsdorf", "tegel", "wedding"], zehlendorf: ["dahlem", "lichterfelde", "wannsee", "grunewald"]
+  wilmersdorf: ["charlottenburg", "schmargendorf", "friedenau", "grunewald"], wilhelmsruh: ["niederschoenhausen", "rosenthal", "reinickendorf", "pankow"], wittenau: ["reinickendorf", "hermsdorf", "tegel", "wilhelmsruh"], zehlendorf: ["dahlem", "lichterfelde", "wannsee", "grunewald"]
 };
 
 const districtDescriptions = {
@@ -162,6 +165,16 @@ const districtDescriptions = {
   "schlüsseldienst-wilmersdorf": "Schlüsseldienst Berlin Wilmersdorf: Türöffnung ab 59 €, 24/7 erreichbar. Schloss, Zylinder und Preis werden vor der Arbeit nachvollziehbar geklärt.",
   "schlüsseldienst-wittenau": "Schlüsseldienst Berlin Wittenau: Türöffnung ab 59 €, 24/7 erreichbar. Für Wohnanlagen und Häuser klären wir Eingang, Türzustand und Preis telefonisch.",
   "schlüsseldienst-zehlendorf": "Schlüsseldienst Berlin Zehlendorf: Türöffnung ab 59 €, 24/7 erreichbar. Für Haus- und Wohnungstüren vereinbaren wir Vorgehen und Kosten vorab."
+  ,"schlüsseldienst-baumschulenweg": "Schlüsseldienst Berlin Baumschulenweg: Türöffnung ab 59 €, 24/7 erreichbar. Eingang, Aufgang und Preis klären wir passend zur Adresse vorab."
+  ,"schlüsseldienst-fennpfuhl": "Schlüsseldienst Berlin Fennpfuhl: Türöffnung ab 59 €, 24/7 erreichbar. In großen Wohnanlagen stimmen wir Aufgang, Etage und Kosten vorher ab."
+  ,"schlüsseldienst-friedrichsfelde": "Schlüsseldienst Berlin Friedrichsfelde: Türöffnung ab 59 €, 24/7 erreichbar. Türzustand, Gebäudeteil und Festpreis besprechen wir vor der Anfahrt."
+  ,"schlüsseldienst-friedrichshagen": "Schlüsseldienst Berlin Friedrichshagen: Türöffnung ab 59 €, 24/7 erreichbar. Für Wohnungen und Häuser klären wir Anfahrtsweg und Kosten vorab."
+  ,"schlüsseldienst-johannisthal": "Schlüsseldienst Berlin Johannisthal: Türöffnung ab 59 €, 24/7 erreichbar. Bei Wohnung, Haus oder Gewerbe werden Zugang und Preis vorher geklärt."
+  ,"schlüsseldienst-karlshorst": "Schlüsseldienst Berlin Karlshorst: Türöffnung ab 59 €, 24/7 erreichbar. Für Altbau, Neubau oder Haus stimmen wir Türzustand und Kosten vorab ab."
+  ,"schlüsseldienst-niederschoenhausen": "Schlüsseldienst Berlin Niederschönhausen: Türöffnung ab 59 €, 24/7 erreichbar. Für Wohnhaus und Altbau klären wir Anfahrt und Preis telefonisch."
+  ,"schlüsseldienst-rosenthal": "Schlüsseldienst Berlin Rosenthal: Türöffnung ab 59 €, 24/7 erreichbar. Bei Haus-, Wohnungs- oder Nebentür vereinbaren wir Strecke und Kosten vorab."
+  ,"schlüsseldienst-rummelsburg": "Schlüsseldienst Berlin Rummelsburg: Türöffnung ab 59 €, 24/7 erreichbar. Aufgang, Etage, Türzustand und Festpreis werden vor der Anfahrt geklärt."
+  ,"schlüsseldienst-wilhelmsruh": "Schlüsseldienst Berlin Wilhelmsruh: Türöffnung ab 59 €, 24/7 erreichbar. Für Haus und Wohnung besprechen wir Adresse, Anfahrt und Kosten vorher."
 };
 
 const labels = {
@@ -548,6 +561,16 @@ function internalLinkList(slug) {
 }
 
 const pageDetails = {
+  "schlüsseldienst-baumschulenweg": ["Türöffnung zwischen Spree und Baumschulenstraße", "Rund um Baumschulenstraße, Kiefholzstraße und die Wohngebiete am Plänterwald liegen Altbauten, neuere Wohnhäuser und unterschiedliche Hofzugänge dicht beieinander.", "Nennen Sie Hausnummer, Aufgang und Etage sowie den Zustand der Tür. So können Anfahrt, Öffnung und Preis vor dem Auftrag konkret eingeordnet werden."],
+  "schlüsseldienst-fennpfuhl": ["Schlüsselhilfe in den Wohnanlagen am Fennpfuhl", "Die großen Wohnhäuser rund um Anton-Saefkow-Platz, Landsberger Allee und den Fennpfuhl besitzen häufig mehrere Aufgänge und ähnlich angelegte Eingänge.", "Für eine direkte Anfahrt benötigen wir Aufgang, Etage und Klingelname. Ist die Tür abgeschlossen oder steckt innen ein Schlüssel, sollte das bereits am Telefon genannt werden."],
+  "schlüsseldienst-friedrichsfelde": ["Tür- und Schlossservice in Friedrichsfelde", "Zwischen Tierpark, Alt-Friedrichsfelde und den Wohnanlagen an der Sewanstraße wechseln sich Häuser, Wohnblöcke und Gewerberäume mit verschiedenen Schließsystemen ab.", "Teilen Sie mit, welcher Gebäudeteil und welche Tür betroffen sind. Ein Schloss- oder Zylinderwechsel wird getrennt von der Türöffnung geprüft und nur nach Absprache ausgeführt."],
+  "schlüsseldienst-friedrichshagen": ["Türöffnung rund um die Bölschestraße", "Friedrichshagen ist von Altbauten an der Bölschestraße, Wohnhäusern nahe dem Müggelsee und ruhigeren Siedlungsstraßen geprägt. Zugänge und Türtechnik unterscheiden sich entsprechend.", "Bei Grundstücken nennen Sie bitte den richtigen Eingang und einen Treffpunkt. Anfahrt, Türzustand und Kosten werden vor dem Losfahren verbindlich besprochen."],
+  "schlüsseldienst-johannisthal": ["Schlüsseldienst für Johannisthaler Wohnungen und Häuser", "Zwischen Sterndamm, Landschaftspark und den Wohnstraßen Johannisthals finden sich Mehrfamilienhäuser, Einfamilienhäuser und gewerblich genutzte Gebäude.", "Beschreiben Sie die tatsächlich betroffene Tür und sichtbare Sicherungen. Bei Firmenräumen muss eine berechtigte Person die Beauftragung nachvollziehbar bestätigen."],
+  "schlüsseldienst-karlshorst": ["Türöffnung in Karlshorster Wohnlagen", "Rund um Treskowallee, Theaterplatz und die Wohnquartiere nahe dem Tierpark stehen Altbauten, Stadtvillen und Neubauten mit sehr unterschiedlichen Türen und Beschlägen.", "Ob die Tür nur zugefallen, verriegelt oder durch einen defekten Zylinder blockiert ist, wird vorab getrennt erfasst. Danach vereinbaren wir Vorgehen und Preis."],
+  "schlüsseldienst-niederschoenhausen": ["Schlüsselnotdienst rund um Schloss Schönhausen", "Niederschönhausen verbindet Altbauten an der Dietzgenstraße mit Villen, Einfamilienhäusern und Wohnquartieren rund um Schlosspark und Pastor-Niemöller-Platz.", "Nennen Sie bei Grundstücken den richtigen Zugang und ob Haus- oder Wohnungstür betroffen ist. Zusätzliche Sicherungen und Material werden separat besprochen."],
+  "schlüsseldienst-rosenthal": ["Tür- und Schlüsselhilfe in Rosenthal", "Zwischen Hauptstraße, Rosenthaler Anger und den Siedlungsgebieten stehen viele Einfamilien- und Reihenhäuser mit Grundstückstoren, Nebeneingängen und individuellen Sicherungen.", "Für die Anfahrt benötigen wir die vollständige Adresse und den richtigen Zugang. Eine zweite Tür oder ein gewünschter Zylinderwechsel sind eigenständige Leistungen."],
+  "schlüsseldienst-rummelsburg": ["Türöffnung im Weitlingkiez und an der Rummelsburger Bucht", "Altbauten im Weitlingkiez, moderne Häuser am Wasser und größere Wohnanlagen rund um die Hauptstraße bringen verschiedene Eingangs- und Türsituationen mit sich.", "Geben Sie Gebäudeteil, Aufgang, Etage und Türzustand an. Damit lassen sich Anfahrt, benötigte Leistung und Festpreis vor Beginn nachvollziehbar abstimmen."],
+  "schlüsseldienst-wilhelmsruh": ["Schlüsselhilfe zwischen Wilhelmsruh und Nordend", "Wohnhäuser an der Hauptstraße, kleinere Siedlungen und Gewerbeflächen nahe dem Bahnhof Wilhelmsruh unterscheiden sich bei Zufahrt, Eingang und Schließtechnik.", "Sagen Sie uns, ob Haus-, Wohnungs- oder Gewerbetür betroffen ist und ob ein Schlüssel innen steckt. Preis und Anfahrtsweg werden vor dem Auftrag geklärt."],
   "schlüsseldienst-friedenau": ["Türöffnung in Friedenauer Altbauten", "Rund um Breslauer Platz, Bundesallee und Rheinstraße liegen viele Altbauwohnungen mit Seitenflügeln, Hinterhäusern und unterschiedlichen Haustüranlagen.", "Nennen Sie Aufgang, Etage und Klingelnamen zusammen mit dem Türzustand. So lassen sich Zugang, Anfahrt und die passende Öffnung vor dem Auftrag konkret einordnen."],
   "schlüsseldienst-dahlem": ["Schlüsselhilfe für Wohnhäuser und Einrichtungen in Dahlem", "Dahlem verbindet Villenstraßen mit Universitäts-, Museums- und Institutsgebäuden. Bei nicht privaten Objekten muss eine berechtigte Kontaktperson den Auftrag nachvollziehbar bestätigen.", "Bei Grundstücken ist wichtig, welche Tür tatsächlich betroffen ist. Gartentor, Haustür und Wohnungstür besitzen häufig getrennte Schließungen und erfordern unterschiedliche Arbeiten."],
   "schlüsseldienst-grunewald": ["Tür- und Schlossservice für Grunewalder Wohnlagen", "Zwischen Hagenplatz, Koenigsallee und den Wohnstraßen am Forst stehen viele freistehende Häuser mit Grundstückstoren, Nebeneingängen und zusätzlicher Sicherungstechnik.", "Beschreiben Sie die betroffene Tür und vorhandene Beschläge möglichst genau. Material, Schlosswechsel oder Arbeiten an einer weiteren Schließung sind separate Leistungen."],
