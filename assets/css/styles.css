@@ -3417,6 +3417,220 @@ main section:not(.page-hero-image) img,
   }
 }
 
+/* Bezirksseiten verwenden dieselbe kompakte Trust-Hierarchie wie die Startseite. */
+.district-page,
+.district-page h1,
+.district-page h2,
+.district-page h3,
+.district-page .button,
+.district-page .home-hero-checks {
+  font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+}
+
+.district-page .district-home-hero {
+  min-height: 0;
+  padding: 64px 0;
+}
+
+.district-page .district-home-hero .hero-copy {
+  display: flex;
+  max-width: 780px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.district-page .home-hero-rating {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0 0 18px;
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.district-page .home-hero-rating .google-word {
+  font-size: 18px;
+  letter-spacing: -.6px;
+}
+
+.district-page .home-hero-rating .review-stars {
+  color: #f9b400;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+
+.district-page .district-home-hero h1 {
+  order: 2;
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(42px, 4vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  overflow-wrap: normal;
+}
+
+.district-page .home-hero-intro {
+  order: 3;
+  max-width: 720px;
+  margin: 24px 0 0 !important;
+  color: #fff !important;
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+  font-weight: 400;
+}
+
+.district-page .home-hero-checks {
+  order: 4;
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #fff;
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.district-page .home-hero-checks li {
+  position: relative;
+  min-height: 28px;
+  padding: 2px 0 2px 30px;
+}
+
+.district-page .home-hero-checks li::before {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  color: #fff;
+  content: "✓";
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .22);
+}
+
+.district-page .district-home-hero .home-hero-actions {
+  order: 5;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.district-page .district-home-hero .home-hero-actions .button {
+  display: inline-flex;
+  min-width: 250px;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.district-page .home-call-button {
+  border-color: #fff !important;
+  background: #fff !important;
+  color: #17364c !important;
+}
+
+.district-page .home-whatsapp-button {
+  border-color: #16a953 !important;
+  background: #16a953 !important;
+  color: #fff !important;
+}
+
+.district-page .home-action-svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+.district-page .home-whatsapp-svg {
+  width: 27px;
+  height: 27px;
+}
+
+@media (max-width: 640px) {
+  .district-page .district-home-hero {
+    padding: 30px 0 34px !important;
+  }
+
+  .district-page .district-home-hero .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .district-page .home-hero-rating {
+    gap: 5px;
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+
+  .district-page .home-hero-rating .google-word {
+    font-size: 15px;
+  }
+
+  .district-page .home-hero-rating .review-stars {
+    font-size: 16px;
+    letter-spacing: .4px;
+  }
+
+  .district-page .district-home-hero h1 {
+    width: 100%;
+    font-size: clamp(27px, 8vw, 34px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.025em !important;
+  }
+
+  .district-page .home-hero-intro {
+    margin-top: 18px !important;
+    font-size: 17px !important;
+    line-height: 1.43 !important;
+  }
+
+  .district-page .home-hero-checks {
+    gap: 9px;
+    margin-top: 20px;
+    font-size: 16.5px;
+  }
+
+  .district-page .home-hero-checks li {
+    min-height: 25px;
+    padding-left: 29px;
+  }
+
+  .district-page .home-hero-checks li::before {
+    font-size: 21px;
+  }
+
+  .district-page .district-home-hero .home-hero-actions {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .district-page .district-home-hero .home-hero-actions .button {
+    width: 100%;
+    min-width: 0;
+    min-height: 52px;
+    padding: 11px 10px;
+    font-size: 17px;
+  }
+}
+
 /* Compact language dropdown and localized service pages */
 .language-switcher {
   position: relative;

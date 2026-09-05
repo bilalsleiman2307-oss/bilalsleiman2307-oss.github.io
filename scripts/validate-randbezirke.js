@@ -11,7 +11,7 @@ for (const slug of slugs) {
   const canonical = html.match(/<link rel="canonical" href="(.*?)">/)?.[1] || '';
   try { JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1]); } catch { errors.push(`${slug}: invalid schema`); }
   if (!canonical.endsWith(`/${slug}/`)) errors.push(`${slug}: canonical`);
-  if (!html.includes('<body class="local-page">')) errors.push(`${slug}: design class`);
+  if (!html.includes('<body class="district-page">')) errors.push(`${slug}: design class`);
   if (title.length > 62) errors.push(`${slug}: title ${title.length}`);
   if (description.length < 120 || description.length > 160) errors.push(`${slug}: description ${description.length}`);
   titles.add(title);
