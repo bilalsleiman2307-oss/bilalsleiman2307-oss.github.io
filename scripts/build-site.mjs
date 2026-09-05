@@ -35,7 +35,9 @@ walk(root);
 for (const slug of internationalSlugs) if (!allIndexes.includes(slug)) allIndexes.push(slug);
 const newDistrictSlugs = [
   "schlüsseldienst-tiergarten", "schlüsseldienst-tegel", "schlüsseldienst-wittenau", "schlüsseldienst-hellersdorf", "schlüsseldienst-hohenschoenhausen",
-  "schlüsseldienst-lichterfelde", "schlüsseldienst-mariendorf", "schlüsseldienst-britz", "schlüsseldienst-adlershof", "schlüsseldienst-westend"
+  "schlüsseldienst-lichterfelde", "schlüsseldienst-mariendorf", "schlüsseldienst-britz", "schlüsseldienst-adlershof", "schlüsseldienst-westend",
+  "schlüsseldienst-friedenau", "schlüsseldienst-dahlem", "schlüsseldienst-grunewald", "schlüsseldienst-schmargendorf", "schlüsseldienst-siemensstadt",
+  "schlüsseldienst-haselhorst", "schlüsseldienst-lankwitz", "schlüsseldienst-marienfelde", "schlüsseldienst-buckow", "schlüsseldienst-biesdorf"
 ];
 for (const slug of newDistrictSlugs) if (!allIndexes.includes(slug)) allIndexes.push(slug);
 if (!allIndexes.includes("sitemap")) allIndexes.push("sitemap");
@@ -71,11 +73,11 @@ const legacyHtmlRoutes = new Map([
 ]);
 
 const districtNames = {
-  "adlershof":"Adlershof", "britz":"Britz", "buch":"Buch", "charlottenburg":"Charlottenburg", "franzoesisch-buchholz":"Französisch Buchholz", "französisch-buchholz":"Französisch Buchholz", "frohnau":"Frohnau",
+  "adlershof":"Adlershof", "biesdorf":"Biesdorf", "britz":"Britz", "buch":"Buch", "buckow":"Buckow", "charlottenburg":"Charlottenburg", "dahlem":"Dahlem", "franzoesisch-buchholz":"Französisch Buchholz", "französisch-buchholz":"Französisch Buchholz", "friedenau":"Friedenau", "frohnau":"Frohnau", "grunewald":"Grunewald",
   "friedrichshain":"Friedrichshain", "gesundbrunnen":"Gesundbrunnen", "koepenick":"Köpenick", "köpenick":"Köpenick",
-  "heiligensee":"Heiligensee", "hellersdorf":"Hellersdorf", "hermsdorf":"Hermsdorf", "hohenschoenhausen":"Hohenschönhausen", "karow":"Karow", "kaulsdorf":"Kaulsdorf", "kladow":"Kladow", "kreuzberg":"Kreuzberg", "lichtenberg":"Lichtenberg", "lichtenrade":"Lichtenrade", "lichterfelde":"Lichterfelde", "mahlsdorf":"Mahlsdorf", "mariendorf":"Mariendorf", "marzahn":"Marzahn", "mitte":"Mitte", "moabit":"Moabit", "mueggelheim":"Müggelheim",
+  "haselhorst":"Haselhorst", "heiligensee":"Heiligensee", "hellersdorf":"Hellersdorf", "hermsdorf":"Hermsdorf", "hohenschoenhausen":"Hohenschönhausen", "karow":"Karow", "kaulsdorf":"Kaulsdorf", "kladow":"Kladow", "kreuzberg":"Kreuzberg", "lankwitz":"Lankwitz", "lichtenberg":"Lichtenberg", "lichtenrade":"Lichtenrade", "lichterfelde":"Lichterfelde", "mahlsdorf":"Mahlsdorf", "mariendorf":"Mariendorf", "marienfelde":"Marienfelde", "marzahn":"Marzahn", "mitte":"Mitte", "moabit":"Moabit", "mueggelheim":"Müggelheim",
   "neukölln":"Neukölln", "pankow":"Pankow", "prenzlauerberg":"Prenzlauer Berg", "reinickendorf":"Reinickendorf",
-  "rahnsdorf":"Rahnsdorf", "rudow":"Rudow", "schoeneberg":"Schöneberg", "schöneberg":"Schöneberg", "spandau":"Spandau", "staaken":"Staaken", "steglitz":"Steglitz", "tempelhof":"Tempelhof",
+  "rahnsdorf":"Rahnsdorf", "rudow":"Rudow", "schmargendorf":"Schmargendorf", "schoeneberg":"Schöneberg", "schöneberg":"Schöneberg", "siemensstadt":"Siemensstadt", "spandau":"Spandau", "staaken":"Staaken", "steglitz":"Steglitz", "tempelhof":"Tempelhof",
   "tegel":"Tegel", "tiergarten":"Tiergarten", "treptow":"Treptow", "wannsee":"Wannsee", "wedding":"Wedding", "weißensee":"Weißensee", "westend":"Westend", "wilmersdorf":"Wilmersdorf", "wittenau":"Wittenau", "zehlendorf":"Zehlendorf"
 };
 const districtRoutes = allIndexes.filter((r) => r.startsWith("schlüsseldienst-") && districtNames[r.slice(16)] && !canonicalRoutes.has(r));
@@ -83,12 +85,18 @@ const districtRoutes = allIndexes.filter((r) => r.startsWith("schlüsseldienst-"
 const districtDescriptions = {
   "schlüsseldienst-adlershof": "Schlüsseldienst Berlin Adlershof: Türöffnung ab 59 €, 24/7 erreichbar. Für Wohnungen und Gewerberäume klären wir Türzustand und Preis vorab.",
   "schlüsseldienst-britz": "Schlüsseldienst Berlin Britz: Türöffnung ab 59 €, 24/7 erreichbar. Bei Altbau, Siedlungshaus oder Wohnanlage stimmen wir Anfahrt und Kosten vorher ab.",
+  "schlüsseldienst-biesdorf": "Schlüsseldienst Berlin Biesdorf: Türöffnung ab 59 €, 24/7 erreichbar. Für Haus-, Wohnungs- und Nebentüren klären wir Anfahrt und Festpreis vorher.",
+  "schlüsseldienst-buckow": "Schlüsseldienst Berlin Buckow: Türöffnung ab 59 €, 24/7 erreichbar. Ob Wohnanlage oder Reihenhaus, Türzustand und Kosten besprechen wir vorab.",
   "schlüsseldienst-buch": "Schlüsseldienst Berlin Buch: Türöffnung ab 59 €, 24/7 erreichbar. Für Wohnhäuser und Türen nahe dem Klinikum klären wir Anfahrt und Preis vorab.",
   "schlüsseldienst-charlottenburg": "Schlüsseldienst Berlin Charlottenburg: Türöffnung ab 59 €, 24/7 erreichbar. Türzustand, Anfahrt und Preis klären wir verbindlich vor Beginn.",
+  "schlüsseldienst-dahlem": "Schlüsseldienst Berlin Dahlem: Türöffnung ab 59 €, 24/7 erreichbar. Bei Wohnhaus, Villa oder Institut klären wir Berechtigung, Zufahrt und Preis vorher.",
   "schlüsseldienst-franzoesisch-buchholz": "Schlüsseldienst Berlin Französisch Buchholz: Türöffnung ab 59 €, 24/7 erreichbar. Vor der Anfahrt besprechen wir Schloss, Anfahrtsweg und Kosten.",
   "schlüsseldienst-friedrichshain": "Schlüsseldienst Berlin Friedrichshain: Türöffnung ab 59 €, 24/7 erreichbar. Bei zugefallener oder verriegelter Tür klären wir den Preis vorab.",
+  "schlüsseldienst-friedenau": "Schlüsseldienst Berlin Friedenau: Türöffnung ab 59 €, 24/7 erreichbar. Für Altbauwohnungen und Hinterhäuser stimmen wir Eingang, Anfahrt und Kosten ab.",
   "schlüsseldienst-frohnau": "Schlüsseldienst Berlin Frohnau: Türöffnung ab 59 €, 24/7 erreichbar. Bei Haus- und Wohnungstüren vereinbaren wir Anfahrt, Vorgehen und Preis vorher.",
+  "schlüsseldienst-grunewald": "Schlüsseldienst Berlin Grunewald: Türöffnung ab 59 €, 24/7 erreichbar. Bei Häusern und Grundstückszugängen besprechen wir betroffene Tür und Kosten vorab.",
   "schlüsseldienst-gesundbrunnen": "Schlüsseldienst Berlin Gesundbrunnen: Türöffnung ab 59 €, 24/7 erreichbar. Anfahrt und Preis klären wir vor dem konkreten Einsatz direkt am Telefon.",
+  "schlüsseldienst-haselhorst": "Schlüsseldienst Berlin Haselhorst: Türöffnung ab 59 €, 24/7 erreichbar. Für Wohnhöfe und Mehrfamilienhäuser klären wir Eingang, Türart und Preis vorab.",
   "schlüsseldienst-heiligensee": "Schlüsseldienst Berlin Heiligensee: Türöffnung ab 59 €, 24/7 erreichbar. Für die Randlage stimmen wir Adresse, Anfahrt und Festpreis genau vorher ab.",
   "schlüsseldienst-hellersdorf": "Schlüsseldienst Berlin Hellersdorf: Türöffnung ab 59 €, 24/7 erreichbar. Aufgang, Etage, Türzustand und Festpreis werden vor der Anfahrt geklärt.",
   "schlüsseldienst-hermsdorf": "Schlüsseldienst Berlin Hermsdorf: Türöffnung ab 59 €, 24/7 erreichbar. Türart, Schloss und Anfahrtsweg besprechen wir passend zur Adresse vorab.",
@@ -98,11 +106,13 @@ const districtDescriptions = {
   "schlüsseldienst-kladow": "Schlüsseldienst Berlin Kladow: Türöffnung ab 59 €, 24/7 erreichbar. Wegen der Wege im Südwesten werden Anfahrt und Preis am Telefon genau vereinbart.",
   "schlüsseldienst-koepenick": "Schlüsseldienst Berlin Köpenick: Türöffnung ab 59 €, 24/7 erreichbar. Ob zugefallen oder abgeschlossen, Ablauf und Kosten stehen vorher fest.",
   "schlüsseldienst-kreuzberg": "Schlüsseldienst Berlin Kreuzberg: Türöffnung ab 59 €, 24/7 erreichbar. Wir fragen nach der Türsituation und vereinbaren Anfahrt und Preis vorab.",
+  "schlüsseldienst-lankwitz": "Schlüsseldienst Berlin Lankwitz: Türöffnung ab 59 €, 24/7 erreichbar. Bei Wohnung, Reihenhaus oder Gewerberaum werden Anfahrt und Kosten vorher geklärt.",
   "schlüsseldienst-lichtenberg": "Schlüsseldienst Berlin Lichtenberg: Türöffnung ab 59 €, 24/7 erreichbar. Bei Schlüsselverlust oder Defekt besprechen wir das Vorgehen vor Beginn.",
   "schlüsseldienst-lichtenrade": "Schlüsseldienst Berlin Lichtenrade: Türöffnung ab 59 €, 24/7 erreichbar. Türzustand, Adresse und Kosten klären wir vor der Fahrt in den Berliner Süden.",
   "schlüsseldienst-lichterfelde": "Schlüsseldienst Berlin Lichterfelde: Türöffnung ab 59 €, 24/7 erreichbar. Bei Haus- und Wohnungstüren vereinbaren wir Anfahrt und Leistung vorher.",
   "schlüsseldienst-mahlsdorf": "Schlüsseldienst Berlin Mahlsdorf: Türöffnung ab 59 €, 24/7 erreichbar. Bei Haus-, Neben- und Wohnungstüren nennen wir Ablauf und Kosten vor Beginn.",
   "schlüsseldienst-mariendorf": "Schlüsseldienst Berlin Mariendorf: Türöffnung ab 59 €, 24/7 erreichbar. Türart, Verriegelung, Anfahrt und konkrete Kosten klären wir vor dem Einsatz.",
+  "schlüsseldienst-marienfelde": "Schlüsseldienst Berlin Marienfelde: Türöffnung ab 59 €, 24/7 erreichbar. Für Siedlungshaus und Wohnanlage vereinbaren wir Anfahrt und Preis telefonisch.",
   "schlüsseldienst-marzahn": "Schlüsseldienst Berlin Marzahn: Türöffnung ab 59 €, 24/7 erreichbar. Für Wohnungstüren und Zylinderprobleme erhalten Sie vorab klare Kosten.",
   "schlüsseldienst-mitte": "Schlüsseldienst Berlin Mitte: Türöffnung ab 59 €, 24/7 erreichbar. Für Wohnung, Büro oder Gewerbe klären wir Preis und Anfahrt vor Arbeitsbeginn.",
   "schlüsseldienst-moabit": "Schlüsseldienst Berlin Moabit: Türöffnung ab 59 €, 24/7 erreichbar. Von der ersten Schilderung bis zur Öffnung bleiben Ablauf und Kosten klar.",
@@ -113,7 +123,9 @@ const districtDescriptions = {
   "schlüsseldienst-reinickendorf": "Schlüsseldienst Berlin Reinickendorf: Türöffnung ab 59 €, 24/7 erreichbar. Die Konditionen nennen wir passend zur Türsituation vor der Anfahrt.",
   "schlüsseldienst-rahnsdorf": "Schlüsseldienst Berlin Rahnsdorf: Türöffnung ab 59 €, 24/7 erreichbar. In Hessenwinkel und Wilhelmshagen klären wir Strecke und Preis adressbezogen.",
   "schlüsseldienst-rudow": "Schlüsseldienst Berlin Rudow: Türöffnung ab 59 €, 24/7 erreichbar. Ob Tür zugefallen, verriegelt oder Schloss defekt: Der Preis wird vorher geklärt.",
+  "schlüsseldienst-schmargendorf": "Schlüsseldienst Berlin Schmargendorf: Türöffnung ab 59 €, 24/7 erreichbar. Für Altbau und Wohnhaus klären wir Schloss, Anfahrt und Kosten vor Beginn.",
   "schlüsseldienst-schoeneberg": "Schlüsseldienst Berlin Schöneberg: Türöffnung ab 59 €, 24/7 erreichbar. Wir prüfen Schloss und Beschlag und erklären die Kosten vor Arbeitsbeginn.",
+  "schlüsseldienst-siemensstadt": "Schlüsseldienst Berlin Siemensstadt: Türöffnung ab 59 €, 24/7 erreichbar. Aufgang, Gebäudeteil, Türzustand und Festpreis stimmen wir telefonisch ab.",
   "schlüsseldienst-spandau": "Schlüsseldienst Berlin Spandau: Türöffnung ab 59 €, 24/7 erreichbar. Für zugefallene und abgeschlossene Türen klären wir den Aufwand telefonisch vorab.",
   "schlüsseldienst-staaken": "Schlüsseldienst Berlin Staaken: Türöffnung ab 59 €, 24/7 erreichbar. In Alt- und Neu-Staaken stimmen wir Türsituation, Anfahrt und Kosten vorher ab.",
   "schlüsseldienst-steglitz": "Schlüsseldienst Berlin Steglitz: Türöffnung ab 59 €, 24/7 erreichbar. Bei Aussperrung oder Schlüsselverlust vereinbaren wir den Preis vorher.",
@@ -508,6 +520,16 @@ function internalLinkList(slug) {
 }
 
 const pageDetails = {
+  "schlüsseldienst-friedenau": ["Türöffnung in Friedenauer Altbauten", "Rund um Breslauer Platz, Bundesallee und Rheinstraße liegen viele Altbauwohnungen mit Seitenflügeln, Hinterhäusern und unterschiedlichen Haustüranlagen.", "Nennen Sie Aufgang, Etage und Klingelnamen zusammen mit dem Türzustand. So lassen sich Zugang, Anfahrt und die passende Öffnung vor dem Auftrag konkret einordnen."],
+  "schlüsseldienst-dahlem": ["Schlüsselhilfe für Wohnhäuser und Einrichtungen in Dahlem", "Dahlem verbindet Villenstraßen mit Universitäts-, Museums- und Institutsgebäuden. Bei nicht privaten Objekten muss eine berechtigte Kontaktperson den Auftrag nachvollziehbar bestätigen.", "Bei Grundstücken ist wichtig, welche Tür tatsächlich betroffen ist. Gartentor, Haustür und Wohnungstür besitzen häufig getrennte Schließungen und erfordern unterschiedliche Arbeiten."],
+  "schlüsseldienst-grunewald": ["Tür- und Schlossservice für Grunewalder Wohnlagen", "Zwischen Hagenplatz, Koenigsallee und den Wohnstraßen am Forst stehen viele freistehende Häuser mit Grundstückstoren, Nebeneingängen und zusätzlicher Sicherungstechnik.", "Beschreiben Sie die betroffene Tür und vorhandene Beschläge möglichst genau. Material, Schlosswechsel oder Arbeiten an einer weiteren Schließung sind separate Leistungen."],
+  "schlüsseldienst-schmargendorf": ["Schlüsseldienst rund um den Ortskern Schmargendorf", "Altbauwohnungen am Hohenzollerndamm, kleinere Wohnstraßen und Häuser nahe dem Messelpark bringen verschiedene Tür- und Zylinderarten mit sich.", "Ob die Tür zugefallen, abgeschlossen oder durch ein klemmendes Schloss blockiert ist, wird am Telefon getrennt erfasst. Daraus ergeben sich Vorgehen und Preisabsprache."],
+  "schlüsseldienst-siemensstadt": ["Türöffnung in Siemensstädter Wohnanlagen", "Die Großsiedlung Siemensstadt, ältere Werkswohnungen und Gebäude rund um Nonnendammallee besitzen oft mehrere Aufgänge und ähnlich bezeichnete Eingänge.", "Geben Sie Hausnummer, Aufgang, Etage und Klingelname vollständig an. Bei Gewerbe- oder Betriebsflächen prüfen wir zusätzlich, wer zur Beauftragung berechtigt ist."],
+  "schlüsseldienst-haselhorst": ["Schlüsselnotdienst zwischen Altstadt und Haselhorst", "Wohnhöfe, Mehrfamilienhäuser und Neubauten entlang der Gartenfelder Straße und rund um den Haselhorster Damm unterscheiden sich bei Zugang und Schließtechnik.", "Für eine gezielte Anfahrt benötigen wir den richtigen Gebäudeteil und die konkrete Tür. Zusatzsicherungen oder ein innen steckender Schlüssel sollten bereits beim Anruf genannt werden."],
+  "schlüsseldienst-lankwitz": ["Türöffnung für Wohnungen und Häuser in Lankwitz", "Zwischen Lankwitz Kirche, Kaiser-Wilhelm-Straße und den ruhigeren Siedlungsstraßen stehen Mehrfamilienhäuser, Reihenhäuser und einzelne Gewerbeobjekte.", "Wir unterscheiden Haustür, Wohnungstür und Nebenzugang. Ist die Tür verriegelt oder das Schloss defekt, wird der technische Zustand vor der Ausführung erneut geprüft."],
+  "schlüsseldienst-marienfelde": ["Schloss- und Türhilfe in Marienfelde", "Marienfelde reicht von Siedlungshäusern nahe dem alten Dorfkern bis zu großen Wohnanlagen und Gewerbeflächen entlang der Motzener Straße.", "Nennen Sie bei weitläufigen Grundstücken den richtigen Zugang und einen Treffpunkt. Die Öffnung einer Tür und ein eventuell gewünschter Zylinderwechsel werden getrennt angeboten."],
+  "schlüsseldienst-buckow": ["Türöffnung zwischen Alt-Buckow und Buckower Feldern", "In Buckow treffen Reihenhäuser, ältere Siedlungsbauten und große Wohnanlagen aufeinander. Aufgang und Etage sind ebenso wichtig wie die Information, ob die Tür verriegelt wurde.", "Eine nur zugefallene Tür öffnen wir ohne Beschädigung. Bei einem Defekt prüfen wir, ob Schlüssel, Zylinder, Schloss oder Türspannung die Ursache ist."],
+  "schlüsseldienst-biesdorf": ["Schlüsseldienst für Biesdorfer Häuser und Wohnungen", "Biesdorf ist durch Einfamilienhäuser, Siedlungsstraßen und Wohnanlagen rund um Schloss Biesdorf und den Elsterwerdaer Platz geprägt.", "Teilen Sie mit, ob Haus-, Wohnungs- oder Nebentür betroffen ist und welche Sicherung sichtbar ist. Anfahrt und Arbeitsumfang werden vor Beginn passend dazu vereinbart."],
   "schlüsseldienst-tiergarten": ["Türöffnung zwischen Tiergarten und Hansaviertel", "In Tiergarten liegen Altbauten, moderne Wohnhäuser, Büros und Hotels nah beieinander. Nennen Sie uns deshalb neben der Straße auch Gebäudenutzung, Eingang und Etage.", "Bei Hotel- oder Gewerberäumen muss die Beauftragung eindeutig sein. Türzustand, Berechtigungsnachweis, Zufahrt und Preis werden vor Arbeitsbeginn geklärt."],
   "schlüsseldienst-tegel": ["Schlüsselhilfe von Alt-Tegel bis zum Borsighafen", "Rund um Alt-Tegel, Greenwichpromenade und Borsigwerke treffen ältere Haustüren auf moderne Wohnanlagen. Eine genaue Beschreibung von Schloss und Beschlag erleichtert die Vorbereitung.", "Ob die Tür nur zugefallen oder verriegelt ist, entscheidet über das Vorgehen. Die Anfahrt wird anhand der vollständigen Adresse und der aktuellen Verkehrslage eingeordnet."],
   "schlüsseldienst-wittenau": ["Schlüsseldienst für Wittenauer Wohnlagen", "Zwischen Rathaus Reinickendorf, Oranienburger Straße und den Wohnanlagen am Wilhelmsruher Damm sind Aufgang, Hausnummer und Etage für eine gezielte Anfahrt wichtig.", "Teilen Sie uns mit, ob ein Schlüssel innen steckt oder sich der Zylinder nicht drehen lässt. Zusatzarbeiten und Material erfolgen nur nach einer neuen, eindeutigen Vereinbarung."],
