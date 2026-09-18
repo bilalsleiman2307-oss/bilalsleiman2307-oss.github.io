@@ -71,12 +71,12 @@ const legacyHtmlRoutes = new Map([
 ]);
 
 const districtNames = {
-  "adlershof":"Adlershof", "britz":"Britz", "buch":"Buch", "charlottenburg":"Charlottenburg", "franzoesisch-buchholz":"Französisch Buchholz", "französisch-buchholz":"Französisch Buchholz", "frohnau":"Frohnau",
-  "friedrichshain":"Friedrichshain", "gesundbrunnen":"Gesundbrunnen", "koepenick":"Köpenick", "köpenick":"Köpenick",
-  "heiligensee":"Heiligensee", "hellersdorf":"Hellersdorf", "hermsdorf":"Hermsdorf", "hohenschoenhausen":"Hohenschönhausen", "karow":"Karow", "kaulsdorf":"Kaulsdorf", "kladow":"Kladow", "kreuzberg":"Kreuzberg", "lichtenberg":"Lichtenberg", "lichtenrade":"Lichtenrade", "lichterfelde":"Lichterfelde", "mahlsdorf":"Mahlsdorf", "mariendorf":"Mariendorf", "marzahn":"Marzahn", "mitte":"Mitte", "moabit":"Moabit", "mueggelheim":"Müggelheim",
-  "neukölln":"Neukölln", "pankow":"Pankow", "prenzlauerberg":"Prenzlauer Berg", "reinickendorf":"Reinickendorf",
-  "rahnsdorf":"Rahnsdorf", "rudow":"Rudow", "schoeneberg":"Schöneberg", "schöneberg":"Schöneberg", "spandau":"Spandau", "staaken":"Staaken", "steglitz":"Steglitz", "tempelhof":"Tempelhof",
-  "tegel":"Tegel", "tiergarten":"Tiergarten", "treptow":"Treptow", "wannsee":"Wannsee", "wedding":"Wedding", "weißensee":"Weißensee", "westend":"Westend", "wilmersdorf":"Wilmersdorf", "wittenau":"Wittenau", "zehlendorf":"Zehlendorf"
+  "adlershof": "Adlershof", "britz": "Britz", "buch": "Buch", "charlottenburg": "Charlottenburg", "franzoesisch-buchholz": "Französisch Buchholz", "französisch-buchholz": "Französisch Buchholz", "frohnau": "Frohnau",
+  "friedrichshain": "Friedrichshain", "gesundbrunnen": "Gesundbrunnen", "koepenick": "Köpenick", "köpenick": "Köpenick",
+  "heiligensee": "Heiligensee", "hellersdorf": "Hellersdorf", "hermsdorf": "Hermsdorf", "hohenschoenhausen": "Hohenschönhausen", "karow": "Karow", "kaulsdorf": "Kaulsdorf", "kladow": "Kladow", "kreuzberg": "Kreuzberg", "lichtenberg": "Lichtenberg", "lichtenrade": "Lichtenrade", "lichterfelde": "Lichterfelde", "mahlsdorf": "Mahlsdorf", "mariendorf": "Mariendorf", "marzahn": "Marzahn", "mitte": "Mitte", "moabit": "Moabit", "mueggelheim": "Müggelheim",
+  "neukölln": "Neukölln", "pankow": "Pankow", "prenzlauerberg": "Prenzlauer Berg", "reinickendorf": "Reinickendorf",
+  "rahnsdorf": "Rahnsdorf", "rudow": "Rudow", "schoeneberg": "Schöneberg", "schöneberg": "Schöneberg", "spandau": "Spandau", "staaken": "Staaken", "steglitz": "Steglitz", "tempelhof": "Tempelhof",
+  "tegel": "Tegel", "tiergarten": "Tiergarten", "treptow": "Treptow", "wannsee": "Wannsee", "wedding": "Wedding", "weißensee": "Weißensee", "westend": "Westend", "wilmersdorf": "Wilmersdorf", "wittenau": "Wittenau", "zehlendorf": "Zehlendorf"
 };
 const districtRoutes = allIndexes.filter((r) => r.startsWith("schlüsseldienst-") && districtNames[r.slice(16)] && !canonicalRoutes.has(r));
 
@@ -131,19 +131,19 @@ const districtDescriptions = {
 };
 
 const labels = {
-  "leistung":"Leistungen", "ratgeber":"Ratgeber", "impressum":"Impressum", "sitemap":"Sitemap", "startseite":"Startseite",
-  "schlüsseldienst-berlin-preise":"Schlüsseldienst Berlin Preise", "schlüsseldienst-in-der-nähe":"Schlüsseldienst in der Nähe",
-  "schlüssel-steckt-innen-tür-zu":"Schlüssel steckt innen – Tür zu", "tür-zugefallen-was-tun":"Tür zugefallen – was tun?",
-  "türöffnung-berlin-24h-notdienst":"Türöffnung Berlin", "türöffnung-berlin-kosten":"Türöffnung Berlin Kosten",
-  "schlüsselnotdienst":"Schlüsselnotdienst Berlin", "öffnung-bei-abgeschlossenen-türen":"Öffnung bei abgeschlossenen Türen",
-  "öffnung-bei-zugefallenen-türen":"Öffnung bei zugefallenen Türen", "montage-von-sicherheitsschlösser":"Montage von Sicherheitsschlössern",
-  "schlosswechsel-berlin-schlösser-schnell-sicher-wechseln":"Schlosswechsel Berlin",
-  "sicherheitstechnik-berlin-einbruchschutz-vom-profi":"Sicherheitstechnik & Einbruchschutz Berlin",
-  "schlüsseldienst-berlin-türöffnung-notdienst-24h":"Schlüsseldienst Berlin – Türöffnung & Notdienst 24h",
-  "tuer-zugefallen-berlin":"Tür zugefallen in Berlin", "schluesseldienst-kosten-berlin":"Schlüsseldienst Kosten Berlin",
-  "schluessel-verloren-berlin":"Schlüssel verloren in Berlin", "tuer-zugefallen-wedding":"Tür zugefallen in Wedding",
-  "schluessel-verloren-gesundbrunnen":"Schlüssel verloren in Gesundbrunnen", "tuer-zugefallen-pankow":"Tür zugefallen in Pankow",
-  "schluessel-verloren-mitte":"Schlüssel verloren in Mitte"
+  "leistung": "Leistungen", "ratgeber": "Ratgeber", "impressum": "Impressum", "sitemap": "Sitemap", "startseite": "Startseite",
+  "schlüsseldienst-berlin-preise": "Schlüsseldienst Berlin Preise", "schlüsseldienst-in-der-nähe": "Schlüsseldienst in der Nähe",
+  "schlüssel-steckt-innen-tür-zu": "Schlüssel steckt innen – Tür zu", "tür-zugefallen-was-tun": "Tür zugefallen – was tun?",
+  "türöffnung-berlin-24h-notdienst": "Türöffnung Berlin", "türöffnung-berlin-kosten": "Türöffnung Berlin Kosten",
+  "schlüsselnotdienst": "Schlüsselnotdienst Berlin", "öffnung-bei-abgeschlossenen-türen": "Öffnung bei abgeschlossenen Türen",
+  "öffnung-bei-zugefallenen-türen": "Öffnung bei zugefallenen Türen", "montage-von-sicherheitsschlösser": "Montage von Sicherheitsschlössern",
+  "schlosswechsel-berlin-schlösser-schnell-sicher-wechseln": "Schlosswechsel Berlin",
+  "sicherheitstechnik-berlin-einbruchschutz-vom-profi": "Sicherheitstechnik & Einbruchschutz Berlin",
+  "schlüsseldienst-berlin-türöffnung-notdienst-24h": "Schlüsseldienst Berlin – Türöffnung & Notdienst 24h",
+  "tuer-zugefallen-berlin": "Tür zugefallen in Berlin", "schluesseldienst-kosten-berlin": "Schlüsseldienst Kosten Berlin",
+  "schluessel-verloren-berlin": "Schlüssel verloren in Berlin", "tuer-zugefallen-wedding": "Tür zugefallen in Wedding",
+  "schluessel-verloren-gesundbrunnen": "Schlüssel verloren in Gesundbrunnen", "tuer-zugefallen-pankow": "Tür zugefallen in Pankow",
+  "schluessel-verloren-mitte": "Schlüssel verloren in Mitte"
 };
 
 const titleOverrides = {
@@ -159,7 +159,7 @@ const titleOverrides = {
   "leistung/sicherheitstechnik-berlin-einbruchschutz-vom-profi": "Einbruchschutz Berlin | Sicherheitstechnik für Tür und Schloss",
   "leistung/schlüsseldienst-berlin-türöffnung-notdienst-24h": "Türöffnung Berlin 24h Notdienst | Schlüsseldienst Berlin",
   "schlüsseldienst-berlin-preise": "Schlüsseldienst Berlin Preise | Kosten transparent am Telefon klären",
-  "schlüsseldienst-in-der-nähe": "Schlüsseldienst in der Nähe Berlin | Einsatzgebiete & Bezirke",
+  "schlüsseldienst-in-der-nähe": "Schlüsseldienst in der Nähe | Alle Berliner Bezirke",
   "schlüsseldienst-franzoesisch-buchholz": "Schlüsseldienst Französisch Buchholz Berlin | Türöffnung 24/7",
   "schlüsseldienst-französisch-buchholz": "Schlüsseldienst Französisch-Buchholz | Türöffnung 24/7",
   "schlüsseldienst-koepenick": "Schlüsseldienst Koepenick Berlin | Türöffnung 24/7",
@@ -217,7 +217,7 @@ const priorityLinks = [
   ["/schlüsseldienst-in-der-nähe/", "Einsatzgebiete"]
 ];
 
-const esc = (s) => String(s).replace(/[&<>\"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const esc = (s) => String(s).replace(/[&<>\"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const routeUrl = (slug) => `${site}/${slug ? `${slug}/` : ""}`;
 const canonicalSlugFor = (slug) => canonicalRoutes.get(slug) ?? slug;
 const leaf = (slug) => slug.split("/").at(-1);
@@ -389,7 +389,7 @@ function schema(slug, keyword, faqs) {
     author: { "@id": businessId },
     publisher: { "@id": businessId }
   });
-  return `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@graph":graph})}</script>`;
+  return `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph })}</script>`;
 }
 
 const alternateLanguages = [
@@ -490,7 +490,7 @@ function reviewsSection(slug) {
 }
 
 function districts(prioritize = false) {
-  if (!prioritize) return `<section id="einsatzgebiete"><div class="container"><div class="section-intro"><span class="eyebrow">Lokaler Schlüsseldienst</span><h2>Einsatzgebiete in ganz Berlin</h2><p>Wählen Sie Ihren Bezirk. Die bestehenden lokalen Seiten bleiben unter ihren bisherigen URLs erreichbar.</p></div><div class="area-links">${districtRoutes.map(r=>`<a href="/${r}/">${districtNames[r.slice(16)]}</a>`).join("")}</div></div></section>`;
+  if (!prioritize) return `<section id="einsatzgebiete"><div class="container"><div class="section-intro"><span class="eyebrow">Lokaler Schlüsseldienst</span><h2>Einsatzgebiete in ganz Berlin</h2><p>Wählen Sie Ihren Bezirk. Die bestehenden lokalen Seiten bleiben unter ihren bisherigen URLs erreichbar.</p></div><div class="area-links">${districtRoutes.map(r => `<a href="/${r}/">${districtNames[r.slice(16)]}</a>`).join("")}</div></div></section>`;
   const priority = priorityDistrictSlugs.filter((slug) => districtRoutes.includes(slug));
   const further = districtRoutes.filter((slug) => !priority.includes(slug));
   return `<section id="einsatzgebiete"><div class="container"><div class="section-intro"><span class="eyebrow">Einsatz in Berlin</span><h2>Schlüsseldienst in Ihrer Nähe – Einsatzgebiete in Berlin</h2><p>Die folgenden Seiten informieren über Türöffnung, Preise und Anfahrt im jeweiligen Bezirk. Es handelt sich um Einsatzgebiete, nicht um zusätzliche Filialen. Die Unternehmensadresse bleibt Ramlerstr. 2a in 13355 Berlin.</p></div><div class="area-links priority-area-links">${priority.map((slug) => `<a href="/${slug}/"><strong>Schlüsseldienst Berlin ${districtNames[slug.slice(16)]}</strong><span>24/7 Türöffnung ab 59 €</span></a>`).join("")}</div><h3 class="home-outskirts-title">Weitere Berliner Bezirke und Ortsteile</h3><div class="area-links home-outskirts-links">${further.map((slug) => `<a href="/${slug}/">${districtNames[slug.slice(16)]}</a>`).join("")}</div></div></section>`;
@@ -585,7 +585,7 @@ const guideArticles = {
   }
 };
 
-const faqSection = (slug, keyword, faqs) => faqs.length ? `<section class="section-soft"${!slug ? ' id="faq"' : ""}><div class="container"><div class="section-intro"><span class="eyebrow">Häufige Fragen</span><h2>${!slug ? "Häufige Fragen zum Schlüsseldienst Berlin" : `Antworten zu ${esc(keyword)}`}</h2></div><div class="faq-list">${faqs.map(([q,a])=>`<details class="faq-item"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div></div></section>` : "";
+const faqSection = (slug, keyword, faqs) => faqs.length ? `<section class="section-soft"${!slug ? ' id="faq"' : ""}><div class="container"><div class="section-intro"><span class="eyebrow">Häufige Fragen</span><h2>${!slug ? "Häufige Fragen zum Schlüsseldienst Berlin" : `Antworten zu ${esc(keyword)}`}</h2></div><div class="faq-list">${faqs.map(([q, a]) => `<details class="faq-item"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div></div></section>` : "";
 const contactCta = `<section><div class="container"><div class="cta-panel"><div><h2>Hilfe vom Schlüsseldienst Berlin</h2><p>Schildern Sie Bezirk und Türsituation. Preis und Vorgehen werden vor Beginn besprochen.</p></div><div class="cta-actions"><a class="button button-primary" href="tel:${phone}">${phoneDisplay}</a><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a></div></div></div></section>`;
 
 function guideIndexContent() {
@@ -720,7 +720,7 @@ function internationalSchema(slug, config) {
       }))
     }
   ];
-  return `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@graph":graph})}</script>`;
+  return `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph })}</script>`;
 }
 
 const localizedCards = (items) => items.map(([heading, text]) => `<article class="card service-card-clean"><h3>${esc(heading)}</h3><p>${esc(text)}</p></article>`).join("");
@@ -788,7 +788,7 @@ function render(slug) {
   const seoIntro = `<section class="seo-welcome"><div class="container"><h2>Willkommen bei Trust Schlüsseldienst Berlin</h2><p>Sie brauchen schnell Hilfe, weil Ihre Tür zugefallen ist, der Schlüssel innen steckt oder das Schloss klemmt? Trust Schlüsseldienst Berlin ist 24/7 erreichbar. Wir klären vor Beginn der Arbeit die Türsituation, Ihre Berechtigung und den Preis – transparent und ohne versteckte Kosten.</p></div></section>`;
   const standardHero = district ? districtHero(keyword, intro) : `<section class="page-hero page-hero-image"><div class="container"><div class="hero-copy"><h1>${headingHtml(keyword)}</h1><p>${esc(intro)}</p>${googleReviewBadge}<div class="hero-actions"><a class="button button-primary" href="tel:${phone}">Jetzt anrufen</a><a class="button button-whatsapp" href="https://wa.me/493040563878">WhatsApp</a><a class="button button-secondary" href="/#preise">Preise ansehen</a></div><ul class="hero-points"><li>Festpreis am Telefon</li><li>24/7 Türöffnung</li><li>Einbruchschutz</li></ul></div></div></section>`;
   const main = !slug ? homePageContent(faqs) : priorityDistrictPages[slug] ? priorityDistrictContent(slug, priorityDistrictPages[slug]) : slug === "leistung/schlüsselnotdienst" ? emergencyServiceContent(faqs) : slug === "türöffnung-berlin-24h-notdienst" ? doorOpeningContent(faqs) : pageType === "guide-index" ? guideIndexContent() : pageType === "guide" ? guideArticleContent(slug, faqs) : pageType === "service-index" ? serviceIndexContent() : isLegal ? `<section class="page-hero compact"><div class="container"><span class="eyebrow">Rechtliche Angaben</span><h1>Impressum</h1></div></section><section><div class="container"><div class="card legal-card"><h2>Anbieterkennzeichnung</h2><p><strong>Trust B&M Service UG (haftungsbeschränkt)</strong><br>Inhaber: Bilal Sleiman<br>${streetAddress}<br>13355 Berlin</p><p>Handelsregister: HRB 288982 B</p><p>Telefon: <a href="tel:${phone}">${phoneDisplay}</a><br>E-Mail: <a href="mailto:${email}">${email}</a></p></div></div></section>` : `${standardHero}${seoIntro}${intentBlock(slug, keyword, district)}<section><div class="container"><div class="section-intro clean-intro"><h2>Professionelle Hilfe rund um Tür, Schloss und Sicherheit</h2><p>Jeder Einsatz beginnt mit einer klaren Einschätzung. Zusatzarbeiten oder Material erfolgen nur nach Absprache.</p></div><div class="grid-3 service-cards-clean"><a class="card service-card-clean" href="/leistung/öffnung-bei-zugefallenen-türen/"><h3>Zugefallene Tür</h3><p>Wenn die Wohnungstür nur zugefallen ist, prüfen wir die Türsituation und öffnen möglichst schonend. Trust Schlüsseldienst Berlin erklärt Preis, Anfahrt und Vorgehen vor Beginn transparent.</p><span class="card-button">Mehr erfahren</span></a><a class="card service-card-clean" href="/leistung/öffnung-bei-abgeschlossenen-türen/"><h3>Abgeschlossene Tür</h3><p>Bei abgeschlossener Tür analysieren wir Schloss, Zylinder und Beschlag sorgfältig. Sie erhalten vor der Arbeit eine klare Einschätzung, damit die Öffnung fair und nachvollziehbar bleibt.</p><span class="card-button">Mehr erfahren</span></a><a class="card service-card-clean" href="/leistung/schlosswechsel-berlin-schlösser-schnell-sicher-wechseln/"><h3>Schloss- & Zylinderwechsel</h3><p>Nach Schlüsselverlust, Defekt oder Sicherheitsbedenken wechseln wir Zylinder und Schlösser nur nach Absprache. Material, Aufwand und Kosten werden vorher verständlich erklärt.</p><span class="card-button">Mehr erfahren</span></a></div></div></section><section class="section-blue"><div class="container"><div class="section-intro"><span class="eyebrow">So läuft es ab</span><h2>In vier klaren Schritten wieder Zugang erhalten</h2></div><div class="process-grid"><div class="process-step"><span>1</span><h3>Situation schildern</h3><p>Bezirk, Türart und ob die Tür zugefallen oder abgeschlossen ist.</p></div><div class="process-step"><span>2</span><h3>Preis klären</h3><p>Anfahrt, Leistung, Uhrzeit und mögliche Besonderheiten werden besprochen.</p></div><div class="process-step"><span>3</span><h3>Legitimation prüfen</h3><p>Die Berechtigung zur Öffnung wird vor Ort nachvollziehbar geprüft.</p></div><div class="process-step"><span>4</span><h3>Tür öffnen</h3><p>Wir wählen die zur Situation passende, möglichst schonende Methode.</p></div></div></div></section>${prices()}${reviewsSection(slug)}<section><div class="container split"><div><span class="eyebrow">Seriöser Ablauf</span><h2>Woran Sie einen fairen Schlüsseldienst erkennen</h2><p>Ein seriöser Ablauf beginnt nicht erst an der Tür. Fragen Sie nach Anfahrt, Grundpreis, Zuschlägen und möglichen Materialkosten. Bei Trust werden diese Punkte vor Beginn geklärt. Ein Zylinder oder Beschlag wird nicht ohne Ihre Zustimmung gewechselt.</p></div><div class="card"><h3>Vor dem Einsatz hilfreich</h3><ul class="mini-list"><li>Genaue Adresse und Berliner Bezirk</li><li>Tür nur zugefallen oder abgeschlossen?</li><li>Steckt ein Schlüssel von innen?</li><li>Besonderer Sicherheitsbeschlag vorhanden?</li><li>Ausweis oder andere Legitimation verfügbar?</li></ul></div></div></section>${districts()}${faqSection(slug, keyword, faqs)}${contactCta}`;
-  const languageHead = !slug ? `${hreflangTags()}${openGraphTags({title:titleFor(slug),description:descriptionFor(slug),ogLocale:"de_DE"}, routeUrl(""), true)}` : "";
+  const languageHead = !slug ? `${hreflangTags()}${openGraphTags({ title: titleFor(slug), description: descriptionFor(slug), ogLocale: "de_DE" }, routeUrl(""), true)}` : "";
   let pageFooter = priorityDistrictPages[slug] || !slug ? footer.replace('<div><div class="footer-title">Kontakt</div>', '<div id="kontakt"><div class="footer-title">Kontakt</div>') : footer;
   if (!slug) {
     pageFooter = pageFooter.replace(
@@ -798,7 +798,7 @@ function render(slug) {
   }
   const stylesheetVersion = !slug ? homepageStyleVersion : version;
   const bodyClass = !slug ? "home-page" : pageType === "district" ? "district-page" : "";
-  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(titleFor(slug))}</title><meta name="description" content="${esc(descriptionFor(slug))}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${routeUrl(canonicalSlugFor(slug))}">${languageHead}<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/assets/css/styles.css?v=${stylesheetVersion}">${schema(slug,keyword,faqs)}</head><body${bodyClass ? ` class="${bodyClass}"` : ""}>${header}<main>${slug?`<div class="breadcrumb"><div class="container"><a href="/">Startseite</a><span>›</span><span>${esc(keyword)}</span></div></div>`:""}${main}</main>${pageFooter}<script src="/assets/js/main.js?v=${version}" defer></script></body></html>`;
+  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(titleFor(slug))}</title><meta name="description" content="${esc(descriptionFor(slug))}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${routeUrl(canonicalSlugFor(slug))}">${languageHead}<link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/assets/css/styles.css?v=${stylesheetVersion}">${schema(slug, keyword, faqs)}</head><body${bodyClass ? ` class="${bodyClass}"` : ""}>${header}<main>${slug ? `<div class="breadcrumb"><div class="container"><a href="/">Startseite</a><span>›</span><span>${esc(keyword)}</span></div></div>` : ""}${main}</main>${pageFooter}<script src="/assets/js/main.js?v=${version}" defer></script></body></html>`;
 }
 
 fs.writeFileSync(path.join(root, "index.html"), render(""), "utf8");
@@ -809,7 +809,7 @@ for (const slug of allIndexes) {
 for (const [file, target] of legacyHtmlRoutes) fs.writeFileSync(path.join(root, file), transitionPage(file, target), "utf8");
 
 const sitemapRoutes = ["", ...allIndexes.filter((route) => !canonicalRoutes.has(route))];
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapRoutes.map(r=>`  <url><loc>${routeUrl(r)}</loc><lastmod>${new Date().toISOString().slice(0,10)}</lastmod></url>`).join("\n")}\n</urlset>\n`;
-fs.writeFileSync(path.join(root,"sitemap.xml"),sitemap,"utf8");
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapRoutes.map(r => `  <url><loc>${routeUrl(r)}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>`).join("\n")}\n</urlset>\n`;
+fs.writeFileSync(path.join(root, "sitemap.xml"), sitemap, "utf8");
 console.log(`Generated ${allIndexes.length + 1} pages without changing existing directory routes.`);
 
