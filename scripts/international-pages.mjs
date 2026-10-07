@@ -3,10 +3,10 @@ export const internationalPages = {
     lang: "en",
     hreflang: "en",
     ogLocale: "en_GB",
-    title: "Locksmith Berlin – 24/7 Door Opening from €59 | Trust",
-    description: "Locksmith Berlin available 24/7. Damage-free opening of shut, unlocked doors from €59, arrival in around 10–30 minutes and fixed price by phone.",
+    title: "Locksmith Berlin in English | 24/7 Door Opening from €59",
+    description: "Locksmith Berlin in English: 24/7 door opening from €59, price agreed by phone and arrival usually in 10–30 minutes, depending on traffic and address.",
     h1: "Locksmith Berlin – 24/7 Door Opening from €59",
-    hero: "Locked out, lost your key or facing a broken lock? Trust provides 24/7 door opening throughout Berlin. We confirm the fixed price and travel charge by phone before setting off.",
+    hero: "Locked out, lost your key or facing a broken lock? Trust is available 24 hours a day for door opening throughout Berlin. This page explains the service in English. We confirm the fixed price and travel charge by phone before setting off.",
     heroFacts: ["24/7 emergency service", "Arrival in around 10–30 minutes", "Fixed price agreed by phone", "Shut, unlocked doors opened without damage"],
     nav: { home: "Home", situations: "Lockout help", services: "Services", process: "How it works", prices: "Prices", faq: "FAQ", call: "Call now", menu: "Open menu", language: "Choose language" },
     priceTitle: "Door opening prices from €59",
@@ -61,23 +61,23 @@ export const internationalPages = {
       ["Verify access", "Show an ID or other suitable proof before or immediately after the door is opened."],
       ["Complete the agreed work", "Only the door opening or other work you approved is carried out and shown on the invoice."]
     ],
-    servicesTitle: "Lock and cylinder work after inspection",
+    servicesTitle: "Lock changing and cylinder replacement after inspection",
     servicesIntro: "Door opening and replacement work are separate services. A new component is not added automatically when all you need is access to the property.",
     services: [
-      ["Lock replacement", "A defective lock is replaced only after its condition, the required part and the price have been explained."],
+      ["Lock changing service", "A defective lock is replaced only after its condition, the required part and the price have been explained."],
       ["Profile cylinder replacement", "A cylinder may be sensible after key loss or a defect, but material and fitting require your prior approval."],
       ["Broken-key removal", "The remaining key can often be removed after checking whether the cylinder has also been damaged."],
       ["Security after key loss", "If a missing key can be connected to your address, we discuss practical security options before fitting anything."]
     ],
-    areasTitle: "Emergency locksmith service throughout Berlin",
+    areasTitle: "24-hour locksmith service near you in Berlin",
     areas: [
       "We attend addresses across Berlin, with frequent call-outs in Wedding, Gesundbrunnen, Mitte, Prenzlauer Berg, Pankow, Reinickendorf and Weißensee. These are service areas, not separate branches; the business address remains Ramlerstr. 2a, 13355 Berlin.",
-      "When searching for a locksmith near me or an emergency locksmith near me, give the full street and postcode. This lets us estimate the journey for your actual location instead of using a general citywide promise."
+      "If you need a locksmith near you in Berlin, call with the full street and postcode. The service is open 24 hours a day, including nights and weekends. We give an arrival estimate for the actual address instead of making a general citywide promise."
     ],
     areaLabel: "Berlin service areas",
-    visitorsTitle: "Information for international residents and visitors",
+    visitorsTitle: "Locksmith information in English for Berlin residents and visitors",
     visitorsParagraphs: [
-      "This English page is intended for international residents, students, business travellers and visitors who need clear written information during a lockout. It explains the relevant prices, the access check and what details to provide when contacting Trust. It does not make an unsupported promise about the languages spoken by every technician.",
+      "This page provides booking, pricing and process information in English for international residents, students, business travellers and visitors. If you need help in English by phone, ask when you contact us so that availability can be confirmed for your call.",
       "If your ID is inside the apartment, tell us before the opening. Authorization can be checked immediately afterwards; in an appropriate case a neighbour may first confirm that you live at the address. Hotels, holiday rentals and shared flats may require confirmation from the responsible tenant, host or property manager."
     ],
     reviewsTitle: "Customer experiences published on Google",
@@ -90,12 +90,15 @@ export const internationalPages = {
       ["Can you open a shut door without damage?", "Yes. We open a door without damage when it has only shut and has not been locked with a key. Locked or damaged doors require an individual assessment."],
       ["How quickly can you arrive?", "Depending on the Berlin address and traffic, arrival usually takes around 10–30 minutes. We give you an estimate for your location when you call."],
       ["Is Trust available 24/7?", "Yes. The emergency locksmith service is available 24 hours a day, seven days a week, including weekends and public holidays."],
+      ["Is the locksmith service open now?", "Trust can be contacted 24 hours a day. Call with your full Berlin address and door condition so we can confirm the price, travel charge and current arrival estimate."],
+      ["Can I receive locksmith information in English?", "Yes. This page explains the service, prices and process in English. If you need to speak in English by phone, ask when you contact us so availability can be confirmed for your call."],
       ["Does a key left inside cost more?", "No. A key left or inserted on the inside does not increase our door-opening price. Tell us where the key is when you call."],
       ["What if my key is lost or broken?", "We can open the door and inspect the lock. A cylinder or lock is changed only when necessary and after you approve the work and price."],
+      ["Do you provide a lock changing service?", "Yes. We inspect the lock and explain the suitable replacement, material cost and fitting price before carrying out the work. A new lock is not automatically required for every door opening."],
       ["Is a new cylinder included in the opening price?", "No. Profile cylinders and other materials are separate from the door-opening price and are installed only after explicit agreement."],
       ["What proof do I need for the door opening?", "Access authorization is checked before or immediately after opening. An ID, tenancy evidence or another suitable confirmation may be used."]
     ],
-    ctaTitle: "Need a locksmith in Berlin now?",
+    ctaTitle: "Need a 24-hour locksmith in Berlin now?",
     ctaText: "Call or use WhatsApp and provide your Berlin address, door condition and key problem. We clarify the fixed price and travel charge before setting off.",
     footerSummary: "24/7 door opening and emergency locksmith service throughout Berlin, with the price agreed by phone before travel.",
     footerLinks: { overview: "On this page", situations: "Lockout help", services: "Lock services", prices: "Prices", faq: "FAQ", legal: "Legal notice", sitemap: "Sitemap", contact: "Contact", call: "Call" }

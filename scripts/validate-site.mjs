@@ -194,8 +194,8 @@ const internationalExpectations = [
     lang: "en",
     hreflang: "en",
     locale: "en_GB",
-    title: "Locksmith Berlin – 24/7 Door Opening from €59 | Trust",
-    description: "Locksmith Berlin available 24/7. Damage-free opening of shut, unlocked doors from €59, arrival in around 10–30 minutes and fixed price by phone.",
+    title: "Locksmith Berlin in English | 24/7 Door Opening from €59",
+    description: "Locksmith Berlin in English: 24/7 door opening from €59, price agreed by phone and arrival usually in 10–30 minutes, depending on traffic and address.",
     h1: "Locksmith Berlin – 24/7 Door Opening from €59",
     metaPrice: "from €59",
     heroFacts: ["24/7 emergency service", "Arrival in around 10–30 minutes", "Fixed price agreed by phone", "Shut, unlocked doors opened without damage"]
