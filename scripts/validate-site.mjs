@@ -127,7 +127,7 @@ const homeTitle = decode(home.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || "");
 const homeDescription = home.match(/<meta\s+name="description"\s+content="([^"]+)"/i)?.[1] || "";
 const homeMain = home.match(/<main>([\s\S]*?)<\/main>/i)?.[1] || "";
 const homeVisibleWords = decode(homeMain).split(/\s+/u).filter(Boolean).length;
-if (homeTitle !== "Trust Schlüsseldienst Berlin ab 59 € | Festpreis am Telefon") errors.push("Startseite: vorgesehener HTML-Title stimmt nicht");
+if (homeTitle !== "Schlüsseldienst Berlin 24/7 | Türöffnung ab 59 €") errors.push("Startseite: vorgesehener HTML-Title stimmt nicht");
 if (homeDescription.length < 145 || homeDescription.length > 160) errors.push(`Startseite: Meta Description hat ${homeDescription.length} statt 145–160 Zeichen`);
 if (!home.includes('<h1><span class="home-h1-brand">Trust Schlüsseldienst Berlin</span><span class="home-h1-offer"> – Türöffnung ab 59 €</span></h1>')) errors.push("Startseite: vorgegebene H1 fehlt");
 if (!home.includes("Tür zugefallen, ausgesperrt, Schlüssel verloren oder Schloss defekt?")) errors.push("Startseite: neuer Hero-Einleitungstext fehlt");
